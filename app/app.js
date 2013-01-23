@@ -23,12 +23,23 @@ Ext.application({
      * models and stores. Don't use spaces or special characters in the name.
      */
     name:'Trinus',
+
+    requires:['App.view.login.Window'],
+
     /**
      * @method
      * @template
      * Called automatically when the page has completely loaded.
      */
-    launch:function () {
-        alert(123456);
+
+    launch: function() {
+        Ext.create('Ext.container.Viewport',{
+            layout:'border',
+            style: 'background-color: #000',
+            items:[{
+                region: 'center',
+                xtype: 'windowlogin'
+            }]
+        });
     }
 });
