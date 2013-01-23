@@ -2,35 +2,35 @@ Ext.define('App.view.login.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formpanellogin',
 
+    defaults:{
+        xtype:'textfield',
+        margin:5,
+        allowBlank:false/*,
+        vtype:'alphanum'*/
+    },
+
     initComponent: function(){
-        Ext.create('Ext.form.Panel', {
-            title: 'Simple Form',
-            // The fields
-            defaultType: 'textfield',
-            items: [{
-                fieldLabel: 'First Name',
-                name: 'first',                //this name must match with the field name in the model
-                allowBlank: false
+
+        this.items = this.buildItems();
+
+        this.callParent(arguments);
+
+    },
+
+    buildItems:function () {
+        var items = [
+            {
+                fieldLabel:'Usuario',
+                name:'txtUser',
+                labelWidth:50
             },{
-                fieldLabel: 'Last Name',
-                name: 'last',
-                allowBlank: false
-            }],
+                fieldLabel:'Password',
+                inputType:'password',
+                labelWidth:60,
+                name:'txtPass'
+            }
+        ];
 
-            // Reset and Submit buttons
-            buttons: [{
-                text: 'Reset',
-                handler: function() {
-                    this.up('form').getForm().reset();
-                }
-            }, {
-                text: 'Submit',
-                formBind: true,
-                disabled: true,
-                handler: function() {
-                }
-            }]
-        });
-
+        return items;
     }
 });
