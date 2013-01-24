@@ -5,8 +5,9 @@ Ext.define('App.view.login.FormPanel', {
     defaults:{
         xtype:'textfield',
         margin:5,
-        allowBlank:false/*,
-        vtype:'alphanum'*/
+        allowBlank:false,
+        vtype:'alphanum',
+        labelWidth: 80
     },
 
     initComponent: function(){
@@ -22,12 +23,12 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                labelWidth:50
+                value: '2299123456'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
-                labelWidth:60,
-                name:'txtPass'
+                name:'txtPass',
+                value: 'arnold'
             }
         ];
 

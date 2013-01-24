@@ -35,7 +35,9 @@ Ext.application({
     launch: function() {
         Ext.create('Ext.container.Viewport',{
             layout:'border',
-            style: 'background-color: #000',
+            //style: 'background-image: url("resources/images/bg.gif");',
+            componentCls: 'full-screen-background-image',
+            disabledCls: 'x-viewport',
             items:[{
                 region: 'center',
                 xtype: 'windowlogin'
