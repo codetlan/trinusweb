@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.Window'],
+    requires:['App.view.login.Window', 'App.view.principal.Panel'],
 
     /**
      * @method
@@ -34,14 +34,25 @@ Ext.application({
 
     launch: function() {
         Ext.create('Ext.container.Viewport',{
-            layout:'border',
-            //style: 'background-image: url("resources/images/bg.gif");',
             componentCls: 'full-screen-background-image',
-            disabledCls: 'x-viewport',
+            id:'viewport',
             items:[{
                 region: 'center',
-                xtype: 'windowlogin'
+                xtype: 'windowlogin',
+                listeners:{
+                    scope:this,
+                    logeado:this.iniciar
+                }
             }]
         });
+    },
+
+    iniciar:function(){
+        Ext.getCmp('viewport').add({
+            xtype:'panelprincipal',
+            height:1000,
+            width:2000
+        });
+        console.info(Ext.getCmp('viewport'));
     }
 });

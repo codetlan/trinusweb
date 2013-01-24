@@ -23,7 +23,6 @@ Ext.define('App.view.login.Window', {
     },
 
     buidlButtons:function(){
-        console.info(this);
         var buttons= [{
             text: 'Reset',
             handler: function() {
@@ -38,7 +37,6 @@ Ext.define('App.view.login.Window', {
     },
 
     logeo:function(){
-        console.info(this);
         var form = this.window.items.items[0].getForm(),
             obj = form.getValues();
         if(form.isValid()){
@@ -50,18 +48,14 @@ Ext.define('App.view.login.Window', {
                     var r = Ext.decode(response.responseText);
                     if(r.result === "ok"){
                         this.window.hide();
-                        this.inicio();
+                        this.fireEvent("logeado");
                     } else{
-                        Notification.warn(r.error);
+                        //Notification.warn(r.error);
                     }
                 }
             });
 
         }
-    },
-
-    inicio: function(){
-           alert(124);
     }
 
 });
