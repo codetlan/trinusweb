@@ -20,48 +20,6 @@ Ext.define('App.view.login.Window', {
             }],
             buttons:this.buidlButtons()
         }).show();
-    },
-
-    buidlButtons:function(){
-        console.info(this);
-        var buttons= [{
-            text: 'Reset',
-            handler: function() {
-                this.up('window').items.items[0].getForm().reset();
-            }
-        }, {
-            text: 'Login',
-            handler: this.logeo.bind(this)
-        }];
-
-        return buttons;
-    },
-
-    logeo:function(){
-        console.info(this);
-        var form = this.window.items.items[0].getForm(),
-            obj = form.getValues();
-        if(form.isValid()){
-            Ext.Ajax.request({
-                scope: this,
-                url: 'proxy.php?url=http%3A%2F%2Fisystems.com.mx%3A8181%2FTrinus%2FServletLoginCliente%3Fmovil%3D'
-                    +obj.txtUser+'%26password%3D'+ obj.txtPass,
-                success: function(response){
-                    var r = Ext.decode(response.responseText);
-                    if(r.result === "ok"){
-                        this.window.hide();
-                        this.inicio();
-                    } else{
-                        Notification.warn(r.error);
-                    }
-                }
-            });
-
-        }
-    },
-
-    inicio: function(){
-           alert(124);
     }
 
 });

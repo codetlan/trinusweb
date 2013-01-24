@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.Window'],
+    requires:['App.view.login.FormPanel','App.view.login.Window', 'App.view.principal.Panel'],
 
     /**
      * @method
@@ -33,14 +33,38 @@ Ext.application({
      */
 
     launch: function() {
+        if(!localStorage.getItem("Logeado")){
+            this.window = Ext.create('Ext.window.Window', {
+                title: 'Login',
+                width: 280,
+                height: 150,
+                layout: 'fit',
+                closable: false,
+                draggable: false,
+                items:[{
+                    xtype: 'formpanellogin',
+                    listeners: {
+                        scope: this,
+                        logeado: this.iniciar
+                    }
+                }]
+            }).show();
+
+        } else {
+            this.iniciar();
+        }
+    },
+
+    iniciar:function(){
+        if(this.window){
+            this.window.destroy();
+        }
         Ext.create('Ext.container.Viewport',{
-            layout:'border',
-            //style: 'background-image: url("resources/images/bg.gif");',
             componentCls: 'full-screen-background-image',
-            disabledCls: 'x-viewport',
             items:[{
-                region: 'center',
-                xtype: 'windowlogin'
+                xtype:'panelprincipal',
+                height:1000,
+                width:2000
             }]
         });
     }

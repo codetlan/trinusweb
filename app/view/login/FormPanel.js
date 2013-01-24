@@ -13,6 +13,7 @@ Ext.define('App.view.login.FormPanel', {
     initComponent: function(){
 
         this.items = this.buildItems();
+        this.buttons = this.buidlButtons();
 
         this.callParent(arguments);
 
@@ -33,5 +34,42 @@ Ext.define('App.view.login.FormPanel', {
         ];
 
         return items;
+    },
+
+    buidlButtons:function(){
+        var buttons= [{
+            text: 'Reset',
+            handler: function() {
+                this.getForm().reset();
+            }
+        }, {
+            scope: this,
+            text: 'Login',
+            handler: this.logeo
+        }];
+
+        return buttons;
+    },
+
+    logeo:function(){
+        var form = this.getForm(),
+            obj = form.getValues();
+        if(form.isValid()){
+            Ext.Ajax.request({
+                scope: this,
+                url: 'proxy.php?url=http%3A%2F%2Fisystems.com.mx%3A8181%2FTrinus%2FServletLoginCliente%3Fmovil%3D'
+                    +obj.txtUser+'%26password%3D'+ obj.txtPass,
+                success: function(response){
+                    var r = Ext.decode(response.responseText);
+                    if(r.result === "ok"){
+                        localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
+                        this.fireEvent("logeado");
+                    } else{
+                        //Notification.warn(r.error);
+                    }
+                }
+            });
+
+        }
     }
 });
