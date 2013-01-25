@@ -10,6 +10,11 @@ Ext.define('App.view.menu.MenuPanel', {
     alias :'widget.menupanel',
 
 
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
     initComponent:function(){
         this.items = this.buildItems();
 
@@ -21,8 +26,7 @@ Ext.define('App.view.menu.MenuPanel', {
             {
                 flex: 1,
                 xtype: 'panel',
-                html: 'jjksjljlsd',
-                title: 'Pide Tu taxy'
+                title: 'Pide Tu taxi'
             },{
                 flex: 1,
                 xtype: 'panel',

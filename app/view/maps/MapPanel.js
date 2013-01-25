@@ -13,9 +13,10 @@ Ext.define('App.view.maps.MapPanel', {
     plain:true,
     gmapType:'map',
     mapTypeId: google.maps.MapTypeId.HYBRID,
+    border: false,
 
     center:{
-        geoCodeAddr: 'Ciudad Universitaria, Mexico DF'
+        geoCodeAddr: 'Portales, Mexico DF'
     },
 
     markers: [{
@@ -36,6 +37,7 @@ Ext.define('App.view.maps.MapPanel', {
     },
 
     setCoordenada:function (position) {
+        console.info(position);
         Ext.apply(this, {
             markers:[{
                 title: 'Codetlan',

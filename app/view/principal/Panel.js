@@ -5,34 +5,35 @@ Ext.define('App.view.principal.Panel', {
 
     layout:'border',
 
+
     initComponent:function(){
         this.items = this.buildItems();
-        this.bbar = this.buildBbar();
+        this.tbar = this.buildBbar();
 
         this.callParent(arguments);
     },
 
     buildItems:function(){
         var items = [
+            /*{
+                layout: 'form',
+                region: 'north',
+                items: [this.buildBbar()]
+            },*/
             {
                 xtype:'container',
+                layout: 'fit',
                 region : 'west',
+                flex:.2,
                 items: [{
-                    width: 200,
-                    height: 400,
-                    layout: {
-                        type: 'vbox',
-                        align: 'stretch'
-                    },
                     xtype: 'menupanel'
                 }]
             },{
                 xtype:'panel',
+                layout: 'fit',
                 region : 'center',
-                flex:1,
+                flex: 1,
                 items:[{
-                    width: 1500,
-                    height: 900,
                     xtype: 'mappanel'
                 }]
             }];
@@ -42,14 +43,24 @@ Ext.define('App.view.principal.Panel', {
 
     buildBbar: function(){
         var toolbar =  Ext.create('Ext.toolbar.Toolbar',{
-            width: 700,
-            height: 100,
+            xtype: 'container',
             items: [{
                 xtype: 'button',
-                text: 'Buttonn'
+                text: 'Usuario',
+                icon: 'images/user.png'
+            },{
+                xtype: 'button',
+                text: 'Salir',
+                icon: 'images/user.png',
+                handler: this.salir
             }]
         });
 
         return toolbar;
+    },
+
+    salir: function(){
+        localStorage.removeItem('Logeado');
+        location.href='index.html';
     }
 });

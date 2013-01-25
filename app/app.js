@@ -60,11 +60,9 @@ Ext.application({
             this.window.destroy();
         }
         Ext.create('Ext.container.Viewport',{
-            componentCls: 'full-screen-background-image',
+           layout: 'fit',
             items:[{
-                xtype:'panelprincipal',
-                height:1000,
-                width:2000
+                xtype:'panelprincipal'
             }]
         });
     }
