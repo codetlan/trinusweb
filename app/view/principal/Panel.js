@@ -1,7 +1,7 @@
 Ext.define('App.view.principal.Panel', {
     extend: 'Ext.panel.Panel',
     alias :'widget.panelprincipal',
-    requires: ['Ext.toolbar.Toolbar','App.view.maps.MapPanel'],
+    requires: ['Ext.toolbar.Toolbar','App.view.menu.MenuPanel','App.view.maps.MapPanel'],
 
     layout:'border',
 
@@ -15,6 +15,18 @@ Ext.define('App.view.principal.Panel', {
     buildItems:function(){
         var items = [
             {
+                xtype:'container',
+                region : 'west',
+                items: [{
+                    width: 200,
+                    height: 400,
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    xtype: 'menupanel'
+                }]
+            },{
                 xtype:'panel',
                 region : 'center',
                 flex:1,
@@ -23,12 +35,7 @@ Ext.define('App.view.principal.Panel', {
                     height: 900,
                     xtype: 'mappanel'
                 }]
-            },{
-                xtype:'panel',
-                region : 'east',
-                flex:.8,
-                html:'jejejejeje'
-        }];
+            }];
 
         return items;
     },
@@ -39,7 +46,7 @@ Ext.define('App.view.principal.Panel', {
             height: 100,
             items: [{
                 xtype: 'button',
-                text: 'Button'
+                text: 'Buttonn'
             }]
         });
 
