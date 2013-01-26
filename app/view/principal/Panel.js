@@ -1,12 +1,12 @@
 Ext.define('App.view.principal.Panel', {
-    extend: 'Ext.panel.Panel',
-    alias :'widget.panelprincipal',
-    requires: ['Ext.toolbar.Toolbar','App.view.menu.MenuPanel'/*,'App.view.maps.MapPanel'*/],
+    extend:'Ext.panel.Panel',
+    alias:'widget.panelprincipal',
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel'/*,'App.view.maps.MapPanel'*/],
 
     layout:'border',
 
 
-    initComponent:function(){
+    initComponent:function () {
         this.items = this.buildItems();
         this.tbar = this.buildBbar();
 
@@ -19,12 +19,12 @@ Ext.define('App.view.principal.Panel', {
                 xtype:'menupanel',
                 region:'west',
                 flex:.2
-            },{
+            },
+            {
                 xtype:'container',
                 region:'center',
                 flex:1,
                 html:'<div id="map_canvas" style="height: 100%; width: 100%;"></div>',
-                //id:'map_canvas',
                 listeners:{
                     scope:this,
                     afterrender:this.onAfterRenderMapPanel
@@ -35,30 +35,30 @@ Ext.define('App.view.principal.Panel', {
         return items;
     },
 
-    buildBbar: function(){
-        var toolbar =  Ext.create('Ext.toolbar.Toolbar',{
-            xtype: 'container',
-            items: ['->',{
-                xtype: 'button',
-                text: 'Usuario',
-                icon: 'images/user.png'
-            },{
-                xtype: 'button',
-                text: 'Salir',
-                icon: 'images/user.png',
-                handler: this.salir
+    buildBbar:function () {
+        var toolbar = Ext.create('Ext.toolbar.Toolbar', {
+            xtype:'container',
+            items:['->', {
+                xtype:'button',
+                text:'Usuario',
+                icon:'images/user.png'
+            }, {
+                xtype:'button',
+                text:'Salir',
+                icon:'images/user.png',
+                handler:this.salir
             }]
         });
 
         return toolbar;
     },
 
-    salir: function(){
+    salir:function () {
         localStorage.removeItem('Logeado');
-        location.href='index.html';
+        location.href = 'index.html';
     },
 
-    onAfterRenderMapPanel:function(t, eOpts){
+    onAfterRenderMapPanel:function (t, eOpts) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.createMap.bind(this), this.gestionaErroresGeo);
         } else {
@@ -68,33 +68,39 @@ Ext.define('App.view.principal.Panel', {
 
     createMap:function (position) {
         var _this = this,
-            mapOptions = {
+            mapOptions = { //Se crean las opciones basicas del mapa
                 zoom:14,
                 center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             },
-            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-            geocoder = new google.maps.Geocoder(),
-            infowindow = new google.maps.InfoWindow();
+            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude), //Se crea la coordenada de la posicion actual
+            infowindow = new google.maps.InfoWindow(); //Globo del marker con información
 
-        this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+        this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
+
+        var marker = new google.maps.Marker({ //Se crea el marcador de la ubicacion actual
+            draggable:true,
+            position:latlng,
+            map:this.map
+        });
+
+        this.changeAddress(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
+
+        google.maps.event.addListener(marker, 'dragend', function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+            _this.changeAddress(this.map, marker, infowindow, marker.getPosition());
+        });
+    },
+
+    changeAddress:function(map, marker, infowindow, latlng){
+        var geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[1]) {
-                    _this.map.setZoom(16);
-                    var marker = new google.maps.Marker({
-                        draggable:true,
-                        position:latlng,
-                        map:_this.map
-                    });
-                    infowindow.setContent(results[0].formatted_address);
-                    infowindow.open(_this.map, marker);
+                    map.setZoom(16);
 
-                    google.maps.event.addListener(marker, 'click', function() {
-                        infowindow.open(_this.map,marker);
-                    });
+                    infowindow.setContent(results[0].formatted_address);
+                    infowindow.open(map, marker);
                 }
             }
         });
