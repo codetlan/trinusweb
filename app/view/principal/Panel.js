@@ -40,6 +40,11 @@ Ext.define('App.view.principal.Panel', {
             xtype:'container',
             items:['->', {
                 xtype:'button',
+                text:'Pedir Taxi',
+                icon:'images/user.png',
+                handler:this.pedirTaxi.bind(this)
+            },{
+                xtype:'button',
                 text:'Usuario',
                 icon:'images/user.png'
             }, {
@@ -96,7 +101,7 @@ Ext.define('App.view.principal.Panel', {
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                if (results[1]) {
+                if (results[0]) {
                     map.setZoom(16);
 
                     infowindow.setContent(results[0].formatted_address);
@@ -118,6 +123,29 @@ Ext.define('App.view.principal.Panel', {
         }
         if (err.code == 3) {
             alert("timeout recibiendo la posicion");
+        }
+    },
+
+    pedirTaxi:function(){
+        var invocation=new XMLHttpRequest(),
+            params='idCliente='+2+'&direccion='+'"Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán"'+'&latitud='+19.3103351+'&longitud='+ -99.1703636+
+            '&observ="algunaobservacion"',
+            url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?'+params;
+        console.log(url);
+        if(invocation) {
+            invocation.open('POST', url, true);
+            invocation.onreadystatechange = this.onPedirTaxiResponse.bind(this)
+            invocation.send();
+        }
+    },
+
+    onPedirTaxiResponse:function(response){
+        console.info(response);
+        var r = Ext.decode(response.target.responseText);
+        if(r.result === "ok"){
+
+        } else{
+            Ext.MessageBox.alert('Status', r.result);
         }
     }
 });

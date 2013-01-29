@@ -86,7 +86,7 @@ Ext.define('App.view.login.FormPanel', {
             localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
             this.fireEvent("logeado");
         } else{
-            //Notification.warn(r.error);
+            Ext.MessageBox.alert('Status', r.result);
         }
     }
 });
