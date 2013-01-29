@@ -18,12 +18,12 @@ Ext.define('App.view.principal.Panel', {
             {
                 xtype:'menupanel',
                 region:'west',
-                flex:.2
+                flex:2
             },
             {
                 xtype:'container',
                 region:'center',
-                flex:1,
+                flex:5,
                 html:'<div id="map_canvas" style="height: 100%; width: 100%;"></div>',
                 listeners:{
                     scope:this,
@@ -40,12 +40,10 @@ Ext.define('App.view.principal.Panel', {
             xtype:'container',
             items:['->', {
                 xtype:'button',
-                text:'Usuario',
-                icon:'images/user.png'
-            }, {
-                xtype:'button',
                 text:'Salir',
                 icon:'images/user.png',
+                ui: 'danger',
+                scale: 'medium',
                 handler:this.salir
             }]
         });
@@ -92,15 +90,16 @@ Ext.define('App.view.principal.Panel', {
     },
 
     changeAddress:function(map, marker, infowindow, latlng){
-        var geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
+        var _this = this, geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
-                if (results[1]) {
+                if (results[0]) {
                     map.setZoom(16);
 
                     infowindow.setContent(results[0].formatted_address);
                     infowindow.open(map, marker);
+                    _this.setAddressText(results[0].formatted_address);
                 }
             }
         });
@@ -119,5 +118,10 @@ Ext.define('App.view.principal.Panel', {
         if (err.code == 3) {
             alert("timeout recibiendo la posicion");
         }
+    },
+
+    setAddressText:function(address){
+        this.items.items[0].setAddressText(address);
+
     }
 });
