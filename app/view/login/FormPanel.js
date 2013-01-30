@@ -81,12 +81,14 @@ Ext.define('App.view.login.FormPanel', {
     },
 
     handleo:function(response){
-        var r = Ext.decode(response.target.responseText);
-        if(r.result === "ok"){
-            localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
-            this.fireEvent("logeado");
-        } else{
-            Ext.MessageBox.alert('Status', r.result);
+        if (response.target.readyState == 4 && response.target.status == 200) {
+            var r = Ext.decode(response.target.responseText);
+            if (r.result === "ok") {
+                localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
+                this.fireEvent("logeado");
+            } else {
+                Ext.MessageBox.alert('Status', r.result);
+            }
         }
     }
 });

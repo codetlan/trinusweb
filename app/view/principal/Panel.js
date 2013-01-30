@@ -18,12 +18,16 @@ Ext.define('App.view.principal.Panel', {
             {
                 xtype:'menupanel',
                 region:'west',
-                flex:.2
+                flex:2,
+                listeners:{
+                    scope:this,
+                    pedirtaxi:this.pedirTaxi
+                }
             },
             {
                 xtype:'container',
                 region:'center',
-                flex:1,
+                flex:5,
                 html:'<div id="map_canvas" style="height: 100%; width: 100%;"></div>',
                 listeners:{
                     scope:this,
@@ -40,17 +44,10 @@ Ext.define('App.view.principal.Panel', {
             xtype:'container',
             items:['->', {
                 xtype:'button',
-                text:'Pedir Taxi',
-                icon:'images/user.png',
-                handler:this.pedirTaxi.bind(this)
-            },{
-                xtype:'button',
-                text:'Usuario',
-                icon:'images/user.png'
-            }, {
-                xtype:'button',
                 text:'Salir',
                 icon:'images/user.png',
+                ui:'danger',
+                scale:'medium',
                 handler:this.salir
             }]
         });
@@ -94,10 +91,14 @@ Ext.define('App.view.principal.Panel', {
         google.maps.event.addListener(marker, 'dragend', function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
             _this.changeAddress(this.map, marker, infowindow, marker.getPosition());
         });
+
+        google.maps.event.addListener(marker, 'click', function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+            infowindow.open(this.map, marker);
+        });
     },
 
-    changeAddress:function(map, marker, infowindow, latlng){
-        var geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
+    changeAddress:function (map, marker, infowindow, latlng) {
+        var _this = this, geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
@@ -106,6 +107,7 @@ Ext.define('App.view.principal.Panel', {
 
                     infowindow.setContent(results[0].formatted_address);
                     infowindow.open(map, marker);
+                    _this.setAddressText(results[0].formatted_address);
                 }
             }
         });
@@ -126,26 +128,44 @@ Ext.define('App.view.principal.Panel', {
         }
     },
 
-    pedirTaxi:function(){
-        var invocation=new XMLHttpRequest(),
-            params='idCliente='+2+'&direccion='+'"Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán"'+'&latitud='+19.3103351+'&longitud='+ -99.1703636+
-            '&observ="algunaobservacion"',
-            url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?'+params;
-        console.log(url);
-        if(invocation) {
+    pedirTaxi:function () {
+        var invocation = new XMLHttpRequest(),
+            params = 'idCliente=' + 2 + '&direccion=' + '"Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán"' + '&latitud=' + 19.3103351 + '&longitud=' + -99.1703636 +
+                '&observ="algunaobservacion"',
+            url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
+
+        if (invocation) {
             invocation.open('POST', url, true);
             invocation.onreadystatechange = this.onPedirTaxiResponse.bind(this)
             invocation.send();
         }
     },
 
-    onPedirTaxiResponse:function(response){
+    onPedirTaxiResponse:function (response) {
         console.info(response);
-        var r = Ext.decode(response.target.responseText);
-        if(r.result === "ok"){
+        /**
+         * direccion: ""Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán""
+         estatus: "ASIGNADO"
+         idcliente: 2
+         idservicio: 48
+         idtaxista: 1
+         latitud: "19.3103351"
+         longitud: "-99.1703636"
+         result: "ok"
+         unidad: "1401"
+         */
+        if (response.target.readyState == 4 && response.target.status == 200) {
+            var r = response.target.responseText ? Ext.decode(response.target.responseText) : "";
+            if (r.result === "ok") {
 
-        } else{
-            Ext.MessageBox.alert('Status', r.result);
+            } else {
+                Ext.MessageBox.alert('Status', r.result);
+            }
         }
+    },
+
+    setAddressText:function (address) {
+        this.items.items[0].setAddressText(address);
+
     }
 });
