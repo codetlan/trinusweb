@@ -1,14 +1,14 @@
 Ext.define('App.view.principal.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipal',
-    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel'/*,'App.view.maps.MapPanel'*/],
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel','App.view.xtemplate.XtemplateTaxista'/*,'App.view.maps.MapPanel'*/],
 
     layout:'border',
 
 
     initComponent:function () {
         this.items = this.buildItems();
-        this.tbar = this.buildBbar();
+        //this.tbar = this.buildBbar();
 
         this.callParent(arguments);
     },
@@ -16,13 +16,22 @@ Ext.define('App.view.principal.Panel', {
     buildItems:function () {
         var items = [
             {
-                xtype:'menupanel',
+                xtype: 'panel',
                 region:'west',
+                bbar: this.buildBbar(),
                 flex:2,
-                listeners:{
-                    scope:this,
-                    pedirtaxi:this.pedirTaxi
-                }
+                items:[{
+                    xtype:'menupanel',
+                    listeners:{
+                        scope:this,
+                        pedirtaxi:this.pedirTaxi
+                    }
+                },{
+                    xtype: 'container',
+                    items:[{
+                        xtype: 'xtemplatetaxista'
+                    }]
+                }]
             },
             {
                 xtype:'container',
@@ -45,9 +54,9 @@ Ext.define('App.view.principal.Panel', {
             items:['->', {
                 xtype:'button',
                 text:'Salir',
-                icon:'images/user.png',
-                ui:'danger',
-                scale:'medium',
+                iconCls: 'icon-off icon-white',
+                ui: 'danger',
+                scale: 'medium',
                 handler:this.salir
             }]
         });
@@ -163,9 +172,9 @@ Ext.define('App.view.principal.Panel', {
             }
         }
     },
-
-    setAddressText:function (address) {
-        this.items.items[0].setAddressText(address);
+    
+    setAddressText:function(address){
+        this.items.items[0].items.items[0].setAddressText(address);
 
     }
 });

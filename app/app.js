@@ -26,6 +26,9 @@ Ext.application({
 
     requires:['App.view.login.FormPanel', 'App.view.principal.Panel'],
 
+    defaults: {
+
+    },
     /**
      * @method
      * @template
@@ -35,9 +38,9 @@ Ext.application({
     launch: function() {
         if(!localStorage.getItem("Logeado")){
             this.window = Ext.create('Ext.window.Window', {
-                title: 'Login',
-                width: 280,
-                height: 150,
+                title: 'Bienvenido!!!',
+                width: 310,
+                height: 200,
                 layout: 'fit',
                 closable: false,
                 draggable: false,
