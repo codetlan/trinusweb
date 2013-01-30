@@ -1,14 +1,14 @@
 Ext.define('App.view.principal.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipal',
-    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel'/*,'App.view.maps.MapPanel'*/],
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel','App.view.xtemplate.XtemplateTaxista'/*,'App.view.maps.MapPanel'*/],
 
     layout:'border',
 
 
     initComponent:function () {
         this.items = this.buildItems();
-        this.tbar = this.buildBbar();
+        //this.tbar = this.buildBbar();
 
         this.callParent(arguments);
     },
@@ -16,9 +16,18 @@ Ext.define('App.view.principal.Panel', {
     buildItems:function () {
         var items = [
             {
-                xtype:'menupanel',
+                xtype: 'panel',
                 region:'west',
-                flex:2
+                bbar: this.buildBbar(),
+                flex:2,
+                items:[{
+                    xtype:'menupanel'
+                },{
+                    xtype: 'container',
+                    items:[{
+                        xtype: 'xtemplatetaxista'
+                    }]
+                }]
             },
             {
                 xtype:'container',
@@ -41,7 +50,7 @@ Ext.define('App.view.principal.Panel', {
             items:['->', {
                 xtype:'button',
                 text:'Salir',
-                icon:'images/user.png',
+                iconCls: 'icon-off icon-white',
                 ui: 'danger',
                 scale: 'medium',
                 handler:this.salir
@@ -121,7 +130,7 @@ Ext.define('App.view.principal.Panel', {
     },
 
     setAddressText:function(address){
-        this.items.items[0].setAddressText(address);
+        this.items.items[0].items.items[0].setAddressText(address);
 
     }
 });

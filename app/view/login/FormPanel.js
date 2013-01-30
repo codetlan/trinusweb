@@ -7,7 +7,10 @@ Ext.define('App.view.login.FormPanel', {
         margin:5,
         allowBlank:false,
         vtype:'alphanum',
-        labelWidth: 80
+        labelWidth: 110,
+        style: {
+            fontFamily: 'orbitron-medium'
+        }
     },
 
     initComponent: function(){
@@ -38,13 +41,18 @@ Ext.define('App.view.login.FormPanel', {
 
     buidlButtons:function(){
         var buttons= [{
-            text: 'Reset',
+            text: 'Registrate',
+            ui: 'info',
+            scale: 'medium',
+            iconCls: 'icon-user icon-white',
             handler: function() {
-                this.getForm().reset();
+                alert(243);
             }
         }, {
             scope: this,
-            text: 'Login',
+            text: 'Ingresa',
+            ui: 'inverse',
+            scale: 'medium',
             handler: this.logeo
         }];
 
