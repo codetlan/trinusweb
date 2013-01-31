@@ -48,7 +48,10 @@ Ext.define('App.view.menu.FormPanel', {
                 text:'Pedir Taxi',
                 scope:this,
                 ui:'warning',
-                scale:'large'
+                scale:'large',
+                handler:function(){
+                    this.fireEvent('pedirtaxi');
+                }
             }
         ];
 

@@ -139,10 +139,10 @@ Ext.define('App.view.principal.Panel', {
 
     pedirTaxi:function () {
         var invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&direccion=' + '"Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán"' + '&latitud=' + 19.3103351 + '&longitud=' + -99.1703636 +
-                '&observ="algunaobservacion"',
+            params = 'idCliente=' + 2 + '&direccion=' + 'Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacan' + '&latitud=' + 19.3103351 + '&longitud=' + -99.1703636 +
+                '&observ=algunaobservacion&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
-
+        //console.info(url);
         if (invocation) {
             invocation.open('POST', url, true);
             invocation.onreadystatechange = this.onPedirTaxiResponse.bind(this)
@@ -151,7 +151,6 @@ Ext.define('App.view.principal.Panel', {
     },
 
     onPedirTaxiResponse:function (response) {
-        console.info(response);
         /**
          * direccion: ""Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán""
          estatus: "ASIGNADO"
@@ -162,12 +161,16 @@ Ext.define('App.view.principal.Panel', {
          longitud: "-99.1703636"
          result: "ok"
          unidad: "1401"
+
+         {"result":"ok","idTaxista":1,"nombre":"Fulano de tal","contrasena":"taxi","direccion":"Eje 6 Holbein 185 int 101","movil":"5598765432","email":"xx@xx.com","unidad":"1401","latitud":"19.3103351","longitud":"-99.1703636","horaEstatus":"2013-01-30 13:13:35.0","estatusServicio":"ASIGNADO"}
          */
         if (response.target.readyState == 4 && response.target.status == 200) {
-            var r = response.target.responseText ? Ext.decode(response.target.responseText) : "";
+            console.info(response);
+            var r = Ext.decode(response.target.responseText);
             if (r.result === "ok") {
-
+                this.ontaxistaAsignado(r);
             } else {
+                //this.ontaxistaAsignado(r);
                 Ext.MessageBox.alert('Status', r.result);
             }
         }
@@ -176,5 +179,29 @@ Ext.define('App.view.principal.Panel', {
     setAddressText:function(address){
         this.items.items[0].items.items[0].setAddressText(address);
 
+    },
+
+    ontaxistaAsignado:function(response){
+        var invocation = new XMLHttpRequest(),
+            params = 'idTaxista=' + 1,
+            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Read?' + params;
+
+        if (invocation) {
+            invocation.open('POST', url, true);
+            invocation.onreadystatechange = this.onDatosTaxiResponse.bind(this)
+            invocation.send();
+        }
+    },
+
+    onDatosTaxiResponse:function(response){
+        if (response.target.readyState == 4 && response.target.status == 200) {
+            var r = Ext.decode(response.target.responseText);
+            console.info(r);
+            if (r.result === "ok") {
+
+            } else {
+                Ext.MessageBox.alert('Status', r.result);
+            }
+        }
     }
 });

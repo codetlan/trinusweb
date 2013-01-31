@@ -24,7 +24,13 @@ Ext.define('App.view.menu.MenuPanel', {
             },
             {
                 layout: 'form',
-                xtype:'formpanel'
+                xtype:'formpanel',
+                listeners:{
+                    scope:this,
+                    pedirtaxi:function(){
+                        this.fireEvent('pedirtaxi');
+                    }
+                }
             }
         ];
 

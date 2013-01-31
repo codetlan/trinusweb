@@ -7,10 +7,7 @@ Ext.define('App.view.login.FormPanel', {
         margin:5,
         allowBlank:false,
         vtype:'alphanum',
-        labelWidth: 110,
-        style: {
-            fontFamily: 'orbitron-medium'
-        }
+        labelWidth: 80
     },
 
     initComponent: function(){
@@ -27,7 +24,7 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                value: '2299123456'
+                value: '5555123456'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
@@ -41,18 +38,13 @@ Ext.define('App.view.login.FormPanel', {
 
     buidlButtons:function(){
         var buttons= [{
-            text: 'Registrate',
-            ui: 'info',
-            scale: 'medium',
-            iconCls: 'icon-user icon-white',
+            text: 'Reset',
             handler: function() {
-                alert(243);
+                this.getForm().reset();
             }
         }, {
             scope: this,
-            text: 'Ingresa',
-            ui: 'inverse',
-            scale: 'medium',
+            text: 'Login',
             handler: this.logeo
         }];
 
@@ -92,7 +84,7 @@ Ext.define('App.view.login.FormPanel', {
         if (response.target.readyState == 4 && response.target.status == 200) {
             var r = Ext.decode(response.target.responseText);
             if (r.result === "ok") {
-                localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
+                localStorage.setItem("Logeado", r.token);//Se guarda un identificador para no perder la session
                 this.fireEvent("logeado");
             } else {
                 Ext.MessageBox.alert('Status', r.result);
