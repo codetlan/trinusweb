@@ -40,7 +40,9 @@ Ext.define('App.view.principal.Panel', {
                 html:'<div id="map_canvas" style="height: 100%; width: 100%;"></div>',
                 listeners:{
                     scope:this,
-                    afterrender:this.onAfterRenderMapPanel
+                    afterrender:function(){
+                        this.setPosicionActual(this.createMap.bind(this));
+                    }
                 }
             }
         ];
@@ -49,15 +51,24 @@ Ext.define('App.view.principal.Panel', {
     },
 
     buildBbar:function () {
-        var toolbar = Ext.create('Ext.toolbar.Toolbar', {
+        var _this=this,
+            toolbar = Ext.create('Ext.toolbar.Toolbar', {
             xtype:'container',
-            items:['->', {
+            items:[{
+                xtype:'button',
+                text:'Posicion Actual',
+                ui: 'success',
+                scale: 'medium',
+                handler:function(){
+                    _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
+                }
+            },'->', {
                 xtype:'button',
                 text:'Salir',
                 iconCls: 'icon-off icon-white',
                 ui: 'danger',
                 scale: 'medium',
-                handler:this.salir
+                handler:_this.salir
             }]
         });
 
@@ -69,9 +80,9 @@ Ext.define('App.view.principal.Panel', {
         location.href = 'index.html';
     },
 
-    onAfterRenderMapPanel:function (t, eOpts) {
+    setPosicionActual:function (fn) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(this.createMap.bind(this), this.gestionaErroresGeo);
+            navigator.geolocation.getCurrentPosition(fn, this.gestionaErroresGeo);
         } else {
             alert('Tu navegador no soporta la API de geolocalizacion');
         }
@@ -84,26 +95,26 @@ Ext.define('App.view.principal.Panel', {
                 center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             },
-            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude), //Se crea la coordenada de la posicion actual
-            infowindow = new google.maps.InfoWindow(); //Globo del marker con información
+            latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); //Se crea la coordenada de la posicion actual
+        this.infowindow = new google.maps.InfoWindow(); //Globo del marker con información
 
         this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
 
-        var marker = this.addMarker({ //Se crea el marcador de la ubicacion actual
+        this.markerCliente = this.addMarker({ //Se crea el marcador de la ubicacion actual
             draggable:true,
             position:latlng,
             map:this.map,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    _this.setAddressMarker(this.map, marker, infowindow, marker.getPosition());
+                    _this.setAddressMarker(_this.map, _this.markerCliente, _this.infowindow, _this.markerCliente.getPosition());
                 },
                 click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    infowindow.open(this.map, marker);
+                    _this.infowindow.open(_this.map, _this.markerCliente);
                 }
             }
         });
 
-        this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
+        this.setAddressMarker(this.map, _this.markerCliente, _this.infowindow, latlng); //Agregamos la direccion al marcador
     },
 
     setAddressMarker:function (map, marker, infowindow, latlng) {
@@ -137,46 +148,45 @@ Ext.define('App.view.principal.Panel', {
         }
     },
 
-    pedirTaxi:function () {
+    pedirTaxi:function (formValues) {
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&direccion=' + 'Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacan' + '&latitud=' + 19.3103351 + '&longitud=' + -99.1703636 +
-                '&observ=algunaobservacion&tokenCliente=d3ff5d403cddec90569efd7ef1976515',//+localStorage.getItem('Logeado'),
+            position = _this.markerCliente.getPosition(),
+            params = 'idCliente=' + 2 + '&direccion=' + formValues.txtOrigen + '&latitud=' + position.lat() + '&longitud=' + position.lng() +
+                '&observ='+formValues.txtObservaciones+'&tokenCliente='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
             invocation.onreadystatechange = function (response) {
-                /**
-                 * direccion: ""Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán""
-                 estatus: "ASIGNADO"
-                 idcliente: 2
-                 idservicio: 48
-                 idtaxista: 1
-                 latitud: "19.3103351"
-                 longitud: "-99.1703636"
-                 result: "ok"
-                 unidad: "1401"
-
-                 {"result":"ok",
-                 "idTaxista":1,
-                 "nombre":"Fulano de tal",
-                 "contrasena":"taxi",
-                 "direccion":"Eje 6 Holbein 185 int 101",
-                 "movil":"5598765432",
-                 "email":"xx@xx.com",
-                 "unidad":"1401",
-                 "latitud":"19.3103351",
-                 "longitud":"-99.1703636",
-                 "horaEstatus":"2013-01-30 13:13:35.0",
-                 "estatusServicio":"ASIGNADO"}
-                 */
                 if (response.target.readyState == 4 && response.target.status == 200) {
-                    console.info(response);
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
+                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this));
+                    } else {
+                        Ext.MessageBox.alert('Información', r.result);
+                    }
+                }
+            }
+            invocation.send();
+        }
+    },
+
+    pedirDatosTaxi:function(){
+        var _this=this,
+            invocation = new XMLHttpRequest(),
+            params = 'idCliente=' + 2 + '&status=ACEPTADO&tokenCliente='+localStorage.getItem('Logeado'),
+            url = 'http://isystems.com.mx:8181/Trinus/DatosTaxista?' + params;
+        _this.items.items[1].el.mask("Buscando al taxista mas cercano, por favor espere...");
+        if (invocation) {
+            invocation.open('POST', url, true);
+            invocation.onreadystatechange = function (response) {
+                if (response.target.readyState == 4 && response.target.status == 200) {
+                    var r = Ext.decode(response.target.responseText);
+                    if (r.result === "ok") {
+                        _this.items.items[1].el.unmask();
                         _this.taxistaOnMap(r);
                     } else {
-                        Ext.MessageBox.alert('Status', r.result);
+                        Ext.MessageBox.alert('Información', r.result);
                     }
                 }
             }
@@ -198,7 +208,6 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
-            icon:'images/marker.png',
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
                     _this.setAddressMarker(_this.map, marker, infowindow, marker.getPosition());
@@ -212,11 +221,19 @@ Ext.define('App.view.principal.Panel', {
         this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
     },
 
-    addMarker: function(marker) {
-        var o =  new google.maps.Marker(marker);
-        Ext.Object.each(marker.listeners, function(name, fn){
-            google.maps.event.addListener(o, name, fn);
+    addMarker: function(markerOpts) {
+        var marker =  new google.maps.Marker(markerOpts);
+        Ext.Object.each(markerOpts.listeners, function(name, fn){
+            google.maps.event.addListener(marker, name, fn);
         });
-        return o;
+        return marker;
+    },
+
+    actualizaPosicionCliente:function(position){
+        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); //Se crea la coordenada de la posicion actual
+
+        this.markerCliente.setPosition(latlng);
+        this.setAddressMarker(this.map, this.markerCliente, this.infowindow, this.markerCliente.getPosition());
+        this.map.setCenter(latlng);
     }
 });

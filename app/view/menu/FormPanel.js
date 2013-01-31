@@ -42,6 +42,13 @@ Ext.define('App.view.menu.FormPanel', {
                 emptyText:'No obligatorio'
             },
             {
+                xtype:'textarea',
+                fieldLabel:'Observaciones',
+                width:370,
+                name:'txtObservaciones',
+                emptyText:'No obligatorio'
+            },
+            {
                 xtype: 'container'
             },
             {
@@ -51,7 +58,7 @@ Ext.define('App.view.menu.FormPanel', {
                 ui:'warning',
                 scale:'large',
                 handler:function(){
-                    this.fireEvent('pedirtaxi');
+                    this.fireEvent('pedirtaxi', this.form.getValues());
                 }
             }
         ];

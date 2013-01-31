@@ -27,8 +27,8 @@ Ext.define('App.view.menu.MenuPanel', {
                 xtype:'formpanel',
                 listeners:{
                     scope:this,
-                    pedirtaxi:function(){
-                        this.fireEvent('pedirtaxi');
+                    pedirtaxi:function(formValues){
+                        this.fireEvent('pedirtaxi',formValues);
                     }
                 }
             }
