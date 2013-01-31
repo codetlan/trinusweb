@@ -13,7 +13,6 @@ Ext.define('App.view.menu.FormPanel', {
 
     defaults:{
         labelWidth:140,
-        width:370,
         style: {
             fontFamily: 'orbitron-medium'
         },
@@ -32,11 +31,13 @@ Ext.define('App.view.menu.FormPanel', {
             {
                 xtype:'textfield',
                 fieldLabel:'Ubicaci&oacute;n Actual',
-                name:'txtOrigen'
+                name:'txtOrigen',
+                width:370
             },
             {
                 xtype:'textfield',
                 fieldLabel:'Destino',
+                width:370,
                 name:'txtDestino',
                 emptyText:'No obligatorio'
             },
@@ -47,8 +48,7 @@ Ext.define('App.view.menu.FormPanel', {
                 xtype:'button',
                 text:'Pedir Taxi',
                 scope:this,
-                ui:'warning',
-                scale:'large'
+                ui:'warning'
             }
         ];
 

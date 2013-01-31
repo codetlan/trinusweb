@@ -1,6 +1,7 @@
 Ext.define('App.view.login.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formpanellogin',
+    requires:['App.view.registro.FormPanel'],
 
     defaults:{
         xtype:'textfield',
@@ -27,7 +28,7 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                value: '2299123456'
+                value: '5555123456'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
@@ -45,13 +46,12 @@ Ext.define('App.view.login.FormPanel', {
             ui: 'info',
             scale: 'medium',
             iconCls: 'icon-user icon-white',
-            handler: function() {
-                alert(243);
-            }
+            scope: this,
+            handler: this.windowRegistrarse
         }, {
             scope: this,
             text: 'Ingresa',
-            ui: 'inverse',
+            ui: 'primary',
             scale: 'medium',
             handler: this.logeo
         }];
@@ -96,5 +96,25 @@ Ext.define('App.view.login.FormPanel', {
         } else{
             //Notification.warn(r.error);
         }
+    },
+
+    windowRegistrarse:function(){
+        this.window = Ext.create('Ext.window.Window', {
+            title: 'Ingresa tus Datos',
+            width: 415,
+            height: 336,
+            draggable: false,
+            layout: 'fit',
+            items:[{
+                xtype: 'formregistrarse',
+                listeners:{
+                    scope: this,
+                    cerrarWindow: function(){
+                        this.window.destroy();
+                    }
+
+                }
+            }]
+        }).show();
     }
 });
