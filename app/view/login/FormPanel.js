@@ -1,13 +1,17 @@
 Ext.define('App.view.login.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formpanellogin',
+    requires:['App.view.registro.FormPanel'],
 
     defaults:{
         xtype:'textfield',
         margin:5,
         allowBlank:false,
         vtype:'alphanum',
-        labelWidth: 80
+        labelWidth: 110,
+        style: {
+            fontFamily: 'orbitron-medium'
+        }
     },
 
     initComponent: function(){
@@ -38,13 +42,17 @@ Ext.define('App.view.login.FormPanel', {
 
     buidlButtons:function(){
         var buttons= [{
-            text: 'Reset',
-            handler: function() {
-                this.getForm().reset();
-            }
+            text: 'Registrate',
+            ui: 'info',
+            scale: 'medium',
+            iconCls: 'icon-user icon-white',
+            scope: this,
+            handler: this.windowRegistrarse
         }, {
             scope: this,
-            text: 'Login',
+            text: 'Ingresa',
+            ui: 'primary',
+            scale: 'medium',
             handler: this.logeo
         }];
 
@@ -90,5 +98,25 @@ Ext.define('App.view.login.FormPanel', {
                 Ext.MessageBox.alert('Status', r.result);
             }
         }
+    },
+
+    windowRegistrarse:function(){
+        this.window = Ext.create('Ext.window.Window', {
+            title: 'Ingresa tus Datos',
+            width: 415,
+            height: 336,
+            draggable: false,
+            layout: 'fit',
+            items:[{
+                xtype: 'formregistrarse',
+                listeners:{
+                    scope: this,
+                    cerrarWindow: function(){
+                        this.window.destroy();
+                    }
+
+                }
+            }]
+        }).show();
     }
 });

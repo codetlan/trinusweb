@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/star.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/registro/FormPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/Xtemplate/XtemplateTaxista.js" afterPath="$PROJECT_DIR$/app/view/Xtemplate/XtemplateTaxista.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/login/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/login/FormPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/menu/MenuPanel.js" afterPath="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/principal/Panel.js" afterPath="$PROJECT_DIR$/app/view/principal/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/menu/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
     </list>
-    <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="" />
+    <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="trinus.iws" />
     <ignored path=".idea/workspace.xml" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e489a876-9c45-4335-87b1-f3eef969d26e" time="1359592942762" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="38" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.42528737">
+            <state line="67" column="38" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -51,12 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="28" selection-start="902" selection-end="902" vertical-scroll-proportion="-10.384615">
+            <state line="114" column="36" selection-start="4008" selection-end="4008" vertical-scroll-proportion="1.5135136">
               <folding>
-                <marker date="1359571416000" expanded="true" signature="1166:1192" placeholder="..." />
+                <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -65,12 +67,18 @@
       <file leaf-file-name="MenuPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="88" selection-end="88" vertical-scroll-proportion="15.423077">
+            <state line="30" column="52" selection-start="849" selection-end="849" vertical-scroll-proportion="-16.307692">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1359571270000" expanded="true" signature="216:436" placeholder="{&quot;name&quot;: 'txtDestino'...}" />
-                <marker date="1359571270000" expanded="true" signature="284:546" placeholder="{&quot;xtype&quot;: 'button'...}" />
-                <marker date="1359571270000" expanded="true" signature="502:536" placeholder="{...}" />
-                <marker date="1359571270000" expanded="true" signature="674:762" placeholder="{&quot;flex&quot;: 1...}" />
+                <marker date="1359592912000" expanded="true" signature="1120:1166" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -88,8 +96,13 @@
       <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="84" selection-start="2187" selection-end="2187" vertical-scroll-proportion="-9.961538">
-              <folding />
+            <state line="90" column="31" selection-start="2739" selection-end="2739" vertical-scroll-proportion="-14.576923">
+              <folding>
+                <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
+                <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
+                <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
+                <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,13 +129,14 @@
         <option value="$PROJECT_DIR$/resources/css/bootstrap/bootstrap.css" />
         <option value="$PROJECT_DIR$/resources/css/app/app.css" />
         <option value="$PROJECT_DIR$/resources/theme/stylesheets/bootstrap/default/variables/_window.scss" />
-        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/view/login/Window.js" />
         <option value="$PROJECT_DIR$/app/ux/GMapPanel.js" />
         <option value="$PROJECT_DIR$/proxy.php" />
         <option value="$PROJECT_DIR$/ux/GMapPanel.js" />
         <option value="$PROJECT_DIR$/app/view/maps/MapPanel.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
         <option value="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
         <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
         <option value="$PROJECT_DIR$/app/view/principal/Panel.js" />
@@ -204,6 +218,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -358,14 +390,22 @@
       <created>1359571209268</created>
       <updated>1359571209268</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/menu/MenuPanel.js&#10;&#9;app/view/principal/Panel.js&#10;">
+      <created>1359571547016</created>
+      <updated>1359571547016</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/menu/MenuPanel.js&#10;&#9;app/view/principal/Panel.js&#10;">
+      <created>1359592465288</created>
+      <updated>1359592465288</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1916" height="778" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56164384" sideWeight="0.95624334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -421,7 +461,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="[LEMG] Peticion de servicio&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="[LEMG] Peticion de taxi &amp; Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/login/FormPanel.js&#10;&#9;app/view/menu/FormPanel.js&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -439,22 +479,22 @@
     <MESSAGE value="[LEMG] Se agrega direccion y arrastre del marcador" />
     <MESSAGE value="[LEMG] Se agrega peticion de taxi al api trinus" />
     <MESSAGE value="[LEMG] Peticion de servicio&#10;" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/menu/MenuPanel.js&#10;&#9;app/view/principal/Panel.js&#10;" />
+    <MESSAGE value="[LEMG] Peticion de taxi &amp; Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/login/FormPanel.js&#10;&#9;app/view/menu/FormPanel.js&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="6" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="31" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
+            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
+            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
+            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -462,7 +502,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="27" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1359571416000" expanded="true" signature="1166:1192" placeholder="..." />
+            <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -470,7 +510,12 @@
     <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="49" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
+            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
+            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
+            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,39 +567,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
+    <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="84" selection-start="2187" selection-end="2187" vertical-scroll-proportion="-9.961538">
-          <folding />
+        <state line="67" column="38" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1359592912000" expanded="true" signature="1120:1166" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="88" selection-end="88" vertical-scroll-proportion="15.423077">
+        <state line="30" column="52" selection-start="849" selection-end="849" vertical-scroll-proportion="-16.307692">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="31" selection-start="2739" selection-end="2739" vertical-scroll-proportion="-14.576923">
           <folding>
-            <marker date="1359571270000" expanded="true" signature="216:436" placeholder="{&quot;name&quot;: 'txtDestino'...}" />
-            <marker date="1359571270000" expanded="true" signature="284:546" placeholder="{&quot;xtype&quot;: 'button'...}" />
-            <marker date="1359571270000" expanded="true" signature="502:536" placeholder="{...}" />
-            <marker date="1359571270000" expanded="true" signature="674:762" placeholder="{&quot;flex&quot;: 1...}" />
+            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
+            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
+            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
+            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="28" selection-start="902" selection-end="902" vertical-scroll-proportion="-10.384615">
+        <state line="114" column="36" selection-start="4008" selection-end="4008" vertical-scroll-proportion="1.5135136">
           <folding>
-            <marker date="1359571416000" expanded="true" signature="1166:1192" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="38" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.42528737">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
           </folding>
         </state>
       </provider>

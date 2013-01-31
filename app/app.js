@@ -40,7 +40,7 @@ Ext.application({
             this.window = Ext.create('Ext.window.Window', {
                 title: 'Bienvenido!!!',
                 width: 310,
-                height: 200,
+                height: 220,
                 layout: 'fit',
                 closable: false,
                 draggable: false,
