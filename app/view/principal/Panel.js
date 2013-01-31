@@ -89,24 +89,24 @@ Ext.define('App.view.principal.Panel', {
 
         this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
 
-        var marker = new google.maps.Marker({ //Se crea el marcador de la ubicacion actual
+        var marker = this.addMarker({ //Se crea el marcador de la ubicacion actual
             draggable:true,
             position:latlng,
-            map:this.map
+            map:this.map,
+            listeners:{
+                dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+                    _this.setAddressMarker(this.map, marker, infowindow, marker.getPosition());
+                },
+                click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+                    infowindow.open(this.map, marker);
+                }
+            }
         });
 
-        this.changeAddress(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
-
-        google.maps.event.addListener(marker, 'dragend', function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-            _this.changeAddress(this.map, marker, infowindow, marker.getPosition());
-        });
-
-        google.maps.event.addListener(marker, 'click', function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-            infowindow.open(this.map, marker);
-        });
+        this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
     },
 
-    changeAddress:function (map, marker, infowindow, latlng) {
+    setAddressMarker:function (map, marker, infowindow, latlng) {
         var _this = this, geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
@@ -138,41 +138,49 @@ Ext.define('App.view.principal.Panel', {
     },
 
     pedirTaxi:function () {
-        var invocation = new XMLHttpRequest(),
+        var _this=this,
+            invocation = new XMLHttpRequest(),
             params = 'idCliente=' + 2 + '&direccion=' + 'Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacan' + '&latitud=' + 19.3103351 + '&longitud=' + -99.1703636 +
-                '&observ=algunaobservacion&token='+localStorage.getItem('Logeado'),
+                '&observ=algunaobservacion&tokenCliente=d3ff5d403cddec90569efd7ef1976515',//+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
-        //console.info(url);
         if (invocation) {
             invocation.open('POST', url, true);
-            invocation.onreadystatechange = this.onPedirTaxiResponse.bind(this)
-            invocation.send();
-        }
-    },
+            invocation.onreadystatechange = function (response) {
+                /**
+                 * direccion: ""Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán""
+                 estatus: "ASIGNADO"
+                 idcliente: 2
+                 idservicio: 48
+                 idtaxista: 1
+                 latitud: "19.3103351"
+                 longitud: "-99.1703636"
+                 result: "ok"
+                 unidad: "1401"
 
-    onPedirTaxiResponse:function (response) {
-        /**
-         * direccion: ""Cjon. de Las Plalyas, Pedregal de Carrasco, Coyoacán""
-         estatus: "ASIGNADO"
-         idcliente: 2
-         idservicio: 48
-         idtaxista: 1
-         latitud: "19.3103351"
-         longitud: "-99.1703636"
-         result: "ok"
-         unidad: "1401"
-
-         {"result":"ok","idTaxista":1,"nombre":"Fulano de tal","contrasena":"taxi","direccion":"Eje 6 Holbein 185 int 101","movil":"5598765432","email":"xx@xx.com","unidad":"1401","latitud":"19.3103351","longitud":"-99.1703636","horaEstatus":"2013-01-30 13:13:35.0","estatusServicio":"ASIGNADO"}
-         */
-        if (response.target.readyState == 4 && response.target.status == 200) {
-            console.info(response);
-            var r = Ext.decode(response.target.responseText);
-            if (r.result === "ok") {
-                this.ontaxistaAsignado(r);
-            } else {
-                //this.ontaxistaAsignado(r);
-                Ext.MessageBox.alert('Status', r.result);
+                 {"result":"ok",
+                 "idTaxista":1,
+                 "nombre":"Fulano de tal",
+                 "contrasena":"taxi",
+                 "direccion":"Eje 6 Holbein 185 int 101",
+                 "movil":"5598765432",
+                 "email":"xx@xx.com",
+                 "unidad":"1401",
+                 "latitud":"19.3103351",
+                 "longitud":"-99.1703636",
+                 "horaEstatus":"2013-01-30 13:13:35.0",
+                 "estatusServicio":"ASIGNADO"}
+                 */
+                if (response.target.readyState == 4 && response.target.status == 200) {
+                    console.info(response);
+                    var r = Ext.decode(response.target.responseText);
+                    if (r.result === "ok") {
+                        _this.taxistaOnMap(r);
+                    } else {
+                        Ext.MessageBox.alert('Status', r.result);
+                    }
+                }
             }
+            invocation.send();
         }
     },
     
@@ -181,27 +189,34 @@ Ext.define('App.view.principal.Panel', {
 
     },
 
-    ontaxistaAsignado:function(response){
-        var invocation = new XMLHttpRequest(),
-            params = 'idTaxista=' + 1,
-            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Read?' + params;
+    taxistaOnMap:function(response){
+        var _this=this,
+            latlng = new google.maps.LatLng(response.latitud, response.longitud), //Se crea la coordenada de la posicion actual
+            infowindow = new google.maps.InfoWindow();
 
-        if (invocation) {
-            invocation.open('POST', url, true);
-            invocation.onreadystatechange = this.onDatosTaxiResponse.bind(this)
-            invocation.send();
-        }
+        var marker = this.addMarker({ //Se crea el marcador de la ubicacion actual
+            draggable:true,
+            position:latlng,
+            map:this.map,
+            icon:'images/marker.png',
+            listeners:{
+                dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+                    _this.setAddressMarker(_this.map, marker, infowindow, marker.getPosition());
+                },
+                click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+                    infowindow.open(_this.map, marker);
+                }
+            }
+        });
+
+        this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
     },
 
-    onDatosTaxiResponse:function(response){
-        if (response.target.readyState == 4 && response.target.status == 200) {
-            var r = Ext.decode(response.target.responseText);
-            console.info(r);
-            if (r.result === "ok") {
-
-            } else {
-                Ext.MessageBox.alert('Status', r.result);
-            }
-        }
+    addMarker: function(marker) {
+        var o =  new google.maps.Marker(marker);
+        Ext.Object.each(marker.listeners, function(name, fn){
+            google.maps.event.addListener(o, name, fn);
+        });
+        return o;
     }
 });

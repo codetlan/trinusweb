@@ -58,7 +58,7 @@ Ext.application({
         }
     },
 
-    iniciar:function(){
+    iniciar:function(record){console.info(record);
         if(this.window){
             this.window.destroy();
         }
