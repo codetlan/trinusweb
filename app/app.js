@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.FormPanel', 'App.view.principal.Panel'],
+    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel'],
 
     defaults: {
 
@@ -59,14 +59,24 @@ Ext.application({
     },
 
     iniciar:function(record){
+        console.info(record);
         if(this.window){
             this.window.destroy();
         }
-        Ext.create('Ext.container.Viewport',{
-           layout: 'fit',
-            items:[{
-                xtype:'panelprincipal'
-            }]
-        });
+        if(record.idcliente==2){
+            Ext.create('Ext.container.Viewport',{
+               layout: 'fit',
+                items:[{
+                    xtype:'panelprincipal'
+                }]
+            });
+        } else {
+            Ext.create('Ext.container.Viewport',{
+                layout: 'fit',
+                items:[{
+                    xtype:'panelprincipaladmin'
+                }]
+            });
+        }
     }
 });

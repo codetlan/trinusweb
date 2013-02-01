@@ -17,7 +17,7 @@ Ext.define('App.view.principal.Panel', {
         var items = [
             {
                 xtype: 'panel',
-                region:'west',
+                region:'east',
                 bbar: this.buildBbar(),
                 flex:2,
                 items:[{
@@ -77,6 +77,7 @@ Ext.define('App.view.principal.Panel', {
 
     salir:function () {
         localStorage.removeItem('Logeado');
+        localStorage.removeItem('recordUsuario');
         location.href = 'index.html';
     },
 

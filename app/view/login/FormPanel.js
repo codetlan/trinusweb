@@ -93,6 +93,7 @@ Ext.define('App.view.login.FormPanel', {
             var r = Ext.decode(response.target.responseText);
             if (r.result === "ok") {
                 localStorage.setItem("Logeado", r.token);//Se guarda un identificador para no perder la session
+                localStorage.setItem("recordUsuario", r.idcliente);
                 this.fireEvent("logeado", r);
             } else {
                 Ext.MessageBox.alert('Status', r.result);
