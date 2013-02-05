@@ -86,7 +86,7 @@ Ext.define('App.view.principal.Panel', {
 
     salir:function () {
         localStorage.removeItem('Logeado');
-        localStorage.removeItem('recordUsuario');
+        localStorage.removeItem('Usuario');
         location.href = 'index.html';
     },
 
@@ -129,7 +129,7 @@ Ext.define('App.view.principal.Panel', {
         this.autoCompleteOnDestino(position);
     },
 
-    setAddressMarker:function (map, marker, infowindow, latlng) {
+    setAddressMarker:function (map, marker, infowindow, latlng, sinAddressText) {
         var _this = this, geocoder = new google.maps.Geocoder(); //Servicio para convertir entre latlng y address
 
         geocoder.geocode({'latLng':latlng}, function (results, status) {
@@ -139,7 +139,9 @@ Ext.define('App.view.principal.Panel', {
 
                     infowindow.setContent(results[0].formatted_address);
                     infowindow.open(map, marker);
-                    _this.setAddressText(results[0].formatted_address);
+                    if(!sinAddressText){
+                        _this.setAddressText(results[0].formatted_address);
+                    }
                 }
             }
         });
@@ -164,7 +166,8 @@ Ext.define('App.view.principal.Panel', {
         var _this=this,
             invocation = new XMLHttpRequest(),
             position = _this.markerCliente.getPosition(),
-            params = 'idCliente=' + 2 + '&direccion=' + formValues.txtOrigen + '&latitud=' + position.lat() + '&longitud=' + position.lng() +
+            params = 'idCliente=' + Ext.decode(localStorage.getItem('Usuario')).idCliente +
+                '&direccion=' + formValues.txtOrigen + '&latitud=' + position.lat() + '&longitud=' + position.lng() +
                 '&observ='+formValues.txtObservaciones+'&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
         if (invocation) {
@@ -173,7 +176,7 @@ Ext.define('App.view.principal.Panel', {
                 if (response.target.readyState == 4 && response.target.status == 200) {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
-                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this, r.idservicio));
+                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this, r.idServicio));
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
                     }
@@ -186,7 +189,8 @@ Ext.define('App.view.principal.Panel', {
     pedirDatosTaxi:function(idServicio){
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&estatus=ACEPTADO&token='+localStorage.getItem('Logeado'),
+            params = 'idCliente=' + Ext.decode(localStorage.getItem('Usuario')).idCliente +
+                '&estatus=ACEPTADO&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/DatosTaxista?' + params;
         _this.items.items[1].el.mask("Buscando al taxista mas cercano, por favor espere...");
         if (invocation) {
@@ -220,7 +224,7 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
-            icon:"images/trinusMarker.png",
+            //icon:"images/trinusMarker.png",
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
@@ -263,7 +267,7 @@ Ext.define('App.view.principal.Panel', {
                 if (response.target.readyState == 4 && response.target.status == 200) {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
-                        Ext.MessageBox.alert('Información', "El taxi ha llegado.");
+                        Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
                     }
@@ -305,7 +309,7 @@ Ext.define('App.view.principal.Panel', {
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    _this.setAddressMarker(_this.map, marker, infowindow, marker.getPosition());
+                    _this.setAddressMarker(_this.map, marker, infowindow, marker.getPosition(), true);
                 },
                 click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
                     infowindow.open(_this.map, marker);
@@ -313,7 +317,7 @@ Ext.define('App.view.principal.Panel', {
             }
         });
 
-        this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
+        this.setAddressMarker(this.map, marker, infowindow, latlng, true); //Agregamos la direccion al marcador
 
         this.calcularRuta(response);
     },

@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/registro/FormPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/Xtemplate/XtemplateTaxista.js" afterPath="$PROJECT_DIR$/app/view/Xtemplate/XtemplateTaxista.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/Panel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/login/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/login/FormPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/menu/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/principal/Panel.js" afterPath="$PROJECT_DIR$/app/view/principal/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/registro/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/registro/FormPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="trinus.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="e489a876-9c45-4335-87b1-f3eef969d26e" time="1359592942762" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,41 +33,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
+      <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="38" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proxy.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/proxy.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="29" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+            <state line="31" column="80" selection-start="935" selection-end="935" vertical-scroll-proportion="0.5945946">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="36" selection-start="4008" selection-end="4008" vertical-scroll-proportion="1.5135136">
-              <folding>
-                <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
-              </folding>
+            <state line="185" column="0" selection-start="6546" selection-end="6546" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="52" selection-start="849" selection-end="849" vertical-scroll-proportion="-16.307692">
+            <state line="69" column="39" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,18 +63,7 @@
       <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1359592912000" expanded="true" signature="1120:1166" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="83" selection-start="800" selection-end="800" vertical-scroll-proportion="-9.375">
+            <state line="46" column="41" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,13 +72,35 @@
       <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="31" selection-start="2739" selection-end="2739" vertical-scroll-proportion="-14.576923">
-              <folding>
-                <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
-                <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
-                <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
-                <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
-              </folding>
+            <state line="49" column="43" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XtemplateTaxista.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="85" selection-start="1126" selection-end="1126" vertical-scroll-proportion="-18.461538">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/recarga/FormPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="73" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="38" selection-start="582" selection-end="597" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,6 +113,11 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="E " />
+      </list>
+    </option>
     <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -124,30 +127,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/trinus.js" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/resources/css/bootstrap/bootstrap.css" />
-        <option value="$PROJECT_DIR$/resources/css/app/app.css" />
-        <option value="$PROJECT_DIR$/resources/theme/stylesheets/bootstrap/default/variables/_window.scss" />
-        <option value="$PROJECT_DIR$/app/view/login/Window.js" />
-        <option value="$PROJECT_DIR$/app/ux/GMapPanel.js" />
-        <option value="$PROJECT_DIR$/proxy.php" />
         <option value="$PROJECT_DIR$/ux/GMapPanel.js" />
         <option value="$PROJECT_DIR$/app/view/maps/MapPanel.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/form/WindowForm.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js" />
+        <option value="$PROJECT_DIR$/app/view/recarga/FormPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/Panel.js" />
         <option value="$PROJECT_DIR$/app/view/principal/Panel.js" />
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
+    <option name="x" value="231" />
     <option name="y" value="22" />
-    <option name="width" value="1916" />
-    <option name="height" value="778" />
+    <option name="width" value="1689" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -175,6 +179,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -217,6 +231,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -236,6 +264,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xtemplate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recarga" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,14 +381,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taxistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taxistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -320,9 +464,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sht" />
+    <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -332,7 +481,14 @@
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
-      <method />
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
       <JSDebuggerConfigurationSettings>
@@ -398,29 +554,49 @@
       <created>1359592465288</created>
       <updated>1359592465288</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[ODLG] Se sube pantaalla principal de admin">
+      <created>1359742139221</created>
+      <updated>1359742139221</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[ODLG] Se sube administrador  y funcionalidad de trinus para solicitar taxis.">
+      <created>1360025792226</created>
+      <updated>1360025792226</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[LEMG] Se sube funcionalidad para pintar los taxistas en el mapa, autocompletar el destino y pinta la ruta.">
+      <created>1360030493265</created>
+      <updated>1360030493265</updated>
+    </task>
+    <task id="LOCAL-00012" summary="[LEMG] Se Elimina proxy.php">
+      <created>1360030833949</created>
+      <updated>1360030833949</updated>
+    </task>
+    <task id="LOCAL-00013" summary="[ODLG] Se actualizo en template y los botones para la pagina principal de clientes.">
+      <created>1360102617329</created>
+      <updated>1360102617329</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1916" height="778" extended-state="6" />
+    <frame x="231" y="22" width="1689" height="1054" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56164384" sideWeight="0.95624334" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30868167" sideWeight="0.9981966" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12941177" sideWeight="0.43835616" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17468046" sideWeight="0.69131833" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.94382024" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.94382024" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -448,6 +624,7 @@
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
     <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
@@ -457,11 +634,12 @@
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="[LEMG] Peticion de taxi &amp; Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/login/FormPanel.js&#10;&#9;app/view/menu/FormPanel.js&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of github.com:manduks/trinusweb&#10;&#10;Conflicts:&#10;&#9;app/view/admin/Panel.js&#10;&#9;app/view/principal/Panel.js&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -481,135 +659,111 @@
     <MESSAGE value="[LEMG] Peticion de servicio&#10;" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/menu/MenuPanel.js&#10;&#9;app/view/principal/Panel.js&#10;" />
     <MESSAGE value="[LEMG] Peticion de taxi &amp; Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/login/FormPanel.js&#10;&#9;app/view/menu/FormPanel.js&#10;" />
+    <MESSAGE value="[ODLG] Se sube pantaalla principal de admin" />
+    <MESSAGE value="[ODLG] Se sube administrador  y funcionalidad de trinus para solicitar taxis." />
+    <MESSAGE value="[LEMG] Se sube funcionalidad para pintar los taxistas en el mapa, autocompletar el destino y pinta la ruta." />
+    <MESSAGE value="[LEMG] Se Elimina proxy.php" />
+    <MESSAGE value="[ODLG] Se actualizo en template y los botones para la pagina principal de clientes." />
+    <MESSAGE value="Merge branch 'master' of github.com:manduks/trinusweb&#10;&#10;Conflicts:&#10;&#9;app/view/admin/Panel.js&#10;&#9;app/view/principal/Panel.js&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="31" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
-            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
-            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
-            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="27" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="49" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
-            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
-            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
-            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="46" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/css/app/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="130" selection-end="130" vertical-scroll-proportion="0.08314856" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/theme/stylesheets/bootstrap/default/variables/_window.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="46" selection-start="472" selection-end="487" vertical-scroll-proportion="0.30050084" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/theme/stylesheets/bootstrap/default/widgets/_window.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="52" selection-start="3185" selection-end="3185" vertical-scroll-proportion="0.4095563" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/bootstrap/bootstrap.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="41" selection-start="4842" selection-end="4844" vertical-scroll-proportion="0.5113438" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="83" selection-start="800" selection-end="800" vertical-scroll-proportion="-9.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/css/bootstrap/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="490732" selection-start="490726" selection-end="490732" vertical-scroll-proportion="0.0">
+        <state line="0" column="490732" selection-start="490726" selection-end="490732" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="83" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="11" selection-start="11" selection-end="42" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/registro/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.5960265">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="30" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.9437086">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="111" selection-start="3489" selection-end="3489" vertical-scroll-proportion="0.5800672">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="38" selection-start="1833" selection-end="1833" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="34" selection-start="917" selection-end="917" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1359592912000" expanded="true" signature="1120:1166" placeholder="{...}" />
-          </folding>
+        <state line="69" column="39" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="52" selection-start="849" selection-end="849" vertical-scroll-proportion="-16.307692">
+        <state line="22" column="38" selection-start="582" selection-end="597" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="85" selection-start="1126" selection-end="1126" vertical-scroll-proportion="-18.461538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/recarga/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="73" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="31" selection-start="2739" selection-end="2739" vertical-scroll-proportion="-14.576923">
-          <folding>
-            <marker date="1359592864000" expanded="true" signature="227:365" placeholder="{&quot;xtype&quot;: 'textfield'...}" />
-            <marker date="1359592864000" expanded="true" signature="1165:1213" placeholder="{&quot;text&quot;: 'Reset'...}" />
-            <marker date="1359592864000" expanded="true" signature="1184:1192" placeholder="{...}" />
-            <marker date="1359592864000" expanded="true" signature="1215:1330" placeholder="{&quot;text&quot;: 'Login'...}" />
-          </folding>
+        <state line="49" column="43" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="41" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="185" column="0" selection-start="6546" selection-end="6546" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="36" selection-start="4008" selection-end="4008" vertical-scroll-proportion="1.5135136">
-          <folding>
-            <marker date="1359590376000" expanded="true" signature="1166:1192" placeholder="..." />
-          </folding>
+        <state line="31" column="80" selection-start="935" selection-end="935" vertical-scroll-proportion="0.5945946">
+          <folding />
         </state>
       </provider>
     </entry>

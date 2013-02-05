@@ -132,7 +132,7 @@ Ext.define('App.view.admin.Panel', {
     pedirTaxistas:function(){
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'tokenUsuario='+localStorage.getItem('Logeado'),
+            params = 'token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params;
         if (invocation) {
             invocation.open('POST', url, true);
@@ -163,7 +163,7 @@ Ext.define('App.view.admin.Panel', {
                         map:_this.map,
                         listeners:{
                             click:function () {
-                                var content = "Hola " + taxista.nombre_completo,
+                                var content = "Hola " + taxista.nombreCompleto,
                                     infowindow = new google.maps.InfoWindow({
                                         content:_this.xtemplateTaxista()
                                     });
@@ -175,10 +175,10 @@ Ext.define('App.view.admin.Panel', {
                 } else {
                     _this.arrTaxisMarkers[taxista.idTaxista].setPosition(latlng);
                 }
+                _this.map.getBounds().extend(latlng);
             }
         });
-        _this.map.setZoom(12); //TODO Hacerlo dinamico
-        console.log(_this.arrTaxisMarkers);
+
     },
 
     xtemplateTaxista: function(){
