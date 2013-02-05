@@ -56,27 +56,26 @@ Ext.define('App.view.principal.Panel', {
             layout: 'hbox',
             items:[{
                 xtype:'button',
-                text:'Posicion Actual',
+                text: '<font color=#FFF>Posición Actual</font>',
                 flex: 1,
-                ui: 'primary',
+                ui: 'inverse',
                 scale: 'medium',
                 handler:function(){
                     _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                 }
             },{
                 xtype: 'button',
-                text: 'Recarga Saldo',
+                text: '<font color=#FFF>Recarga Saldo</font>',
                 flex: 1,
-                ui: 'info',
+                ui: 'warning',
                 scale: 'medium',
                 scope: this,
                 handler: _this.recargaSaldo
             }, {
                 xtype:'button',
-                text:'Salir',
+                text:'<font color=#FFF>Salir</font>',
                 flex: 1,
-                iconCls: 'icon-off icon-white',
-                ui: 'danger',
+                ui: 'inverse',
                 scale: 'medium',
                 handler:_this.salir
             }]

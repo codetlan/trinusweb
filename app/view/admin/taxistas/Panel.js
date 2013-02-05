@@ -113,8 +113,8 @@ Ext.define('App.view.admin.taxistas.Panel', {
          if(form.isValid()){  */
         var _this = this,
             invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&status=ACEPTADO&tokenCliente=' + localStorage.getItem('Logeado'),
-            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create?nombre_completo=oswaldo lopez&contrasena=prueba&direccion=Privade de Benito Juarez&telCasa=52430356&movil=5513899832&email=oswaldo@codetlan.com&fechaNac=10 Octubre 1986&imei=244523543545&unidad=546gtr65&latitud=19&longitud=20&gcm=24567644&placas=343556643&tokenCliente='+localStorage.getItem('Logeado');
+            params = 'idCliente=' + 2 + '&status=ACEPTADO&token=' + localStorage.getItem('Logeado'),
+            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create?nombre_completo=oswaldo lopez&contrasena=prueba&direccion=Privade de Benito Juarez&telCasa=52430356&movil=5513899832&email=oswaldo@codetlan.com&fechaNac=10 Octubre 1986&imei=244523543545&unidad=546gtr65&latitud=19&longitud=20&gcm=24567644&placas=343556643&token='+localStorage.getItem('Logeado');
         if (invocation) {
             invocation.open('POST', url, true);
             invocation.onreadystatechange = function (response) {
