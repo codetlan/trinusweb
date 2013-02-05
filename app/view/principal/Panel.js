@@ -1,7 +1,7 @@
 Ext.define('App.view.principal.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipal',
-    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel','App.view.xtemplate.XtemplateTaxista'/*,'App.view.maps.MapPanel'*/],
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel','App.view.xtemplate.XtemplateTaxista','App.view.recarga.FormPanel'],
 
     layout:'border',
 
@@ -54,17 +54,28 @@ Ext.define('App.view.principal.Panel', {
         var _this=this,
             toolbar = Ext.create('Ext.toolbar.Toolbar', {
             xtype:'container',
+            layout: 'hbox',
             items:[{
                 xtype:'button',
                 text:'Posicion Actual',
-                ui: 'success',
+                flex: 1,
+                ui: 'primary',
                 scale: 'medium',
                 handler:function(){
                     _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                 }
-            },'->', {
+            },{
+                xtype: 'button',
+                text: 'Recarga Saldo',
+                flex: 1,
+                ui: 'info',
+                scale: 'medium',
+                scope: this,
+                handler: _this.recargaSaldo
+            }, {
                 xtype:'button',
                 text:'Salir',
+                flex: 1,
                 iconCls: 'icon-off icon-white',
                 ui: 'danger',
                 scale: 'medium',
@@ -236,5 +247,26 @@ Ext.define('App.view.principal.Panel', {
         this.markerCliente.setPosition(latlng);
         this.setAddressMarker(this.map, this.markerCliente, this.infowindow, this.markerCliente.getPosition());
         this.map.setCenter(latlng);
+    },
+
+    recargaSaldo: function(){
+        console.info(this);
+        this.el.mask();
+        this.window = Ext.create('Ext.window.Window', {
+            title: 'Recarga de Credito',
+            width: 400,
+            height: 150,
+            draggable: false,
+            scope: this,
+            items:[{
+                xtype: 'containerrecarga'
+            }],
+            listeners:{
+                scope: this,
+                close: function(){
+                    this.el.unmask();
+                }
+            }
+        }).show();
     }
 });

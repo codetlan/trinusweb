@@ -58,12 +58,11 @@ Ext.application({
         }
     },
 
-    iniciar:function(record){
-        console.info(record);
+    iniciar:function(){
         if(this.window){
             this.window.destroy();
         }
-        if(record.idcliente==2){
+        if(localStorage.getItem('Usuario')!=2){
             Ext.create('Ext.container.Viewport',{
                layout: 'fit',
                 items:[{

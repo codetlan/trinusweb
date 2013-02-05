@@ -68,19 +68,7 @@ Ext.define('App.view.menu.FormPanel', {
 
     setAddressText:function (address) {
         this.items.items[1].items.items[0].setValue(address);
-    }/*,
-
-     tplTaxista: function(){
-     var imageTpl = new Ext.XTemplate(
-     '<div><img height="110" style="border: 2px solid #99BBE8; width:100px; margin: 2px; float: left;"  src="images/man.png" ></div>',
-     '<div><font color="#999"; face="orbitron-light"; size=3 >Nombre:</font> Juan Carlos Jimenez Torres </div>',
-     '<div><font color="#999"; face="orbitron-light"; size=3 >No. del Taxi:</font> 12345635 </div>',
-     '<div><font color="#999"; face="orbitron-light"; size=3 >Placas:</font> IJG874NJD </div>',
-     '<div><font color="#999"; face="orbitron-light"; size=3 >Tiempo de llegada:</font> 24 min.</font></div>',
-     '<div><font color="#999"; face="orbitron-light"; size=3 >Clasificaci&oacute;n: </font></div>'
-     );
-     return imageTpl;
-     }  */
+    }
 });
 
 

@@ -19,6 +19,7 @@ Ext.define('App.view.admin.Panel', {
                 xtype:"menuadmin",
                 region:"west",
                 title:"Menu",
+                id: "Menu"+this.id,
                 bbar:this.buildBbar(),
                 flex:1,
                 scope:this,
@@ -34,6 +35,12 @@ Ext.define('App.view.admin.Panel', {
                         text:"Taxistas",
                         scope:this,
                         cls: "taxi"
+                    },
+                    {
+                        iconCls: 'icon-list-alt',
+                        text: 'Historial de Servicios',
+                        scope: this,
+                        cls: 'historial'
                     }
                 ],
                 listeners:{
@@ -84,12 +91,7 @@ Ext.define('App.view.admin.Panel', {
             this.items.items[0].descargas[titulo]= titulo;
             this.items.items[1].add({xtype:"panel"+titulo, title:titulo, closable:true, id:titulo+this.id});
         }
-        console.info(this.items.items[1]);
         this.items.items[1].setActiveTab(titulo+this.id);
-    },
-
-    verCliente:function () {
-        alert(353);
     },
 
     salir:function () {
