@@ -33,10 +33,10 @@ Ext.define('App.view.menu.FormPanel', {
                 fieldLabel:'Ubicaci&oacute;n Actual',
                 name:'txtOrigen',
                 width:370
-            },
-            {
+            },{
                 xtype:'textfield',
                 fieldLabel:'Destino',
+                id:'txtDestino',
                 width:370,
                 name:'txtDestino',
                 emptyText:'No obligatorio'

@@ -58,11 +58,13 @@ Ext.application({
         }
     },
 
+
     iniciar:function(){
-        if(this.window){
-            this.window.destroy();
-        }
-        if(localStorage.getItem('Usuario')!=2){
+    if(this.window){
+        this.window.destroy();
+    }
+    if(localStorage.getItem('Usuario')!=2){
+
             Ext.create('Ext.container.Viewport',{
                layout: 'fit',
                 items:[{

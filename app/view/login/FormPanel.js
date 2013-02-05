@@ -7,7 +7,7 @@ Ext.define('App.view.login.FormPanel', {
         xtype:'textfield',
         margin:5,
         allowBlank:false,
-        vtype:'alphanum',
+        //vtype:'alphanum',
         labelWidth: 110,
         style: {
             fontFamily: 'orbitron-medium'
@@ -28,12 +28,12 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                value: '5555123456'
+                value: 'enrique@codetlan.com'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
                 name:'txtPass',
-                value: 'arnold'
+                value: '111'
             }
         ];
 
@@ -63,32 +63,17 @@ Ext.define('App.view.login.FormPanel', {
         var form = this.getForm(),
             obj = form.getValues();
         if(form.isValid()){
-            /*Ext.Ajax.request({
-                scope: this,
-                url: 'http://isystems.com.mx:8181/Trinus/ServletLoginCliente?movil='+obj.txtUser+'&password='+ obj.txtPass,
-                /*url: 'proxy.php?url=http%3A%2F%2Fisystems.com.mx%3A8181%2FTrinus%2FServletLoginCliente%3Fmovil%3D'
-                    +obj.txtUser+'%26password%3D'+ obj.txtPass,* /
-                success: function(response){
-                    var r = Ext.decode(response.responseText);
-                    if(r.result === "ok"){
-                        localStorage.setItem("Logeado", 1);//Se guarda un identificador para no perder la session
-                        this.fireEvent("logeado");
-                    } else{
-                        //Notification.warn(r.error);
-                    }
-                }
-            });*/
             var invocation=new XMLHttpRequest(),
-                url = 'http://isystems.com.mx:8181/Trinus/ServletLoginCliente?movil='+obj.txtUser+'&password='+ obj.txtPass;
+                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?email='+obj.txtUser+'&password='+ obj.txtPass;
             if(invocation) {
                 invocation.open('POST', url, true);
-                invocation.onreadystatechange = this.handleo.bind(this);
+                invocation.onreadystatechange = this.logear.bind(this);
                 invocation.send();
             }
         }
     },
 
-    handleo:function(response){
+    logear:function(response){
         if (response.target.readyState == 4 && response.target.status == 200) {
             var r = Ext.decode(response.target.responseText);
             if (r.result === "ok") {
