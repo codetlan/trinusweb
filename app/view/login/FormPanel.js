@@ -28,7 +28,7 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                value: 'enrique@codetlan.com'
+                value: '9876543210'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
@@ -64,7 +64,7 @@ Ext.define('App.view.login.FormPanel', {
             obj = form.getValues();
         if(form.isValid()){
             var invocation=new XMLHttpRequest(),
-                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?email='+obj.txtUser+'&password='+ obj.txtPass;
+                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?movil='+obj.txtUser+'&password='+ obj.txtPass;
             if(invocation) {
                 invocation.open('POST', url, true);
                 invocation.onreadystatechange = this.logear.bind(this);
@@ -78,7 +78,7 @@ Ext.define('App.view.login.FormPanel', {
             var r = Ext.decode(response.target.responseText);
             if (r.result === "ok") {
                 localStorage.setItem("Logeado", r.token);//Se guarda un identificador para no perder la session
-                localStorage.setItem("Usuario", r.usuario);
+                localStorage.setItem("Usuario", Ext.encode(r));
                 this.fireEvent("logeado", r);
             } else {
                 Ext.MessageBox.alert('Status', r.result);
@@ -98,7 +98,7 @@ Ext.define('App.view.login.FormPanel', {
                 listeners:{
                     scope: this,
                     cerrarWindow: function(){
-                        this.window.destroy();
+                        this.window.close();
                     }
 
                 }

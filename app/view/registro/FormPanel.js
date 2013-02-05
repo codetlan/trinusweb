@@ -99,7 +99,7 @@ Ext.define('App.view.registro.FormPanel', {
                 if (response.target.readyState == 4 && response.target.status == 200) {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
-                        Ext.MessageBox.alert('Información', "Enhorabuena"+ values.txtName + ", Ahora puedes ingresar al sistema.", _this.fireEvent("cerrarWindow"));
+                        Ext.MessageBox.alert('Información', "¡Enhorabuena "+ values.txtName + "!, Ahora puedes ingresar al sistema.", _this.fireEvent("cerrarWindow"));
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
                     }
