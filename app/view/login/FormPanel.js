@@ -28,7 +28,7 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Usuario',
                 name:'txtUser',
-                value: 'enrique@codetlan.com'
+                value: '9876543210'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
@@ -64,7 +64,7 @@ Ext.define('App.view.login.FormPanel', {
             obj = form.getValues();
         if(form.isValid()){
             var invocation=new XMLHttpRequest(),
-                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?email='+obj.txtUser+'&password='+ obj.txtPass;
+                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?movil='+obj.txtUser+'&password='+ obj.txtPass;
             if(invocation) {
                 invocation.open('POST', url, true);
                 invocation.onreadystatechange = this.logear.bind(this);

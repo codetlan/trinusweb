@@ -30,30 +30,31 @@ Ext.define('App.view.menu.FormPanel', {
         var items = [
             {
                 xtype:'textfield',
-                fieldLabel:'Ubicaci&oacute;n Actual',
+                //fieldLabel:'Ubicaci&oacute;n',
                 name:'txtOrigen',
-                width:370
+                width:370,
+                emptyText: 'Ubicación'
             },{
                 xtype:'textfield',
-                fieldLabel:'Destino',
+                //fieldLabel:'Destino',
                 id:'txtDestino',
                 width:370,
                 name:'txtDestino',
-                emptyText:'No obligatorio'
+                emptyText:'Destino *No Obligatorio'
             },
             {
                 xtype:'textarea',
-                fieldLabel:'Observaciones',
+                //fieldLabel:'Observaciones',
                 width:370,
                 name:'txtObservaciones',
-                emptyText:'No obligatorio'
+                emptyText:'Observaciones *No Obligatorio'
             },
             {
                 xtype: 'container'
             },
             {
                 xtype:'button',
-                text:'Pedir Taxi',
+                text:'<font size="12pt";>Pedir Taxi</font>',
                 scope:this,
                 ui:'warning',
                 scale:'large',

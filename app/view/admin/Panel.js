@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipaladmin',
-    requires:['App.view.admin.MenuAdminPanel','App.view.admin.taxistas.Panel','App.view.admin.clientes.Panel'],
+    requires:['App.view.admin.MenuAdminPanel','App.view.admin.taxistas.Panel','App.view.admin.clientes.Panel','App.view.xtemplate.XtemplateTaxista'],
 
     layout:'border',
 
@@ -76,8 +76,8 @@ Ext.define('App.view.admin.Panel', {
         var _this = this,
             bbar = ['->', {
                 xtype:'button',
-                text:'Salir',
-                iconCls:'icon-off icon-white',
+                text:'<span style="color:#FFF;">Salir</span>',
+                iconCls:'icon-off',
                 ui:'danger',
                 scale:'medium',
                 handler:_this.salir
@@ -165,7 +165,7 @@ Ext.define('App.view.admin.Panel', {
                             click:function () {
                                 var content = "Hola " + taxista.nombre_completo,
                                     infowindow = new google.maps.InfoWindow({
-                                        content:content
+                                        content:_this.xtemplateTaxista()
                                     });
                                 infowindow.open(_this.map, marker);
                             }
@@ -179,6 +179,11 @@ Ext.define('App.view.admin.Panel', {
         });
         _this.map.setZoom(12); //TODO Hacerlo dinamico
         console.log(_this.arrTaxisMarkers);
+    },
+
+    xtemplateTaxista: function(){
+        this.tpl = Ext.create('App.view.xtemplate.XtemplateTaxista', {}).show();
+
     }
 
 });

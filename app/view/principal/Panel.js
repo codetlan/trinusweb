@@ -56,27 +56,26 @@ Ext.define('App.view.principal.Panel', {
             layout: 'hbox',
             items:[{
                 xtype:'button',
-                text:'Posicion Actual',
+                text: '<font color=#FFF>Posición Actual</font>',
                 flex: 1,
-                ui: 'primary',
+                ui: 'inverse',
                 scale: 'medium',
                 handler:function(){
                     _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                 }
             },{
                 xtype: 'button',
-                text: 'Recarga Saldo',
+                text: '<font color=#FFF>Recarga Saldo</font>',
                 flex: 1,
-                ui: 'info',
+                ui: 'warning',
                 scale: 'medium',
                 scope: this,
                 handler: _this.recargaSaldo
             }, {
                 xtype:'button',
-                text:'Salir',
+                text:'<font color=#FFF>Salir</font>',
                 flex: 1,
-                iconCls: 'icon-off icon-white',
-                ui: 'danger',
+                ui: 'inverse',
                 scale: 'medium',
                 handler:_this.salir
             }]
@@ -166,7 +165,7 @@ Ext.define('App.view.principal.Panel', {
             invocation = new XMLHttpRequest(),
             position = _this.markerCliente.getPosition(),
             params = 'idCliente=' + 2 + '&direccion=' + formValues.txtOrigen + '&latitud=' + position.lat() + '&longitud=' + position.lng() +
-                '&observ='+formValues.txtObservaciones+'&tokenCliente='+localStorage.getItem('Logeado'),
+                '&observ='+formValues.txtObservaciones+'&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
@@ -187,7 +186,7 @@ Ext.define('App.view.principal.Panel', {
     pedirDatosTaxi:function(idServicio){
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&estatus=ACEPTADO&tokenCliente='+localStorage.getItem('Logeado'),
+            params = 'idCliente=' + 2 + '&estatus=ACEPTADO&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/DatosTaxista?' + params;
         _this.items.items[1].el.mask("Buscando al taxista mas cercano, por favor espere...");
         if (invocation) {
@@ -256,7 +255,7 @@ Ext.define('App.view.principal.Panel', {
     taxistaEnLugar:function(idServicio){
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'idServicio=' + idServicio + '&estatusServicio=EN EL LUGAR&tokenCliente='+localStorage.getItem('Logeado'),
+            params = 'idServicio=' + idServicio + '&estatusServicio=EN EL LUGAR&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletInfoServicio?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
