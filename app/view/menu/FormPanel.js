@@ -9,14 +9,14 @@ Ext.define('App.view.menu.FormPanel', {
     extend:'Ext.form.FormPanel',
     alias:'widget.formpanel',
 
-    bodyPadding:15,
+    bodyPadding: 10,
 
     defaults:{
-        labelWidth:140,
+        labelAlign: 'top',
+        paddingTop: 30,
         style: {
             fontFamily: 'orbitron-medium'
-        },
-        padding: '20'
+        }
     },
 
 
@@ -30,27 +30,21 @@ Ext.define('App.view.menu.FormPanel', {
         var items = [
             {
                 xtype:'textfield',
-                //fieldLabel:'Ubicaci&oacute;n',
+                fieldLabel:'Ubicaci&oacute;n',
                 name:'txtOrigen',
-                width:370,
                 emptyText: 'Ubicación'
             },{
                 xtype:'textfield',
-                //fieldLabel:'Destino',
+                fieldLabel:'Destino',
                 id:'txtDestino',
-                width:370,
                 name:'txtDestino',
-                emptyText:'Destino *No Obligatorio'
+                emptyText:'No Obligatorio'
             },
             {
                 xtype:'textarea',
-                //fieldLabel:'Observaciones',
-                width:370,
+                fieldLabel:'Observaciones',
                 name:'txtObservaciones',
-                emptyText:'Observaciones *No Obligatorio'
-            },
-            {
-                xtype: 'container'
+                emptyText:'No Obligatorio'
             },
             {
                 xtype:'button',

@@ -13,23 +13,37 @@ Ext.define('App.view.principal.Panel', {
     },
 
     buildItems:function () {
+        this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+            data:{
+            nombre:''
+        }});
         var items = [
             {
                 xtype: 'panel',
                 region:'east',
                 bbar: this.buildBbar(),
                 flex:2,
+                layout:{
+                    type: 'vbox',
+                    align: 'stretch',
+                    pack: 'start'
+                },
                 items:[{
+                    flex: 7,
                     xtype:'menupanel',
+                    layout:{
+                        type: 'vbox',
+                        align: 'stretch',
+                        pack: 'start'
+                    },
                     listeners:{
                         scope:this,
                         pedirtaxi:this.pedirTaxi
                     }
                 },{
+                    flex: 4,
                     xtype: 'container',
-                    items:[{
-                        xtype: 'xtemplatetaxista'
-                    }]
+                    items:[this.tplTaxista]
                 }]
             },
             {
@@ -238,6 +252,7 @@ Ext.define('App.view.principal.Panel', {
 
         this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
         this.taxistaEnLugar(idServicio); //Hacer la petición para saber cuando el taxista este en el lugar del servicio solicitado
+        this.datosTaxista(response); //Se envian datos del taxista al xtemplate
     },
 
     addMarker: function(markerOpts) {
@@ -341,7 +356,6 @@ Ext.define('App.view.principal.Panel', {
     },
 
     recargaSaldo: function(){
-        console.info(this);
         this.el.mask();
         this.window = Ext.create('Ext.window.Window', {
             title: 'Recarga de Credito',
@@ -359,5 +373,9 @@ Ext.define('App.view.principal.Panel', {
                 }
             }
         }).show();
+    },
+
+    datosTaxista:function(data){
+        this.tplTaxista.tpl.overwrite(this.items.items[0].items.items[1].items.items[0].el,data);
     }
 });

@@ -153,7 +153,14 @@ Ext.define('App.view.admin.Panel', {
     addTaxistasOnMap:function (response) {
         var _this = this;
         _this.arrTaxisMarkers = [];
+
+        _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+            data:{
+                nombre:''
+            }});
         Ext.each(response.data, function (taxista) {
+            console.info(taxista.nombreCompleto);
+            console.info(_this.tplTaxista);
             if (taxista.latitud !== "") {
                 var latlng = new google.maps.LatLng(taxista.latitud, taxista.longitud); //Se crea la coordenada de la posicion actual,
                 if (!_this.arrTaxisMarkers[taxista.idTaxista]) {
@@ -165,7 +172,7 @@ Ext.define('App.view.admin.Panel', {
                             click:function () {
                                 var content = "Hola " + taxista.nombreCompleto,
                                     infowindow = new google.maps.InfoWindow({
-                                        content:_this.xtemplateTaxista()
+                                        content: _this.tplTaxista.tpl.html
                                     });
                                 infowindow.open(_this.map, marker);
                             }
@@ -178,12 +185,5 @@ Ext.define('App.view.admin.Panel', {
                 _this.map.getBounds().extend(latlng);
             }
         });
-
-    },
-
-    xtemplateTaxista: function(){
-        this.tpl = Ext.create('App.view.xtemplate.XtemplateTaxista', {}).show();
-
     }
-
 });

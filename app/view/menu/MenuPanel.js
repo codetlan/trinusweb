@@ -19,12 +19,19 @@ Ext.define('App.view.menu.MenuPanel', {
     buildItems:function () {
         var items = [
             {
+                flex: 2,
                 layout:'fit',
                 xtype:'xtemplatetitulo'
             },
             {
-                layout: 'form',
+
+                flex: 6,
                 xtype:'formpanel',
+                layout:{
+                    type: 'vbox',
+                    align: 'stretch',
+                    pack: 'start'
+                },
                 listeners:{
                     scope:this,
                     pedirtaxi:function(formValues){
