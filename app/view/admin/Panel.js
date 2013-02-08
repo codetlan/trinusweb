@@ -115,10 +115,15 @@ Ext.define('App.view.admin.Panel', {
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             }; //Se crea la coordenada de la posicion actual
         this.infowindow = new google.maps.InfoWindow(); //Globo del marker con información
+        this.arrTaxisMarkers = [];
 
         this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
 
-        this.pedirTaxistas();
+        var runner = new Ext.util.TaskRunner();
+        var task = runner.start({
+            run: this.pedirTaxistas.bind(this),
+            interval: 1000
+        });
     },
 
     addMarker:function (markerOpts) {
@@ -152,22 +157,19 @@ Ext.define('App.view.admin.Panel', {
 
     addTaxistasOnMap:function (response) {
         var _this = this;
-        _this.arrTaxisMarkers = [];
-
         _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
             data:{
                 nombre:''
             }});
         Ext.each(response.data, function (taxista) {
-            console.info(taxista.nombreCompleto);
-            console.info(_this.tplTaxista);
             if (taxista.latitud !== "") {
                 var latlng = new google.maps.LatLng(taxista.latitud, taxista.longitud); //Se crea la coordenada de la posicion actual,
-                if (!_this.arrTaxisMarkers[taxista.idTaxista]) {
+                if (Ext.isEmpty(_this.arrTaxisMarkers[taxista.idTaxista])) {
 
                     var marker = _this.addMarker({
                         position:latlng,
                         map:_this.map,
+                        draggable:true,
                         listeners:{
                             click:function () {
                                 var content = "Hola " + taxista.nombreCompleto,
@@ -179,11 +181,14 @@ Ext.define('App.view.admin.Panel', {
                         }
                     });
                     _this.arrTaxisMarkers[taxista.idTaxista] = marker;
+                    _this.map.getBounds().extend(latlng);
                 } else {
                     _this.arrTaxisMarkers[taxista.idTaxista].setPosition(latlng);
                 }
-                _this.map.getBounds().extend(latlng);
             }
         });
+        _this.map.setCenter(_this.map.getBounds().getCenter());
+        //_this.map.fitBounds(_this.map.getBounds());
+        //_this.map.panToBounds(_this.map.getBounds());
     }
 });
