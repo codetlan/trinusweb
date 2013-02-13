@@ -1,8 +1,9 @@
 Ext.define('App.view.admin.taxistas.Panel', {
     extend:'Ext.panel.Panel',
-    alias:'widget.panelTaxistas',
-    requires:'App.view.admin.taxistas.form.FormTaxista',
+    alias:'widget.panelTaxi',
+    requires:['App.view.admin.taxistas.form.FormTaxista', 'App.view.admin.taxistas.GridPanel'],
 
+    layout:'border',
 
     initComponent:function () {
         this.items = this.buildItems();
@@ -25,12 +26,10 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     getCentro:function () {
-        return [
-            {
-                xtype:'container',
-                region:'center'
-            }
-        ];
+        return {
+            xtype:'gridpanelfilterT',
+            region:'center'
+        }
     },
 
     buildTbar:function () {
@@ -42,20 +41,6 @@ Ext.define('App.view.admin.taxistas.Panel', {
                 scale:'medium',
                 ui:'info',
                 handler:this.lanzarForm.bind(this, 'agregar', true)
-            },
-            {
-                xtype:'button',
-                text:'Editar Taxista',
-                scope:this,
-                scale:'medium',
-                ui:'info'
-            },
-            {
-                xtype:'button',
-                text:'Eliminar Taxista',
-                scope:this,
-                scale:'medium',
-                ui:'info'
             }
         ]
     },
@@ -80,7 +65,6 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     lanzarForm:function (boton, t, comando) {
-        console.info(comando);
         //crear la ventana
         this._crearWindowForm(comando);
 
@@ -108,26 +92,29 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     agregarTaxista:function () {
-        /*var form = this.getForm(),
-         obj = form.getValues();
-         if(form.isValid()){  */
-        var _this = this,
-            invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + 2 + '&status=ACEPTADO&token=' + localStorage.getItem('Logeado'),
-            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create?nombre_completo=oswaldo lopez&contrasena=prueba&direccion=Privade de Benito Juarez&telCasa=52430356&movil=5513899832&email=oswaldo@codetlan.com&fechaNac=10 Octubre 1986&imei=244523543545&unidad=546gtr65&latitud=19&longitud=20&gcm=24567644&placas=343556643&token='+localStorage.getItem('Logeado');
-        if (invocation) {
-            invocation.open('POST', url, true);
-            invocation.onreadystatechange = function (response) {
-                if (response.target.readyState == 4 && response.target.status == 200) {
-                    var r = Ext.decode(response.target.responseText);
-                    if (r.result === "ok") {
-                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.");
-                    } else {
-                        Ext.MessageBox.alert('Información', r.result);
+        var form = this.winForm.items.items[0].getForm(),
+            obj = form.getValues();
+
+        if (form.isValid()) {
+            var invocation = new XMLHttpRequest(),
+                url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create?nombre_completo=' + obj.txtName + '&' +
+                    'contrasena=' + obj.txtPass + '&direccion=' + obj.txtDireccion + '&telCasa=' + obj.txtTelefono + '&movil=' + obj.txtMovil + '&email=' + obj.txtEmail + '&' +
+                    'fechaNac=' + obj.txtNacimiento + '&imei=' + obj.txtImei + '&unidad=' + obj.txtUnidad + '&placas=' + obj.txtPlacas + '&token=' + localStorage.getItem('Logeado');
+            if (invocation) {
+                invocation.open('POST', url, true);
+                invocation.onreadystatechange = function (response) {
+                    if (response.target.readyState == 4 && response.target.status == 200) {
+                        var r = Ext.decode(response.target.responseText);
+                        if (r.result === "ok") {
+                            Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
+                        } else {
+                            Ext.MessageBox.alert('Información', r.result);
+                        }
                     }
                 }
+                invocation.send();
             }
-            invocation.send();
+            this.winForm.destroy();
         }
     }
 

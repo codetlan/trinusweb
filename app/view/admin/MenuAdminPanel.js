@@ -32,11 +32,12 @@ Ext.define('App.view.admin.MenuAdminPanel', {
             Ext.each(_this.opciones, function (item) {
                 if(e.getTarget('a.'+item.cls)){
                     _this.titulo = item.text;
+                    _this.panel = item.cls;
                 }
             }, _this);
 
             if(this.titulo){
-                this.fireEvent("opcion", this.titulo);
+                this.fireEvent("opcion", this.titulo,this.panel);
             }
         }, this);
     }

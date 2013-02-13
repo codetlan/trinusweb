@@ -1,6 +1,6 @@
-Ext.define('App.view.admin.taxistas.form.FormTaxista', {
+Ext.define('App.view.admin.clientes.form.FormCliente', {
     extend:'Ext.form.FormPanel',
-    alias:'widget.formtaxistas',
+    alias:'widget.formclientes',
 
     layout: 'form',
     bodyPadding: 10,
@@ -25,34 +25,8 @@ Ext.define('App.view.admin.taxistas.form.FormTaxista', {
                 vtype:'alpha'
             },
             {
-                fieldLabel:'Fecha de Nacimiento',
-                name:'txtNacimiento',
-                xtype: 'datefield',
-                format: 'Y/m/d'
-            },
-            {
-                fieldLabel:'Direcci&oacute;n',
-                name:'txtDireccion'
-            },
-            {
-                fieldLabel:'Tel. Casa',
-                name:'txtTelefono'
-            },
-            {
                 fieldLabel:'Movil',
                 name:'txtMovil'
-            },
-            {
-                fieldLabel:'IMEI',
-                name:'txtImei'
-            },
-            {
-                fieldLabel:'Unidad',
-                name:'txtUnidad'
-            },
-            {
-                fieldLabel:'Placas',
-                name:'txtPlacas'
             },
             {
                 fieldLabel:'Email',
@@ -70,3 +44,4 @@ Ext.define('App.view.admin.taxistas.form.FormTaxista', {
     }
 
 });
+

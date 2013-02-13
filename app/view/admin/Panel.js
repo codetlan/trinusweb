@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipaladmin',
-    requires:['App.view.admin.MenuAdminPanel','App.view.admin.taxistas.Panel','App.view.admin.clientes.Panel','App.view.xtemplate.XtemplateTaxista'],
+    requires:['App.view.admin.MenuAdminPanel','App.view.admin.taxistas.Panel','App.view.admin.clientes.Panel','App.view.admin.historial.Panel','App.view.xtemplate.XtemplateTaxista'],
 
     layout:'border',
 
@@ -28,24 +28,24 @@ Ext.define('App.view.admin.Panel', {
                         iconCls:"icon-user",
                         text:"Clientes",
                         scope:this,
-                        cls: "cliente"
+                        cls: "Cliente"
                     },
                     {
                         iconCls: "icon-hand-right",
                         text:"Taxistas",
                         scope:this,
-                        cls: "taxi"
+                        cls: "Taxi"
                     },
                     {
                         iconCls: 'icon-list-alt',
                         text: 'Historial de Servicios',
                         scope: this,
-                        cls: 'historial'
+                        cls: 'Historial'
                     }
                 ],
                 listeners:{
-                    opcion:function (titulo) {
-                        _this.agregarTabpanel(titulo);
+                    opcion:function (titulo,panel) {
+                        _this.agregarTabpanel(titulo,panel);
                     }
                 }
             },
@@ -86,10 +86,10 @@ Ext.define('App.view.admin.Panel', {
         return bbar;
     },
 
-    agregarTabpanel:function (titulo) {
-        if(Ext.isEmpty(this.items.items[0].descargas[titulo]) ){
-            this.items.items[0].descargas[titulo]= titulo;
-            this.items.items[1].add({xtype:"panel"+titulo, title:titulo, closable:true, id:titulo+this.id});
+    agregarTabpanel:function (titulo,panel) {
+        if(Ext.isEmpty(this.items.items[0].descargas[panel]) ){
+            this.items.items[0].descargas[panel]= panel;
+            this.items.items[1].add({xtype:"panel"+panel, flex:1, title:titulo, closable:true, id:titulo+this.id});
         }
         this.items.items[1].setActiveTab(titulo+this.id);
     },
