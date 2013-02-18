@@ -26,7 +26,8 @@ Ext.define('App.view.admin.clientes.form.FormCliente', {
             },
             {
                 fieldLabel:'Movil',
-                name:'txtMovil'
+                name:'txtMovil',
+                maxLength: 10
             },
             {
                 fieldLabel:'Email',

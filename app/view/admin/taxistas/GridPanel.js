@@ -5,28 +5,27 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     initComponent: function(){
         var me = this;
 
-        Ext.define('Browser', {
+        Ext.define('Taxi', {
             extend: 'Ext.data.Model',
-            idProperty: 'rendering_engine',
             fields: me.buildFields()
         });
 
         me.store = me.buildStore();
         me.columns = me.buildColumns();
-        me.bbar = me.buildBbar();
+        //me.bbar = me.buildBbar();
 
         this.callParent(arguments);
     },
 
     buildColumns:function(){ // creamos las columnas de nuestro grid
         var cols = [
-            {text: 'Nombre', flex: 1, sortable: true, dataIndex: 'Nombre'},
-            {text: 'Dirección',          flex: 1, sortable: true,  dataIndex: 'Dirección'},
-            {text: 'Movil',      flex: 1, sortable: true,  dataIndex: 'Movil'},
-            {text: 'Email',   flex: 1, sortable: true,  dataIndex: 'Email'},
-            {text: 'Imei',        flex: 1, sortable: true,  dataIndex: 'Imei'},
-            {text: 'Unidad',        flex: 1, sortable: true,  dataIndex: 'Unidad'},
-            {text: 'Placas',        flex: 1, sortable: true,  dataIndex: 'Placas'},
+            {text: 'Nombre', flex: 1, sortable: true, dataIndex: 'nombreCompleto'},
+            {text: 'Dirección',          flex: 1, sortable: true,  dataIndex: 'direccion'},
+            {text: 'Movil',      flex: 1, sortable: true,  dataIndex: 'movil'},
+            {text: 'Email',   flex: 1, sortable: true,  dataIndex: 'email'},
+            {text: 'Imei',        flex: 1, sortable: true,  dataIndex: 'imei'},
+            {text: 'Unidad',        flex: 1, sortable: true,  dataIndex: 'unidad'},
+            {text: 'Placas',        flex: 1, sortable: true,  dataIndex: 'placas'},
             {text: 'Contraseña',        flex: 1, sortable: true,  dataIndex: 'contrasena'}
         ];
 
@@ -41,38 +40,29 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
          data: me.buildData()
          }); */
 
-        store = new Ext.data.JsonStore({
-            proxy:{
-                type: 'ajax',
-                url : 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?token='+localStorage.getItem('Logeado'),
-                noCache: false,
-                actionMethods: {
-                    read: 'POST'
+        store = new Ext.data.Store({
+                model: 'Taxi',
+                proxy: {
+                    type: 'ajax',
+                    url : 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?token='+localStorage.getItem('Logeado'),
+                    method: 'POST'
                 },
-                reader: {
-                    type: 'json',
-                    root: 'data',
-                    successProperty: 'success'
-                }
-            }
-            ,autoLoad: true
-
+                autoLoad: true
         });
-
 
         return store;
     },
 
     buildFields:function(){ // creamos la definicion de los slots, es decir qeu propiedades tienen
         var fields = [
-            {name: 'Nombre',  type: 'string'},
-            {name: 'Dirección',           type: 'string', convert: null,     defaultValue: undefined},
-            {name: 'Movil',          type: 'string', convert: null,     defaultValue: undefined},
-            {name: 'Email',    type: 'string',  convert: null,     defaultValue: undefined},
-            {name: 'Imei',         type: 'string', convert: null,     defaultValue: undefined},
-            {name: 'Unidad',         type: 'string', convert: null,     defaultValue: undefined},
-            {name: 'Placas',         type: 'string', convert: null,     defaultValue: undefined},
-            {name: 'Contrasena',         type: 'string', convert: null,     defaultValue: undefined}
+            {name: 'nombreCompleto',  type: 'string'},
+            {name: 'direccion',           type: 'string'},
+            {name: 'movil',          type: 'string'},
+            {name: 'email',    type: 'string'},
+            {name: 'imei',         type: 'string'},
+            {name: 'unidad',         type: 'string'},
+            {name: 'placas',         type: 'string'},
+            {name: 'contrasena',         type: 'string'}
         ];
 
         return fields;
@@ -139,7 +129,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
             ["Misc","PSP browser","PSP","-","C"],
             ["Other browsers","All others","-","-","U"]
         ];
-
+        console.info(data);
         return data;
     },
 

@@ -2,6 +2,8 @@ Ext.define('App.view.registro.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formregistrarse',
 
+    bodyPadding: 3,
+    buttonAlign: 'center',
     defaults:{
         xtype:'textfield',
         labelWidth: 150,
@@ -33,7 +35,8 @@ Ext.define('App.view.registro.FormPanel', {
             },{
                 fieldLabel:'Movil',
                 name:'txtMovil',
-                vtype:'num'
+                vtype:'num',
+                maxLength: 10
             },{
                 fieldLabel:'Contraseña',
                 inputType:'password',
@@ -46,8 +49,7 @@ Ext.define('App.view.registro.FormPanel', {
             },{
                 fieldLabel:'Email',
                 name:'txtEmail',
-                vtype:'email',
-                value:'a@a.com'
+                vtype:'email'
             }
         ];
 
@@ -58,9 +60,8 @@ Ext.define('App.view.registro.FormPanel', {
         var _this=this,
             buttons= [{
             text: 'Cancelar',
-            ui: 'danger',
+            ui: 'inverse',
             scale: 'medium',
-            iconCls: 'icon-user',
             scope: this,
             handler: function(){
                 this.fireEvent("cerrarWindow");
@@ -69,7 +70,7 @@ Ext.define('App.view.registro.FormPanel', {
         }, {
             scope: this,
             text: 'Crear',
-            ui: 'primary',
+            ui: 'warning',
             scale: 'medium',
             handler:function(){
                 console.info(this.form.isValid());

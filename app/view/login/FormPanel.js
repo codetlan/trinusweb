@@ -3,6 +3,8 @@ Ext.define('App.view.login.FormPanel', {
     alias :'widget.formpanellogin',
     requires:['App.view.registro.FormPanel'],
 
+    bodyPadding: 10,
+    buttonAlign: 'center',
     defaults:{
         xtype:'textfield',
         margin:5,
@@ -26,8 +28,9 @@ Ext.define('App.view.login.FormPanel', {
     buildItems:function () {
         var items = [
             {
-                fieldLabel:'Usuario',
-                name:'txtUser',
+                fieldLabel:'Movil',
+                name:'txtMovil',
+                maxLength: 10,
                 value: '9876543210'
             },{
                 fieldLabel:'Password',
@@ -43,15 +46,14 @@ Ext.define('App.view.login.FormPanel', {
     buidlButtons:function(){
         var buttons= [{
             text: 'Registrate',
-            ui: 'info',
+            ui: 'inverse',
             scale: 'medium',
-            iconCls: 'icon-user icon-white',
             scope: this,
             handler: this.windowRegistrarse
         }, {
             scope: this,
             text: 'Ingresa',
-            ui: 'primary',
+            ui: 'warning',
             scale: 'medium',
             handler: this.logeo
         }];
@@ -64,7 +66,7 @@ Ext.define('App.view.login.FormPanel', {
             obj = form.getValues();
         if(form.isValid()){
             var invocation=new XMLHttpRequest(),
-                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?movil='+obj.txtUser+'&password='+ obj.txtPass;
+                url = 'http://isystems.com.mx:8181/Trinus/ServletLogin?movil='+obj.txtMovil+'&password='+ obj.txtPass;
             if(invocation) {
                 invocation.open('POST', url, true);
                 invocation.onreadystatechange = this.logear.bind(this);
@@ -87,6 +89,7 @@ Ext.define('App.view.login.FormPanel', {
     },
 
     windowRegistrarse:function(){
+        this.fireEvent('mask');
         this.window = Ext.create('Ext.window.Window', {
             title: 'Ingresa tus Datos',
             width: 415,

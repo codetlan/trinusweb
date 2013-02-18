@@ -40,42 +40,25 @@ Ext.define('App.view.admin.taxistas.Panel', {
                 scope:this,
                 scale:'medium',
                 ui:'info',
-                handler:this.lanzarForm.bind(this, 'agregar', true)
+                handler:this.lanzarForm
             }
         ]
     },
 
-    _crearWindowForm:function (c) {
-        if (!this.winForm) {
-            //si la ventana no se ha creado
-            this.winForm = Ext.create('Ext.window.Window', {
-                title:'Agregar Taxista',
-                width:500,
-                height:450,
-                draggable:false,
-                layout:'fit',
-                items:[
-                    {
-                        xtype:'formtaxistas'
-                    }
-                ],
-                buttons:this.buildButtons()
-            });
-        }
-    },
-
-    lanzarForm:function (boton, t, comando) {
-        //crear la ventana
-        this._crearWindowForm(comando);
-
-        if (boton == "agregar") {
-            this.winForm.show();
-        }
-        else {
-            //var record= this.grid.getSeleccionado();
-            //abrir para editar
-            //this.winForm.show(record);
-        }
+    lanzarForm:function () {
+        this.winForm = Ext.create('Ext.window.Window', {
+            title:'Agregar Taxista',
+            width:500,
+            height:450,
+            draggable:false,
+            layout:'fit',
+            items:[
+                {
+                    xtype:'formtaxistas'
+                }
+            ],
+            buttons:this.buildButtons()
+        }).show();
     },
 
     buildButtons:function () {

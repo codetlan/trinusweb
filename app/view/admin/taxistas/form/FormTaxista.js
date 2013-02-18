@@ -36,11 +36,13 @@ Ext.define('App.view.admin.taxistas.form.FormTaxista', {
             },
             {
                 fieldLabel:'Tel. Casa',
-                name:'txtTelefono'
+                name:'txtTelefono',
+                maxLength: 10
             },
             {
                 fieldLabel:'Movil',
-                name:'txtMovil'
+                name:'txtMovil',
+                maxLength: 10
             },
             {
                 fieldLabel:'IMEI',
