@@ -87,23 +87,9 @@ Ext.define('App.view.admin.Panel', {
     },
 
     agregarTabpanel:function (titulo,panel) {
-        var _this = this;
         if(Ext.isEmpty(this.items.items[0].descargas[panel]) ){
             this.items.items[0].descargas[panel]= panel;
-            this.items.items[1].add({
-                xtype:"panel"+panel,
-                flex:1, title:titulo,
-                closable:true,
-                scope: this,
-                id:titulo+this.id,
-                listeners: {
-                    maskara:function () {
-                        _this.body.mask();
-                    },
-                    unmaskara:function () {
-                        _this.body.unmask();
-                    }
-                }});
+            this.items.items[1].add({xtype:"panel"+panel, flex:1, title:titulo, closable:true, id:titulo+this.id});
         }
         this.items.items[1].setActiveTab(titulo+this.id);
     },
@@ -124,7 +110,7 @@ Ext.define('App.view.admin.Panel', {
 
     createMap:function (position) {
         var mapOptions = { //Se crean las opciones basicas del mapa
-                zoom:12,
+                zoom:8,
                 center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             }; //Se crea la coordenada de la posicion actual
@@ -136,7 +122,7 @@ Ext.define('App.view.admin.Panel', {
         var runner = new Ext.util.TaskRunner();
         var task = runner.start({
             run: this.pedirTaxistas.bind(this),
-            interval: 1000
+            interval: 1000000
         });
     },
 
@@ -149,7 +135,7 @@ Ext.define('App.view.admin.Panel', {
     },
 
     pedirTaxistas:function(){
-        var _this=this,
+        /*var _this=this,
             invocation = new XMLHttpRequest(),
             params = 'token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params;
@@ -166,55 +152,55 @@ Ext.define('App.view.admin.Panel', {
                 }
             }
             invocation.send();
-        }
+        }*/
+        var params = 'token='+localStorage.getItem('Logeado');
+        Ext.data.JsonP.request({
+            url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params,
+            scope: this,
+            success: function(r) {
+                this.addTaxistasOnMap(r);
+            },
+            failure:function(r){console.info(r);
+                Ext.MessageBox.alert('Información', r.result);
+            }
+        });
     },
 
     addTaxistasOnMap:function (response) {
         var _this = this;
-
+        _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+            data:{
+                nombre:''
+            }});
         Ext.each(response.data, function (taxista) {
             if (taxista.latitud !== "") {
                 var latlng = new google.maps.LatLng(taxista.latitud, taxista.longitud); //Se crea la coordenada de la posicion actual,
                 if (Ext.isEmpty(_this.arrTaxisMarkers[taxista.idTaxista])) {
-                    var image = 'images/icon-1.png';
+
                     var marker = _this.addMarker({
                         position:latlng,
                         map:_this.map,
-                        draggable:false,
-                        animation: google.maps.Animation.DROP,
-                        icon: image,
+                        draggable:true,
                         listeners:{
                             click:function () {
-                                var infowindow = new google.maps.InfoWindow({
-                                        content: _this.template(taxista)
+                                var content = "Hola " + taxista.nombreCompleto,
+                                    infowindow = new google.maps.InfoWindow({
+                                        content: _this.tplTaxista.tpl.html
                                     });
                                 infowindow.open(_this.map, marker);
                             }
                         }
                     });
                     _this.arrTaxisMarkers[taxista.idTaxista] = marker;
-                    _this.map.getBounds().extend(latlng);
                 } else {
                     _this.arrTaxisMarkers[taxista.idTaxista].setPosition(latlng);
                 }
+                _this.map.getBounds().extend(latlng);
+                //_this.map.setCenter(_this.map.getBounds().getCenter());
             }
         });
-        _this.map.setCenter(_this.map.getBounds().getCenter());
+        //_this.map.setCenter(_this.map.getBounds().getCenter());
         //_this.map.fitBounds(_this.map.getBounds());
         //_this.map.panToBounds(_this.map.getBounds());
-    },
-
-    template:function(t){
-        var  tem = '<div class="media">'+
-                '<div style="text-align: center;">'+
-                '<h4 class="media-heading">Detalles del Taxista</h4>'+
-                '</div>' +
-                '<img height="140" style="border: 2px solid #99BBE8; width:100px; float: left;" class="media-object" src="images/man.png">'+
-                '<div style="padding-left: 115px;">Nombre:<br><font color="#999";>'+t.nombreCompleto+'</font><br>' +
-                'No. del Taxi:<br><font color="#999">'+t.unidad+'</font><br>' +
-                'Placas:<br><font color="#999" >'+t.placas+'</font></div>' +
-                '</div>'+
-                '</div>';
-        return tem;
     }
 });
