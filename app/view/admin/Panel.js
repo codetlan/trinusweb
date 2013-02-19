@@ -143,6 +143,7 @@ Ext.define('App.view.admin.Panel', {
         this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
 
         var runner = new Ext.util.TaskRunner();
+
         /*var task = runner.start({
             run:this.pedirTaxistas.bind(this),
             interval:1000
@@ -158,34 +159,30 @@ Ext.define('App.view.admin.Panel', {
     },
 
     pedirTaxistas:function () {
-        var _this = this,
-            invocation = new XMLHttpRequest(),
-            params = 'token=' + localStorage.getItem('Logeado'),
-            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params;
-        if (invocation) {
-            invocation.open('POST', url, true);
-            invocation.onreadystatechange = function (response) {
-                if (response.target.readyState == 4 && response.target.status == 200) {
-                    var r = Ext.decode(response.target.responseText);
-                    if (r.result === "ok") {
-                        _this.addTaxistasOnMap(r);
-                    } else {
-                        Ext.MessageBox.alert('Información', r.result);
-                    }
-                }
+        var params = 'token='+localStorage.getItem('Logeado');
+        Ext.data.JsonP.request({
+            url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params,
+            scope: this,
+            success: function(r) {
+                this.addTaxistasOnMap(r);
+            },
+            failure:function(r){console.info(r);
+                Ext.MessageBox.alert('Información', r.result);
             }
-            invocation.send();
-        }
+        });
     },
 
     addTaxistasOnMap:function (response) {
         var _this = this;
-
+        _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+            data:{
+                nombre:''
+            }});
         Ext.each(response.data, function (taxista) {
             if (taxista.latitud !== "") {
                 var latlng = new google.maps.LatLng(taxista.latitud, taxista.longitud); //Se crea la coordenada de la posicion actual,
                 if (Ext.isEmpty(_this.arrTaxisMarkers[taxista.idTaxista])) {
-                    var image = 'images/icon-1.png';
+
                     var marker = _this.addMarker({
                         position:latlng,
                         map:_this.map,
@@ -202,13 +199,14 @@ Ext.define('App.view.admin.Panel', {
                         }
                     });
                     _this.arrTaxisMarkers[taxista.idTaxista] = marker;
-                    _this.map.getBounds().extend(latlng);
                 } else {
                     _this.arrTaxisMarkers[taxista.idTaxista].setPosition(latlng);
                 }
+                _this.map.getBounds().extend(latlng);
+                //_this.map.setCenter(_this.map.getBounds().getCenter());
             }
         });
-        _this.map.setCenter(_this.map.getBounds().getCenter());
+        //_this.map.setCenter(_this.map.getBounds().getCenter());
         //_this.map.fitBounds(_this.map.getBounds());
         //_this.map.panToBounds(_this.map.getBounds());
     },

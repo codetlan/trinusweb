@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" />
     </list>
     <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -29,45 +30,9 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="364" column="83" selection-start="14420" selection-end="14420" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuAdminPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="28" selection-start="804" selection-end="807" vertical-scroll-proportion="-6.9243984">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="29" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="69" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0">
+            <state line="160" column="31" selection-start="5408" selection-end="5408" vertical-scroll-proportion="-92.30769">
               <folding />
             </state>
           </provider>
@@ -76,34 +41,43 @@
       <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="99" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0">
+            <state line="62" column="146" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XtemplateTaxista.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js">
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="67" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+            <state line="210" column="84" selection-start="7894" selection-end="7894" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/recarga/FormPanel.js">
+      <file leaf-file-name="MenuAdminPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="73" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+            <state line="39" column="57" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+      <file leaf-file-name="GridPanel.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="138" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+            <state line="41" column="24" selection-start="1511" selection-end="1511" vertical-scroll-proportion="-1.2352941">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GridPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="24" selection-start="1587" selection-end="1587" vertical-scroll-proportion="-10.384615">
               <folding />
             </state>
           </provider>
@@ -131,22 +105,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ux/GMapPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/maps/MapPanel.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/taxistas/form/WindowForm.js" />
+        <option value="$PROJECT_DIR$/app/store/Taxistas.js" />
+        <option value="$PROJECT_DIR$/app/model/Taxista.js" />
         <option value="$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
-        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/historial/Panel.js" />
+        <option value="$PROJECT_DIR$/proxy.php" />
         <option value="$PROJECT_DIR$/app/view/recarga/FormPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/principal/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js" />
+        <option value="$PROJECT_DIR$/app/view/registro/FormPanel.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/clientes/form/FormCliente.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js" />
+        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js" />
         <option value="$PROJECT_DIR$/app/view/admin/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" />
       </list>
     </option>
   </component>
@@ -347,10 +321,6 @@
               <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -422,6 +392,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -437,12 +433,28 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="164" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="161" />
     <property name="options.lastSelected" value="settings.github" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sht" />
-    <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="168" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="960" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="962" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="166" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="162" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FullScreen" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -559,7 +571,27 @@
       <created>1360360202652</created>
       <updated>1360360202652</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Merge branch 'master' of github.com:manduks/trinusweb&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;app/view/admin/Panel.js&#10;">
+      <created>1360361090284</created>
+      <updated>1360361090285</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[ODLG] sE SUBE GRID PARA CLIENTES Y TAXISTAS CON FUNCIONALIDAD DE AGREGAR.">
+      <created>1360735684868</created>
+      <updated>1360735684869</updated>
+    </task>
+    <task id="LOCAL-00019" summary="[ODLG] Se suben validadciones para form de taxista y clientes.">
+      <created>1361214627544</created>
+      <updated>1361214627551</updated>
+    </task>
+    <task id="LOCAL-00020" summary="[ODLG] Icono de trinus.">
+      <created>1361214733374</created>
+      <updated>1361214733374</updated>
+    </task>
+    <task id="LOCAL-00021" summary="[ODLG] Se sube modificacion para el tabpanel de administraador.">
+      <created>1361251969240</created>
+      <updated>1361251969240</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -568,13 +600,13 @@
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41960183" sideWeight="0.9071602" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41807044" sideWeight="0.76823336" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21636952" sideWeight="0.58039814" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3063209" sideWeight="0.58192956" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.4981796" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41960183" sideWeight="0.22609401" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.94382024" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -624,7 +656,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ODLG]Se sube template de taxista para mostrar datos." />
+    <option name="LAST_COMMIT_MESSAGE" value="[ODLG] Se sube modificacion para el tabpanel de administraador." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -651,90 +683,114 @@
     <MESSAGE value="[ODLG] Se actualizo en template y los botones para la pagina principal de clientes." />
     <MESSAGE value="Merge branch 'master' of github.com:manduks/trinusweb&#10;&#10;Conflicts:&#10;&#9;app/view/admin/Panel.js&#10;&#9;app/view/principal/Panel.js&#10;" />
     <MESSAGE value="[ODLG]Se sube template de taxista para mostrar datos." />
+    <MESSAGE value="Merge branch 'master' of github.com:manduks/trinusweb&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;app/view/admin/Panel.js&#10;" />
+    <MESSAGE value="[ODLG] sE SUBE GRID PARA CLIENTES Y TAXISTAS CON FUNCIONALIDAD DE AGREGAR." />
+    <MESSAGE value="[ODLG] Se suben validadciones para form de taxista y clientes." />
+    <MESSAGE value="[ODLG] Icono de trinus." />
+    <MESSAGE value="[ODLG] Se sube modificacion para el tabpanel de administraador." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/css/bootstrap/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="490732" selection-start="490726" selection-end="490732" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="83" selection-start="800" selection-end="800" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="11" selection-start="11" selection-end="42" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/registro/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="30" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.9437086" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="111" selection-start="3489" selection-end="3489" vertical-scroll-proportion="0.5800672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="29" selection-start="2165" selection-end="2165" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="69" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="99" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.0" />
+        <state line="29" column="46" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/recarga/FormPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="73" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" />
+        <state line="39" column="23" selection-start="4440" selection-end="4440" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="138" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
+    <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1090" selection-end="1090" vertical-scroll-proportion="0.0">
+        <state line="50" column="45" selection-start="1503" selection-end="1503" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTaxista.js">
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="67" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0">
+        <state line="60" column="17" selection-start="1470" selection-end="1470" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/registro/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="16" selection-start="891" selection-end="904" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/icon-1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/form/FormCliente.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="29" selection-start="714" selection-end="714" vertical-scroll-proportion="0.8446602">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/form/FormTaxista.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="32" selection-start="296" selection-end="296" vertical-scroll-proportion="0.34951457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="28" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.407767">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="57" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="146" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="364" column="83" selection-start="14420" selection-end="14420" vertical-scroll-proportion="0.0">
+        <state line="210" column="84" selection-start="7894" selection-end="7894" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="24" selection-start="1587" selection-end="1587" vertical-scroll-proportion="-10.384615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="804" selection-end="807" vertical-scroll-proportion="-6.9243984">
+        <state line="160" column="31" selection-start="5408" selection-end="5408" vertical-scroll-proportion="-92.30769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="24" selection-start="1511" selection-end="1511" vertical-scroll-proportion="-1.2352941">
           <folding />
         </state>
       </provider>
