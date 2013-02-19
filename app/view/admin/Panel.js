@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipaladmin',
-    requires:['App.view.admin.MenuAdminPanel','App.view.admin.taxistas.Panel','App.view.admin.clientes.Panel','App.view.admin.historial.Panel','App.view.xtemplate.XtemplateTaxista'],
+    requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel', 'App.view.admin.historial.Panel', 'App.view.xtemplate.XtemplateTaxista'],
 
     layout:'border',
 
@@ -19,7 +19,7 @@ Ext.define('App.view.admin.Panel', {
                 xtype:"menuadmin",
                 region:"west",
                 title:"Menu",
-                id: "Menu"+this.id,
+                id:"Menu" + this.id,
                 bbar:this.buildBbar(),
                 flex:1,
                 scope:this,
@@ -28,24 +28,24 @@ Ext.define('App.view.admin.Panel', {
                         iconCls:"icon-user",
                         text:"Clientes",
                         scope:this,
-                        cls: "Cliente"
+                        cls:"Cliente"
                     },
                     {
-                        iconCls: "icon-hand-right",
+                        iconCls:"icon-hand-right",
                         text:"Taxistas",
                         scope:this,
-                        cls: "Taxi"
+                        cls:"Taxi"
                     },
                     {
-                        iconCls: 'icon-list-alt',
-                        text: 'Historial de Servicios',
-                        scope: this,
-                        cls: 'Historial'
+                        iconCls:'icon-list-alt',
+                        text:'Historial de Servicios',
+                        scope:this,
+                        cls:'Historial'
                     }
                 ],
                 listeners:{
-                    opcion:function (titulo,panel) {
-                        _this.agregarTabpanel(titulo,panel);
+                    opcion:function (titulo, panel) {
+                        _this.agregarTabpanel(titulo, panel);
                     }
                 }
             },
@@ -86,26 +86,35 @@ Ext.define('App.view.admin.Panel', {
         return bbar;
     },
 
-    agregarTabpanel:function (titulo,panel) {
+    agregarTabpanel:function (titulo, panel) {
         var _this = this;
-        if(Ext.isEmpty(this.items.items[0].descargas[panel]) ){
-            this.items.items[0].descargas[panel]= panel;
+        console.info("entra");
+        if (this.items.items[0].descargas.indexOf(panel)== -1) {
+            this.items.items[0].descargas.push(panel);
             this.items.items[1].add({
-                xtype:"panel"+panel,
-                flex:1, title:titulo,
+                xtype:"panel" + panel,
+                flex:1,
+                title:titulo,
                 closable:true,
-                scope: this,
-                id:titulo+this.id,
-                listeners: {
+                scope:this,
+                id:titulo + this.id,
+                listeners:{
                     maskara:function () {
                         _this.body.mask();
                     },
                     unmaskara:function () {
                         _this.body.unmask();
+                    },
+                    destroy: function (){
+                        console.info(_this.items.items[0].descargas);
+                        console.info(_this.items.items[0].descargas.indexOf(panel));
+                        _this.items.items[0].descargas.splice(_this.items.items[0].descargas.indexOf(panel),1);
+                        console.info(_this.items.items[0].descargas);
                     }
                 }});
+            console.info(this.items.items[1]);
+            this.items.items[1].setActiveTab(titulo + this.id);
         }
-        this.items.items[1].setActiveTab(titulo+this.id);
     },
 
     salir:function () {
@@ -124,20 +133,20 @@ Ext.define('App.view.admin.Panel', {
 
     createMap:function (position) {
         var mapOptions = { //Se crean las opciones basicas del mapa
-                zoom:12,
-                center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            }; //Se crea la coordenada de la posicion actual
+            zoom:12,
+            center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        }; //Se crea la coordenada de la posicion actual
         this.infowindow = new google.maps.InfoWindow(); //Globo del marker con información
         this.arrTaxisMarkers = [];
 
         this.map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions); //Se crea el mapa
 
         var runner = new Ext.util.TaskRunner();
-        var task = runner.start({
-            run: this.pedirTaxistas.bind(this),
-            interval: 1000
-        });
+        /*var task = runner.start({
+            run:this.pedirTaxistas.bind(this),
+            interval:1000
+        });*/
     },
 
     addMarker:function (markerOpts) {
@@ -148,11 +157,11 @@ Ext.define('App.view.admin.Panel', {
         return marker;
     },
 
-    pedirTaxistas:function(){
-        var _this=this,
+    pedirTaxistas:function () {
+        var _this = this,
             invocation = new XMLHttpRequest(),
-            params = 'token='+localStorage.getItem('Logeado'),
-            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params;
+            params = 'token=' + localStorage.getItem('Logeado'),
+            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
             invocation.onreadystatechange = function (response) {
@@ -181,13 +190,13 @@ Ext.define('App.view.admin.Panel', {
                         position:latlng,
                         map:_this.map,
                         draggable:false,
-                        animation: google.maps.Animation.DROP,
-                        icon: image,
+                        animation:google.maps.Animation.DROP,
+                        icon:image,
                         listeners:{
                             click:function () {
                                 var infowindow = new google.maps.InfoWindow({
-                                        content: _this.template(taxista)
-                                    });
+                                    content:_this.template(taxista)
+                                });
                                 infowindow.open(_this.map, marker);
                             }
                         }
@@ -204,17 +213,17 @@ Ext.define('App.view.admin.Panel', {
         //_this.map.panToBounds(_this.map.getBounds());
     },
 
-    template:function(t){
-        var  tem = '<div class="media">'+
-                '<div style="text-align: center;">'+
-                '<h4 class="media-heading">Detalles del Taxista</h4>'+
-                '</div>' +
-                '<img height="140" style="border: 2px solid #99BBE8; width:100px; float: left;" class="media-object" src="images/man.png">'+
-                '<div style="padding-left: 115px;">Nombre:<br><font color="#999";>'+t.nombreCompleto+'</font><br>' +
-                'No. del Taxi:<br><font color="#999">'+t.unidad+'</font><br>' +
-                'Placas:<br><font color="#999" >'+t.placas+'</font></div>' +
-                '</div>'+
-                '</div>';
+    template:function (t) {
+        var tem = '<div class="media">' +
+            '<div style="text-align: center;">' +
+            '<h4 class="media-heading">Detalles del Taxista</h4>' +
+            '</div>' +
+            '<img height="140" style="border: 2px solid #99BBE8; width:100px; float: left;" class="media-object" src="images/man.png">' +
+            '<div style="padding-left: 115px;">Nombre:<br><font color="#999";>' + t.nombreCompleto + '</font><br>' +
+            'No. del Taxi:<br><font color="#999">' + t.unidad + '</font><br>' +
+            'Placas:<br><font color="#999" >' + t.placas + '</font></div>' +
+            '</div>' +
+            '</div>';
         return tem;
     }
 });

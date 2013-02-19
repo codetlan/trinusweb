@@ -30,7 +30,6 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Movil',
                 name:'txtMovil',
-                maxLength: 10,
                 value: '9876543210'
             },{
                 fieldLabel:'Password',
