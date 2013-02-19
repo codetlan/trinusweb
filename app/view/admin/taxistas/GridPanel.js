@@ -7,15 +7,12 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
 
         Ext.define('Taxi', {
             extend: 'Ext.data.Model',
-            fields: this.buildFields()
+            fields: me.buildFields()
         });
 
-        this.store = this.buildStore();
-        this.columns = this.buildColumns();
-
-        this.store.on('load', function(t,r,o){
-            console.info(r);
-        });
+        me.store = me.buildStore();
+        me.columns = me.buildColumns();
+        //me.bbar = me.buildBbar();
 
         this.callParent(arguments);
     },
@@ -44,16 +41,13 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
          }); */
 
         store = new Ext.data.Store({
-            model:'Taxi',
-            proxy:new Ext.data.ScriptTagProxy({
-                url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?token=' + localStorage.getItem('Logeado'),
-                //url:'http://www.codetlan.com/snake/prueba.php'
-                reader: {
-                    type: 'json',
-                    root: 'data'
-                }
-            }),
-            autoLoad:true
+                model: 'Taxi',
+                proxy: {
+                    type: 'ajax',
+                    url : 'http://isystems.com.mx:8181/Trinus/ServletTaxistas?token='+localStorage.getItem('Logeado'),
+                    method: 'POST'
+                },
+                autoLoad: true
         });
 
         return store;
