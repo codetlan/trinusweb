@@ -30,12 +30,12 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Movil',
                 name:'txtMovil',
-                value: '9876543210'
+                value: '8888888888'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
                 name:'txtPass',
-                value: '111'
+                value: 'aaa'
             }
         ];
 

@@ -3,8 +3,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     alias :'widget.gridpanelfilterT',
 
     initComponent: function(){
-        var me = this;
-
         Ext.define('Taxi', {
             extend: 'Ext.data.Model',
             fields: this.buildFields()
@@ -12,45 +10,149 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
 
         this.store = this.buildStore();
         this.columns = this.buildColumns();
+        this.plugins = this.buildPlugins();
+        this.dockedItems = this.buildDockedItems();
+        this.bbar = this.buildBbar();
 
         this.callParent(arguments);
+
+        this.getSelectionModel().on('selectionchange', function(selModel, selections){
+            this.down('#delete').setDisabled(selections.length === 0);
+        },this);
+        this.aplicarVtypes();
     },
 
-    buildColumns:function(){ // creamos las columnas de nuestro grid
-        var cols = [
-            {text: 'Nombre', flex: 1, sortable: true, dataIndex: 'nombreCompleto'},
-            {text: 'Dirección',          flex: 1, sortable: true,  dataIndex: 'direccion'},
-            {text: 'Movil',      flex: 1, sortable: true,  dataIndex: 'movil'},
-            {text: 'Email',   flex: 1, sortable: true,  dataIndex: 'email'},
-            {text: 'Imei',        flex: 1, sortable: true,  dataIndex: 'imei'},
-            {text: 'Unidad',        flex: 1, sortable: true,  dataIndex: 'unidad'},
-            {text: 'Placas',        flex: 1, sortable: true,  dataIndex: 'placas'},
-            {text: 'Contraseña',        flex: 1, sortable: true,  dataIndex: 'contrasena'}
-        ];
-
-        return cols;
+    // afterRender override: it adds textfield and statusbar reference and start monitoring keydown events in textfield input
+    afterRender: function() {
+        var me = this;
+        me.callParent(arguments);
+        me.textField = me.down('textfield[name=searchField]');
+        //me.statusBar = me.down('statusbar[name=searchStatusBar]');
     },
 
     buildStore:function(){ //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
-        var store;
-
-        store = new Ext.data.Store({
+        var store = new Ext.data.Store({
             model:'Taxi',
             proxy:new Ext.data.ScriptTagProxy({
                 url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?token=' + localStorage.getItem('Logeado'),
                 reader: {
                     type: 'json',
                     root: 'data'
+                },
+                writer:{
+                    type:'json'
                 }
             }),
-            autoLoad:true
+            //autoSync: true,
+            autoLoad:true,
+            listeners: {
+                update: function(store, record, operation, eOpts){
+                    console.info(store);console.info(record);console.info(operation);
+                }
+            }
         });
 
         return store;
     },
 
+    buildColumns:function(){ // creamos las columnas de nuestro grid
+        var cols = [
+            {text:'Nombre',flex:1,sortable:true,dataIndex:'nombreCompleto',editor:{vtype:'nombre', allowBlank:false}},
+            {text:'Dirección',flex:1, sortable:true,dataIndex:'direccion',editor:{vtype:'nombre', allowBlank:false}},
+            {text:'Movil', flex:1, sortable:true, dataIndex:'movil',editor:{vtype:'num', allowBlank:false}},
+            {text:'Email', flex:1, sortable:true, dataIndex:'email',editor:{vtype:'email', allowBlank:false}},
+            {text:'Imei', flex:1, sortable:true, dataIndex:'imei',editor:{vtype:'num', allowBlank:false}},
+            {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad',editor:{vtype:'alphanum', allowBlank:false}},
+            {text:'Placas', flex:1, sortable:true, dataIndex:'placas',editor:{vtype:'alphanum', allowBlank:false}},
+            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena',editor:{vtype:'alphanum', allowBlank:false}}
+        ];
+
+        return cols;
+    },
+
+    buildPlugins:function(){
+        var rowEditing = Ext.create('Ext.grid.plugin.RowEditing');
+        return [rowEditing];
+
+    },
+
+    buildDockedItems:function(){
+        var me = this;
+        return [{
+            xtype: 'toolbar',
+            items: [{
+                text: '<span style="color:#FFF;">Agregar</span>',
+                ui:'success',
+                handler: function(){
+                    // empty record
+                    me.store.insert(0, new Taxi());
+                    me.plugins[0].startEdit(0, 0);
+                }
+            }, '-', {
+                itemId: 'delete',
+                text: '<span style="color:#FFF;">Eliminar</span>',
+                ui:'danger',
+                disabled: true,
+                handler: function(){
+                    var selection = me.getView().getSelectionModel().getSelection()[0];
+                    if (selection) {
+                        me.store.remove(selection);
+                    }
+                }
+            }]
+        }];
+    },
+
+    buildBbar : function (){
+        var me = this, bBar, nombreC, direccion, movil, email, imei, unidad, placas, bReset;
+
+        nombreC    = me.buildTextField('nombreCompleto','nombre');
+        direccion    = me.buildTextField('direccion','nombre');
+        movil   = me.buildTextField('movil','num');
+        email   = me.buildTextField('email','email');
+        imei        = me.buildTextField('imei','num');
+        unidad      = me.buildTextField('unidad','alphanum');
+        placas = me.buildTextField('placas','alphanum');
+        bReset      = Ext.create('Ext.Button', {text: 'Limpiar', ui:'info', flex:1, scope:this, handler: me.resetSearchs});
+
+        bBar = [nombreC,direccion,movil,email,imei, unidad, placas, bReset];
+
+        return bBar;
+    },
+
+    buildTextField:function(dataIndex, vtype){
+        var me = this,
+            textField = {
+                xtype:'textfield',
+                id:dataIndex+me.id,
+                flex:1,
+                vtype:vtype,
+                listeners:{
+                    scope:this,
+                    change:me.filterStore
+                }
+            };
+
+        return textField;
+    },
+
+    filterStore:function(){
+        var me = this, i, value, textfields = ['nombreCompleto', 'direccion', 'movil', 'email', 'imei', 'unidad', 'placas'];
+        me.store.clearFilter(false);
+
+        for (i = 0; i < textfields.length; i++){
+            value = Ext.getCmp(textfields[i]+me.id).getValue();
+            if (!Ext.isEmpty(value)){
+                me.store.filter(textfields[i], value, true, false)
+            }
+
+        }
+
+    },
+
     buildFields:function(){ // creamos la definicion de los slots, es decir qeu propiedades tienen
         var fields = [
+            {name: 'idTaxista', type:'string'},
             {name: 'nombreCompleto',  type: 'string'},
             {name: 'direccion',           type: 'string'},
             {name: 'movil',          type: 'string'},
@@ -64,66 +166,32 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         return fields;
     },
 
-    buildBbar : function (){
-        var me = this, bBar, crEngine, cBrowser, cPlatform, ceVersion, cCss, bReset;
 
-        crEngine    = me.buildCombo('Nombre', 'nombre');
-        cBrowser    = me.buildCombo('Dirección', 'direccion');
-        cPlatform   = me.buildCombo('Movil', 'movil');
-        ceVersion   = me.buildCombo('Email', 'email');
-        cCss        = me.buildCombo('Imei', 'imei');
-        bReset      = Ext.create('Ext.Button', {text: 'Reset', handler: function() { me.resetCombos();}});
+    resetSearchs:function () {
+        var me = this, i, textfields = ['nombreCompleto', 'direccion', 'movil', 'email', 'imei', 'unidad', 'placas'];
 
-        bBar = [crEngine,cBrowser,cPlatform,ceVersion,cCss, bReset];
+        me.store.clearFilter(false);
 
-        return bBar;
+        for (i = 0; i < textfields.length; i++) {
+            Ext.getCmp(textfields[i] + me.id).reset();
+        }
     },
 
-    buildCombo:function(name, dataIndex){
-        var me = this, combo;
-
-        combo = Ext.create('Ext.form.ComboBox', {
-            id: dataIndex+this.id,
-            store: me.buildStore().collect(dataIndex),
-            emptyText: name+'...',
-            displayField: dataIndex,
-            valueField: dataIndex,
-            queryMode: 'local',
-            flex:1,
-            listeners:{
-                scope:this,
-                change:function(t, nv, ov, eOpts){
-                    me.filterStore();
-                }
+    aplicarVtypes:function(){
+        Ext.apply(Ext.form.field.VTypes, {
+            //  vtype validation function
+            nombreMask:/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/,
+            nombreText:'Nombre no v&aacute;lido',
+            nombre:function(val,field){
+                var regExp=/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/;
+                ///^[a-zA-Z ][-_.a-zA-Z0-9 ]{0,30}$/;
+                return regExp.test(val);
+            },
+            numMask:/[\d\$.]/,
+            num:function(val,field){
+                return val;
             }
         });
-
-        return combo;
-    },
-
-    filterStore:function(){
-        var me = this, i, value, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
-
-        me.store.clearFilter(false);
-
-        for (i = 0; i < combos.length; i++){
-            value = Ext.getCmp(combos[i]+me.id).getValue();
-            if (!Ext.isEmpty(value)){
-                me.store.filter(combos[i], value, true, false)
-            }
-
-        }
-
-    },
-
-    resetCombos:function(){
-        var me = this, i, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
-
-        me.store.clearFilter(false);
-
-        for (i = 0; i < combos.length; i++){
-            Ext.getCmp(combos[i]+me.id).reset();
-        }
     }
 
 
