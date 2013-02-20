@@ -12,37 +12,23 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     buildItems:function () {
-        return [
-            {
-                region:"north",
-                height:50,
-                border:false,
-                bodyPadding:5,
-                layout:"column",
-                items:this.buildTbar()
-            },
-            this.getCentro()
-        ];
+        return [this.getCentro()];
     },
 
     getCentro:function () {
         return {
             xtype:'gridpanelfilterT',
-            region:'center'
-        }
-    },
-
-    buildTbar:function () {
-        return [
-            {
-                xtype:'button',
-                text:'Agregar Taxista',
-                scope:this,
-                scale:'medium',
-                ui:'info',
-                handler:this.lanzarForm
+            region:'center',
+            listeners: {
+                scope: this,
+                mask: function(){
+                    this.items.items[0].mask('Cargando....');
+                },
+                unmask: function(){
+                    this.items.items[0].unmask();
+                }
             }
-        ]
+        }
     },
 
     lanzarForm:function () {

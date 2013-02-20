@@ -12,23 +12,22 @@ Ext.define('App.view.admin.clientes.Panel', {
     },
 
     buildItems:function () {
-        return [
-            {
-                region:"north",
-                height:50,
-                border:false,
-                bodyPadding:5,
-                layout:"column",
-                items:this.buildTbar()
-            },
-            this.getCentro()
-        ];
+        return [this.getCentro()];
     },
 
     getCentro:function () {
         return {
             xtype:'gridpanelfilterC',
-            region:'center'
+            region:'center',
+            listeners: {
+                scope: this,
+                mask: function(){
+                    this.items.items[0].mask('Cargando....');
+                },
+                unmask: function(){
+                    this.items.items[0].unmask();
+                }
+            }
         }
     },
 

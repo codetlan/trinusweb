@@ -97,7 +97,6 @@ Ext.define('App.view.admin.Panel', {
                 closable:true,
                 scope:this,
                 id:titulo + this.id,
-                iconCls: 'icon-search',
                 listeners:{
                     maskara:function () {
                         _this.body.mask();
