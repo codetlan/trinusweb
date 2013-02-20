@@ -88,7 +88,6 @@ Ext.define('App.view.admin.Panel', {
 
     agregarTabpanel:function (titulo, panel) {
         var _this = this;
-        console.info("entra");
         if (this.items.items[0].descargas.indexOf(panel)== -1) {
             this.items.items[0].descargas.push(panel);
             this.items.items[1].add({
@@ -106,13 +105,11 @@ Ext.define('App.view.admin.Panel', {
                         _this.body.unmask();
                     },
                     destroy: function (){
-                        console.info(_this.items.items[0].descargas);
-                        console.info(_this.items.items[0].descargas.indexOf(panel));
                         _this.items.items[0].descargas.splice(_this.items.items[0].descargas.indexOf(panel),1);
-                        console.info(_this.items.items[0].descargas);
                     }
                 }});
-            console.info(this.items.items[1]);
+            this.items.items[1].setActiveTab(titulo + this.id);
+        } else {
             this.items.items[1].setActiveTab(titulo + this.id);
         }
     },
@@ -133,7 +130,7 @@ Ext.define('App.view.admin.Panel', {
 
     createMap:function (position) {
         var mapOptions = { //Se crean las opciones basicas del mapa
-            zoom:12,
+            zoom:8,
             center:new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
             mapTypeId:google.maps.MapTypeId.ROADMAP
         }; //Se crea la coordenada de la posicion actual
@@ -144,10 +141,10 @@ Ext.define('App.view.admin.Panel', {
 
         var runner = new Ext.util.TaskRunner();
 
-        /*var task = runner.start({
+        var task = runner.start({
             run:this.pedirTaxistas.bind(this),
-            interval:1000
-        });*/
+            interval:1000000
+        });
     },
 
     addMarker:function (markerOpts) {
@@ -166,7 +163,7 @@ Ext.define('App.view.admin.Panel', {
             success: function(r) {
                 this.addTaxistasOnMap(r);
             },
-            failure:function(r){console.info(r);
+            failure:function(r){
                 Ext.MessageBox.alert('Información', r.result);
             }
         });
@@ -188,7 +185,7 @@ Ext.define('App.view.admin.Panel', {
                         map:_this.map,
                         draggable:false,
                         animation:google.maps.Animation.DROP,
-                        icon:image,
+                        //icon:image,
                         listeners:{
                             click:function () {
                                 var infowindow = new google.maps.InfoWindow({
