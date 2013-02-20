@@ -76,7 +76,7 @@ Ext.define('App.view.admin.Panel', {
         var _this = this,
             bbar = ['->', {
                 xtype:'button',
-                text:'<span style="color:#FFF;">Salir</span>',
+                text:'Salir',
                 iconCls:'icon-off icon-white',
                 ui:'danger',
                 scale:'medium',
@@ -185,7 +185,7 @@ Ext.define('App.view.admin.Panel', {
                         map:_this.map,
                         draggable:false,
                         animation:google.maps.Animation.DROP,
-                        //icon:image,
+                        icon: 'images/icon-1.png',
                         listeners:{
                             click:function () {
                                 var infowindow = new google.maps.InfoWindow({

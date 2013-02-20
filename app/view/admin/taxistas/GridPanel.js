@@ -130,8 +130,9 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                 dock:'top',
                 items:[
                     {
-                        text:'<span style="color:#FFF;">Agregar</span>',
+                        text:'Agregar',
                         ui:'success',
+                        iconCls: 'icon-plus icon-white',
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Taxi());
@@ -141,8 +142,9 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                     '-',
                     {
                         itemId:'delete',
-                        text:'<span style="color:#FFF;">Eliminar</span>',
+                        text:'Eliminar',
                         ui:'danger',
+                        iconCls: 'icon-remove icon-white',
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
@@ -186,7 +188,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         imei = me.buildTextField('imei', 'num');
         unidad = me.buildTextField('unidad', 'alphanum');
         placas = me.buildTextField('placas', 'alphanum');
-        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, scope:this, handler:me.resetSearchs});
+        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, iconCls:'icon-refresh icon-white', scope:this, handler:me.resetSearchs});
 
         bBar = [nombreC, direccion, movil, email, imei, unidad, placas, bReset];
 
@@ -200,6 +202,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                 id:dataIndex + me.id,
                 flex:1,
                 vtype:vtype,
+                emptyText: dataIndex,
                 listeners:{
                     scope:this,
                     change:me.filterStore

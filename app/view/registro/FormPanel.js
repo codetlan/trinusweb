@@ -62,6 +62,7 @@ Ext.define('App.view.registro.FormPanel', {
             text: 'Cancelar',
             ui: 'inverse',
             scale: 'medium',
+            iconCls: 'icon-remove icon-white',
             scope: this,
             handler: function(){
                 this.fireEvent("cerrarWindow");
@@ -71,6 +72,7 @@ Ext.define('App.view.registro.FormPanel', {
             scope: this,
             text: 'Crear',
             ui: 'warning',
+            iconCls: 'icon-ok icon-white',
             scale: 'medium',
             handler:function(){
                 console.info(this.form.isValid());

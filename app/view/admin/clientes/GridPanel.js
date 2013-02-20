@@ -124,8 +124,9 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                 dock:'top',
                 items:[
                     {
-                        text:'<span style="color:#FFF;">Agregar</span>',
+                        text:'Agregar',
                         ui:'success',
+                        iconCls: 'icon-plus icon-white',
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Cliente());
@@ -135,13 +136,13 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                     '-',
                     {
                         itemId:'delete',
-                        text:'<span style="color:#FFF;">Eliminar</span>',
+                        text:'Eliminar',
                         ui:'danger',
+                        iconCls: 'icon-remove icon-white',
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
                             if (selection) {
-                                console.info(selection);
                                 var record = selection.data,
                                     invocation = new XMLHttpRequest(),
                                     url = 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
@@ -177,7 +178,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         nombreC = me.buildTextField('nombreCompleto', 'nombre');
         movil = me.buildTextField('movil', 'num');
         email = me.buildTextField('email', 'email');
-        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, scope:this, handler:me.resetSearchs});
+        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, iconCls:'icon-refresh icon-white', scope:this, handler:me.resetSearchs});
 
         bBar = [nombreC, movil, email, bReset];
 
@@ -191,6 +192,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                 id:dataIndex + me.id,
                 flex:1,
                 vtype:vtype,
+                emptyText: dataIndex,
                 listeners:{
                     scope:this,
                     change:me.filterStore

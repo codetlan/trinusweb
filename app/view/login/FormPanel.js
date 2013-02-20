@@ -30,12 +30,12 @@ Ext.define('App.view.login.FormPanel', {
             {
                 fieldLabel:'Movil',
                 name:'txtMovil',
-                value: '8888888888'
+                value: '9876543210'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
                 name:'txtPass',
-                value: 'aaa'
+                value: '111'
             }
         ];
 
@@ -47,6 +47,7 @@ Ext.define('App.view.login.FormPanel', {
             text: 'Registrate',
             ui: 'inverse',
             scale: 'medium',
+            iconCls: 'icon-user icon-white',
             scope: this,
             handler: this.windowRegistrarse
         }, {
@@ -54,6 +55,7 @@ Ext.define('App.view.login.FormPanel', {
             text: 'Ingresa',
             ui: 'warning',
             scale: 'medium',
+            iconCls: 'icon-ok icon-white',
             handler: this.logeo
         }];
 

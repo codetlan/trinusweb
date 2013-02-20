@@ -48,7 +48,7 @@ Ext.define('App.view.menu.FormPanel', {
             },
             {
                 xtype:'button',
-                text:'<font size="12pt";>Pedir Taxi</font>',
+                text:'Pedir Taxi',
                 scope:this,
                 ui:'warning',
                 scale:'large',

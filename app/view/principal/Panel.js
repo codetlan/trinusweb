@@ -70,26 +70,29 @@ Ext.define('App.view.principal.Panel', {
             layout: 'hbox',
             items:[{
                 xtype:'button',
-                text: '<font color=#FFF>Posición Actual</font>',
+                text: 'Posición',
                 flex: 1,
                 ui: 'inverse',
+                iconCls: 'icon-map-marker icon-white',
                 scale: 'medium',
                 handler:function(){
                     _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                 }
             },{
                 xtype: 'button',
-                text: '<font color=#FFF>Recarga Saldo</font>',
+                text: 'Recarga',
                 flex: 1,
                 ui: 'warning',
+                iconCls: 'icon-shopping-cart icon-white',
                 scale: 'medium',
                 scope: this,
                 handler: _this.recargaSaldo
             }, {
                 xtype:'button',
-                text:'<font color=#FFF>Salir</font>',
+                text:'Salir',
                 flex: 1,
                 ui: 'inverse',
+                iconCls: 'icon-off icon-white',
                 scale: 'medium',
                 handler:_this.salir
             }]
@@ -218,7 +221,8 @@ Ext.define('App.view.principal.Panel', {
                         _this.items.items[1].el.unmask();
                         _this.taxistaOnMap(r, idServicio);
                     } else {
-                        Ext.MessageBox.alert('Información', r.result);
+                        Ext.MessageBox.alert('Información', r.result+'. Por Favor Pide Taxi!!! Nuevamente');
+                        _this.items.items[1].el.unmask();
                     }
                 }
             }
@@ -240,7 +244,7 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
-            //icon:"images/trinusMarker.png",
+            icon: 'images/icon-1.png',
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
