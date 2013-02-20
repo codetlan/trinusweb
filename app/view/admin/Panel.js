@@ -77,7 +77,7 @@ Ext.define('App.view.admin.Panel', {
             bbar = ['->', {
                 xtype:'button',
                 text:'<span style="color:#FFF;">Salir</span>',
-                iconCls:'icon-off',
+                iconCls:'icon-off icon-white',
                 ui:'danger',
                 scale:'medium',
                 handler:_this.salir
@@ -88,8 +88,7 @@ Ext.define('App.view.admin.Panel', {
 
     agregarTabpanel:function (titulo, panel) {
         var _this = this;
-        console.info("entra");
-        if (this.items.items[0].descargas.indexOf(panel)== -1) {
+        if (this.items.items[0].descargas.indexOf(panel) == -1) {
             this.items.items[0].descargas.push(panel);
             this.items.items[1].add({
                 xtype:"panel" + panel,
@@ -98,6 +97,7 @@ Ext.define('App.view.admin.Panel', {
                 closable:true,
                 scope:this,
                 id:titulo + this.id,
+                iconCls: 'icon-search',
                 listeners:{
                     maskara:function () {
                         _this.body.mask();
@@ -105,14 +105,10 @@ Ext.define('App.view.admin.Panel', {
                     unmaskara:function () {
                         _this.body.unmask();
                     },
-                    destroy: function (){
-                        console.info(_this.items.items[0].descargas);
-                        console.info(_this.items.items[0].descargas.indexOf(panel));
-                        _this.items.items[0].descargas.splice(_this.items.items[0].descargas.indexOf(panel),1);
-                        console.info(_this.items.items[0].descargas);
+                    destroy:function () {
+                        _this.items.items[0].descargas.splice(_this.items.items[0].descargas.indexOf(panel), 1);
                     }
                 }});
-            console.info(this.items.items[1]);
             this.items.items[1].setActiveTab(titulo + this.id);
         }
     },
@@ -145,9 +141,9 @@ Ext.define('App.view.admin.Panel', {
         var runner = new Ext.util.TaskRunner();
 
         /*var task = runner.start({
-            run:this.pedirTaxistas.bind(this),
-            interval:1000
-        });*/
+         run:this.pedirTaxistas.bind(this),
+         interval:1000
+         });*/
     },
 
     addMarker:function (markerOpts) {
@@ -159,14 +155,15 @@ Ext.define('App.view.admin.Panel', {
     },
 
     pedirTaxistas:function () {
-        var params = 'token='+localStorage.getItem('Logeado');
+        var params = 'token=' + localStorage.getItem('Logeado');
         Ext.data.JsonP.request({
-            url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?'+params,
-            scope: this,
-            success: function(r) {
+            url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params,
+            scope:this,
+            success:function (r) {
                 this.addTaxistasOnMap(r);
             },
-            failure:function(r){console.info(r);
+            failure:function (r) {
+                console.info(r);
                 Ext.MessageBox.alert('Información', r.result);
             }
         });
@@ -174,7 +171,7 @@ Ext.define('App.view.admin.Panel', {
 
     addTaxistasOnMap:function (response) {
         var _this = this;
-        _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+        _this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista', {
             data:{
                 nombre:''
             }});

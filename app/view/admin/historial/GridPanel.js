@@ -1,28 +1,34 @@
-Ext.define('App.view.admin.clientes.GridPanel', {
+Ext.define('App.view.admin.historial.GridPanel', {
     extend:'Ext.grid.Panel',
-    alias:'widget.gridpanelfilterC',
+    alias:'widget.gridpanelfilterH',
 
     initComponent:function () {
         var me = this;
 
-        Ext.define('Cliente', {
+        Ext.define('Historial', {
             extend:'Ext.data.Model',
-            fields:me.buildFields()
+            fields:this.buildFields()
         });
 
-        me.store = me.buildStore();
-        me.columns = me.buildColumns();
-        me.bbar = me.buildBbar();
+        this.store = this.buildStore();
+        this.columns = this.buildColumns();
+
+        this.store.on('load', function (t, r, o) {
+            console.info(r);
+        });
 
         this.callParent(arguments);
     },
 
     buildColumns:function () { // creamos las columnas de nuestro grid
         var cols = [
-            {text:'Nombre', flex:1, sortable:true, dataIndex:'nombreCompleto'},
-            {text:'Movil', flex:1, sortable:true, dataIndex:'movil'},
-            {text:'Email', flex:1, sortable:true, dataIndex:'email'},
-            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena'}
+            {text:'Nombre Cliente', flex:1, sortable:true, dataIndex:'nombreCliente'},
+            {text:'Nombre Taxista', flex:1, sortable:true, dataIndex:'nombreTaxista'},
+            {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion'},
+            {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad'},
+            {text:'Placas', flex:1, sortable:true, dataIndex:'placas'},
+            {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'},
+            {text:'Observaciones', flex:1, sortable:true, dataIndex:'observaciones'}
         ];
 
         return cols;
@@ -32,9 +38,9 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         var store;
 
         store = new Ext.data.Store({
-            model:'Cliente',
+            model:'Historial',
             proxy:new Ext.data.ScriptTagProxy({
-                url:'http://isystems.com.mx:8181/Trinus/ServletClientes?token=' + localStorage.getItem('Logeado'),
+                url:'http://isystems.com.mx:8181/Trinus/ServletServicios?token=' + localStorage.getItem('Logeado'),
                 reader:{
                     type:'json',
                     root:'data'
@@ -48,10 +54,13 @@ Ext.define('App.view.admin.clientes.GridPanel', {
 
     buildFields:function () { // creamos la definicion de los slots, es decir qeu propiedades tienen
         var fields = [
-            {name:'nombreCompleto', type:'string'},
-            {name:'movil', type:'string'},
-            {name:'email', type:'string'},
-            {name:'contrasena', type:'string'}
+            {name:'nombreCliente', type:'string'},
+            {name:'nombreTaxista', type:'string'},
+            {name:'direccion', type:'string'},
+            {name:'unidad', type:'string'},
+            {name:'placas', type:'string'},
+            {name:'estatus', type:'string'},
+            {name:'observaciones', type:'string'}
         ];
 
         return fields;
@@ -61,13 +70,15 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         var me = this, bBar, crEngine, cBrowser, cPlatform, ceVersion, cCss, bReset;
 
         crEngine = me.buildCombo('Nombre', 'nombre');
+        cBrowser = me.buildCombo('Dirección', 'direccion');
         cPlatform = me.buildCombo('Movil', 'movil');
         ceVersion = me.buildCombo('Email', 'email');
+        cCss = me.buildCombo('Imei', 'imei');
         bReset = Ext.create('Ext.Button', {text:'Reset', handler:function () {
             me.resetCombos();
         }});
 
-        bBar = [crEngine, cPlatform, ceVersion, bReset];
+        bBar = [crEngine, cBrowser, cPlatform, ceVersion, cCss, bReset];
 
         return bBar;
     },
@@ -95,7 +106,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     },
 
     filterStore:function () {
-        var me = this, i, value, combos = ['nombre', 'movil', 'email'];
+        var me = this, i, value, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
 
         me.store.clearFilter(false);
 
@@ -110,7 +121,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     },
 
     resetCombos:function () {
-        var me = this, i, combos = ['nombre', 'movil', 'email'];
+        var me = this, i, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
 
         me.store.clearFilter(false);
 
@@ -121,4 +132,3 @@ Ext.define('App.view.admin.clientes.GridPanel', {
 
 
 });
-

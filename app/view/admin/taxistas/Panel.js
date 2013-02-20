@@ -46,6 +46,7 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     lanzarForm:function () {
+        this.fireEvent('maskara');
         this.winForm = Ext.create('Ext.window.Window', {
             title:'Agregar Taxista',
             width:500,
@@ -57,7 +58,13 @@ Ext.define('App.view.admin.taxistas.Panel', {
                     xtype:'formtaxistas'
                 }
             ],
-            buttons:this.buildButtons()
+            buttons:this.buildButtons(),
+            listeners: {
+                scope: this,
+                destroy: function (){
+                    this.fireEvent('unmaskara');
+                }
+            }
         }).show();
     },
 
@@ -75,7 +82,7 @@ Ext.define('App.view.admin.taxistas.Panel', {
     },
 
     agregarTaxista:function () {
-        var form = this.winForm.items.items[0].getForm(),
+        var _this=this, form = this.winForm.items.items[0].getForm(),
             obj = form.getValues();
 
         if (form.isValid()) {
@@ -89,7 +96,10 @@ Ext.define('App.view.admin.taxistas.Panel', {
                     if (response.target.readyState == 4 && response.target.status == 200) {
                         var r = Ext.decode(response.target.responseText);
                         if (r.result === "ok") {
-                            Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
+                            _this.items.items[1].body.mask('Cargando....');
+                            _this.items.items[1].store.load();
+                            _this.items.items[1].body.unmask();
+                            //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
                         } else {
                             Ext.MessageBox.alert('Información', r.result);
                         }

@@ -5,3 +5,8 @@
     -o-background-size: cover;
     background-size: cover;
 }
+
+.x-grid-row-selected{
+    background-color: red;
+    border-color: red;
+}

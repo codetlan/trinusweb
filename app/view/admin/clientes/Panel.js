@@ -82,7 +82,7 @@ Ext.define('App.view.admin.clientes.Panel', {
     },
 
     agregarCliente:function () {
-        var form = this.winForm.items.items[0].getForm(),
+        var _this= this, form = this.winForm.items.items[0].getForm(),
             obj = form.getValues();
 
         if (form.isValid()) {
@@ -96,7 +96,10 @@ Ext.define('App.view.admin.clientes.Panel', {
                     if (response.target.readyState == 4 && response.target.status == 200) {
                         var r = Ext.decode(response.target.responseText);
                         if (r.result === "ok") {
-                            Ext.MessageBox.alert('Información', "Se agrego el cliente correctamente");
+                            _this.items.items[1].body.mask('Cargando....');
+                            _this.items.items[1].store.load();
+                            _this.items.items[1].body.unmask();
+                            //Ext.MessageBox.alert('Información', "Se agrego el cliente correctamente");
                         } else {
                             Ext.MessageBox.alert('Información', r.result);
                         }

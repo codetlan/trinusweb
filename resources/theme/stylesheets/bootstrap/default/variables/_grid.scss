@@ -54,8 +54,8 @@ $grid-row-cell-over-background-gradient: 'grid-row-over' !default;
 
 //row cell selected
 $grid-row-cell-selected-border-style: dotted !default;
-$grid-row-cell-selected-border-color: adjust-color($base-color, $hue: 6.952deg, $saturation: 5.848%, $lightness: -6.471%) !default;
-$grid-row-cell-selected-background-color: adjust-color($base-color, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+$grid-row-cell-selected-border-color: adjust-color($grayMedium, $hue: 6.952deg, $saturation: 5.848%, $lightness: -6.471%) !default;
+$grid-row-cell-selected-background-color: adjust-color($grayMedium, $hue: 3.188deg, $saturation: 0.542%, $lightness: 7.843%) !default;
 
 //row cell focus
 $grid-row-cell-focus-border-color: adjust-color($neutral-color, $hue: 0deg, $saturation: 0%, $lightness: -6.667%) !default;

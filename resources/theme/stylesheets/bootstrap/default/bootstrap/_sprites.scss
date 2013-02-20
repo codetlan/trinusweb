@@ -27,6 +27,20 @@
   background-repeat: no-repeat;
   margin-top: 1px;
 }
+
+[class^="icon-white"],
+[class*=" icon-white"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  //.ie7-restore-right-whitespace();
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: theme-background-image($theme-name, $iconWhiteSpritePath);
+  //background-position: 14px 14px;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+}
 /*
 White icons with optional class, or on hover/active states of certain elements
 .icon-white,
