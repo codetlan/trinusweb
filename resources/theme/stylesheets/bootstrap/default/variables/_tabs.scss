@@ -51,7 +51,7 @@ $tab-bottom-inner-border-width: 0 1px 1px 1px !default;
 
 $tab-border-color: transparent !default;
 $tab-border-color-over: transparent !default;
-$tab-border-color-active: $tableBorder !default;
+$tab-border-color-active: $black !default;
 $tab-border-color-disabled: transparent !default;
 
 $tab-inner-border-color: adjust-color($tab-base-color, $hue: 0deg, $saturation: -8.571%, $lightness: 8.941%) !default;

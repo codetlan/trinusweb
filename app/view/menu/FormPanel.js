@@ -49,6 +49,8 @@ Ext.define('App.view.menu.FormPanel', {
             {
                 xtype:'button',
                 text:'Pedir Taxi',
+                icon: 'images/icon-1.png',
+                flex: 2,
                 scope:this,
                 ui:'warning',
                 scale:'large',

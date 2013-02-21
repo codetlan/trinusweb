@@ -2,6 +2,19 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelfilterC',
 
+    viewConfig:{
+        forceFit: true,
+        showPreview: true, // custom property
+        enableRowBody: true,
+        getRowClass: function(r,i,rp,d){
+            if(r.data.estatus == 'INACTIVO'){
+                console.info(rp);
+                rp.body = '<p>' + r.data.estatus + 'didier</p>'
+                return 'redUnder';
+            }
+        }
+    },
+
     initComponent:function () {
         Ext.define('Cliente', {
             extend:'Ext.data.Model',
@@ -49,7 +62,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                 update:function (store, record, operation, eOpts) {
                     var _this = this, record = record.data,
                         invocation = new XMLHttpRequest(), url,
-                        params = 'nombre_completo=' + record.nombreCompleto + '&contrasena=' + record.contrasena +
+                        params = 'nombre=' + record.nombreCompleto + '&contrasena=' + record.contrasena +
                             '&movil=' + record.movil + '&email=' + record.email;
 
                     if (record.idCliente == '') {
@@ -104,7 +117,8 @@ Ext.define('App.view.admin.clientes.GridPanel', {
             {text:'Nombre', flex:1, sortable:true, dataIndex:'nombreCompleto', editor:{vtype:'nombre', allowBlank:false}},
             {text:'Movil', flex:1, sortable:true, dataIndex:'movil', editor:{vtype:'num', allowBlank:false}},
             {text:'Email', flex:1, sortable:true, dataIndex:'email', editor:{vtype:'email', allowBlank:false}},
-            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}}
+            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}},
+            {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus' }
         ];
 
         return cols;
@@ -126,7 +140,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                     {
                         text:'Agregar',
                         ui:'success',
-                        iconCls: 'icon-plus icon-white',
+                        //iconCls: 'icon-plus icon-white',
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Cliente());
@@ -136,9 +150,9 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                     '-',
                     {
                         itemId:'delete',
-                        text:'Eliminar',
+                        text:'Desactivar',
                         ui:'danger',
-                        iconCls: 'icon-remove icon-white',
+                        //iconCls: 'icon-remove icon-white',
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
@@ -178,7 +192,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         nombreC = me.buildTextField('nombreCompleto', 'nombre');
         movil = me.buildTextField('movil', 'num');
         email = me.buildTextField('email', 'email');
-        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, iconCls:'icon-refresh icon-white', scope:this, handler:me.resetSearchs});
+        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, scope:this, handler:me.resetSearchs});
 
         bBar = [nombreC, movil, email, bReset];
 
@@ -222,7 +236,8 @@ Ext.define('App.view.admin.clientes.GridPanel', {
             {name:'nombreCompleto', type:'string'},
             {name:'movil', type:'string'},
             {name:'email', type:'string'},
-            {name:'contrasena', type:'string'}
+            {name:'contrasena', type:'string'},
+            {name:'estatus', type:'string'}
         ];
 
         return fields;

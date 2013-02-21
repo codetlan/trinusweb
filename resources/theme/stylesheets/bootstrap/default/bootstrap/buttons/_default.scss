@@ -1,5 +1,5 @@
 //base colors for the default button
-$button-default-base-color: $btnDefaultBackgroundHighlight !default; //F7F7F7
+$button-default-base-color: $black !default; //F7F7F7
 $button-default-base-color-over: $btnDefaultBackgroundHighlight !default; //E4F3FF
 $button-default-base-color-focus: $button-default-base-color-over !default;
 $button-default-base-color-pressed: $btnDefaultBackgroundHighlight !default; //B6CBE4
@@ -11,7 +11,7 @@ $button-default-border-color-focus: #c5c5c5 !default;
 $button-default-border-color-pressed: #c5c5c5 !default;
 $button-default-border-color-disabled: #c5c5c5 !default;
 
-$button-default-background-color: $button-default-base-color !default;
+$button-default-background-color: $black !default;
 $button-default-background-color-over: $button-default-base-color-over !default;
 $button-default-background-color-focus: $button-default-base-color-focus !default;
 $button-default-background-color-pressed: $button-default-base-color-pressed !default;
@@ -23,7 +23,7 @@ $button-default-background-gradient-focus: $button-default-background-gradient !
 $button-default-background-gradient-pressed: null !default;
 $button-default-background-gradient-disabled: $button-default-background-gradient !default;
 
-$button-default-color: $white !default;
+$button-default-color: $black !default;
 $button-default-color-over: $button-default-color !default;
 $button-default-color-focus: $button-default-color-over !default;
 $button-default-color-pressed: $button-default-color !default;

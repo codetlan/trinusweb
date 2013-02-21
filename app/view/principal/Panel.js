@@ -208,7 +208,7 @@ Ext.define('App.view.principal.Panel', {
     pedirDatosTaxi:function(idServicio){
         var _this=this,
             invocation = new XMLHttpRequest(),
-            params = 'idCliente=' + Ext.decode(localStorage.getItem('Usuario')).idCliente +
+            params = 'idServicio=' + idServicio +
                 '&estatus=ACEPTADO&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/DatosTaxista?' + params;
         _this.items.items[1].el.mask("Buscando al taxista mas cercano, por favor espere...");
@@ -314,7 +314,8 @@ Ext.define('App.view.principal.Panel', {
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
             var objLocation = autocomplete.getPlace();
-            _this.destinoOnMap({latitud:objLocation.geometry.location.Ya, longitud:objLocation.geometry.location.Za});
+            console.info(objLocation);
+            _this.destinoOnMap({latitud:objLocation.geometry.location.hb, longitud:objLocation.geometry.location.ib});
         });
     },
 

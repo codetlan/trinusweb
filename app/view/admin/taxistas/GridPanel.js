@@ -50,7 +50,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                 update:function (store, record, operation, eOpts) {
                     var _this = this, record = record.data,
                         invocation = new XMLHttpRequest(), url,
-                        params = 'nombre_completo=' + record.nombreCompleto + '&contrasena=' + record.contrasena + '&direccion=' + record.direccion +
+                        params = 'nombre=' + record.nombreCompleto + '&contrasena=' + record.contrasena + '&direccion=' + record.direccion +
                             '&telCasa=' + record.movil + '&movil=' + record.movil + '&email=' + record.email + '&' +
                             'fechaNac=2013/02/11&imei=' + record.imei + '&unidad=' + record.unidad + '&placas=' + record.placas;
 
@@ -110,7 +110,8 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
             {text:'Imei', flex:1, sortable:true, dataIndex:'imei', editor:{vtype:'num', allowBlank:false}},
             {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad', editor:{vtype:'alphanum', allowBlank:false}},
             {text:'Placas', flex:1, sortable:true, dataIndex:'placas', editor:{vtype:'alphanum', allowBlank:false}},
-            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}}
+            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}},
+            {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'}
         ];
 
         return cols;
@@ -142,7 +143,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                     '-',
                     {
                         itemId:'delete',
-                        text:'Eliminar',
+                        text:'Desactivar',
                         ui:'danger',
                         iconCls: 'icon-remove icon-white',
                         disabled:true,
@@ -236,7 +237,8 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
             {name:'imei', type:'string'},
             {name:'unidad', type:'string'},
             {name:'placas', type:'string'},
-            {name:'contrasena', type:'string'}
+            {name:'contrasena', type:'string'},
+            {name:'estatus', type:'string'}
         ];
 
         return fields;
