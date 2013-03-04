@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel', 'App.view.sitio.Panel'],
+    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel'],
 
     defaults: {
 
@@ -75,7 +75,7 @@ Ext.application({
                 panel = 'panelprincipal';
                 break;
             case "3" :
-                panel = 'panelsitioadmin';
+                panel = 'panelprincipaladmin';
                 esSitio = true;
                 break;
         }
