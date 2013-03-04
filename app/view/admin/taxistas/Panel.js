@@ -4,6 +4,7 @@ Ext.define('App.view.admin.taxistas.Panel', {
     requires:['App.view.admin.taxistas.form.FormTaxista', 'App.view.admin.taxistas.GridPanel'],
 
     layout:'border',
+    esSitio:undefined,
 
     initComponent:function () {
         this.items = this.buildItems();
@@ -19,6 +20,7 @@ Ext.define('App.view.admin.taxistas.Panel', {
         return {
             xtype:'gridpanelfilterT',
             region:'center',
+            esSitio:this.esSitio,
             listeners: {
                 scope: this,
                 mask: function(){
@@ -73,11 +75,16 @@ Ext.define('App.view.admin.taxistas.Panel', {
 
         if (form.isValid()) {
             var invocation = new XMLHttpRequest(),
-                url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create?nombre_completo=' + obj.txtName + '&' +
+                params = '?nombre_completo=' + obj.txtName + '&' +
                     'contrasena=' + obj.txtPass + '&direccion=' + obj.txtDireccion + '&telCasa=' + obj.txtTelefono + '&movil=' + obj.txtMovil + '&email=' + obj.txtEmail + '&' +
                     'fechaNac=' + obj.txtNacimiento + '&imei=' + obj.txtImei + '&unidad=' + obj.txtUnidad + '&placas=' + obj.txtPlacas + '&token=' + localStorage.getItem('Logeado');
+
+            if(this.esSitio){
+                params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+            }
+
             if (invocation) {
-                invocation.open('POST', url, true);
+                invocation.open('POST', 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create' + params, true);
                 invocation.onreadystatechange = function (response) {
                     if (response.target.readyState == 4 && response.target.status == 200) {
                         var r = Ext.decode(response.target.responseText);

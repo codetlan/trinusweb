@@ -2,6 +2,8 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelfilterC',
 
+    esSitio:undefined,
+
     viewConfig:{
         forceFit:true,
         showPreview:true, // custom property
@@ -44,10 +46,14 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     },
 
     buildStore:function () { //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
+        var params = '?token=' + localStorage.getItem('Logeado');
+        if(this.esSitio){
+            params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+        }
         var store = new Ext.data.Store({
             model:'Cliente',
             proxy:new Ext.data.ScriptTagProxy({
-                url:'http://isystems.com.mx:8181/Trinus/ServletClientes?token=' + localStorage.getItem('Logeado'),
+                url:'http://isystems.com.mx:8181/Trinus/ServletClientes'+params,
                 reader:{
                     type:'json',
                     root:'data'
@@ -64,6 +70,10 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                         invocation = new XMLHttpRequest(), url,
                         params = 'nombre=' + record.nombreCompleto + '&contrasena=' + record.contrasena +
                             '&movil=' + record.movil + '&email=' + record.email;
+
+                    if(this.esSitio){
+                        params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                    }
 
                     if (record.idCliente == '') {
                         _this.fireEvent("mask");
@@ -159,12 +169,17 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                             if (selection) {
                                 var record = selection.data,
                                     invocation = new XMLHttpRequest(),
-                                    url = 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
+                                    params = '?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
+
+                                if(this.esSitio){
+                                    params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                                }
+
                                 me.fireEvent("mask");
                                 console.info(record);
                                 if (record.idCliente != '') {
                                     if (invocation) {
-                                        invocation.open('POST', url, true);
+                                        invocation.open('POST', 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete'+ params, true);
                                         invocation.onreadystatechange = function (response) {
                                             if (response.target.readyState == 4 && response.target.status == 200) {
                                                 var r = Ext.decode(response.target.responseText);

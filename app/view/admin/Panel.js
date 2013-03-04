@@ -4,6 +4,7 @@ Ext.define('App.view.admin.Panel', {
     requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel', 'App.view.admin.historial.Panel', 'App.view.xtemplate.XtemplateTaxista'],
 
     layout:'border',
+    esSitio: undefined,
 
 
     initComponent:function () {
@@ -97,6 +98,7 @@ Ext.define('App.view.admin.Panel', {
                 closable:true,
                 scope:this,
                 id:titulo + this.id,
+                esSitio:this.esSitio,
                 listeners:{
                     maskara:function () {
                         _this.body.mask('Cargando...');
@@ -157,6 +159,9 @@ Ext.define('App.view.admin.Panel', {
 
     pedirTaxistas:function () {
         var params = 'token=' + localStorage.getItem('Logeado');
+        if(this.esSitio){
+            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario
+        }
         Ext.data.JsonP.request({
             url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params,
             scope:this,

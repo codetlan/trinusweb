@@ -4,6 +4,7 @@ Ext.define('App.view.admin.historial.Panel', {
     requires:['App.view.admin.historial.GridPanel'],
 
     layout:'border',
+    esSitio:undefined,
 
     initComponent:function () {
         this.items = this.buildItems();
@@ -18,7 +19,8 @@ Ext.define('App.view.admin.historial.Panel', {
     getCentro:function () {
         return {
             xtype:'gridpanelfilterH',
-            region:'center'
+            region:'center',
+            esSitio:this.esSitio
         }
     }
 });

@@ -64,7 +64,8 @@ Ext.application({
             this.window.destroy();
         }
         var usuario = Ext.decode(localStorage.getItem('Usuario')),
-            panel = '';
+            panel = '',
+            esSitio = false;
         usuario.tipo = "3";
         switch (usuario.tipo) {
             case "0" :
@@ -75,6 +76,7 @@ Ext.application({
                 break;
             case "3" :
                 panel = 'panelsitioadmin';
+                esSitio = true;
                 break;
         }
 
@@ -82,7 +84,8 @@ Ext.application({
             layout:'fit',
             items:[
                 {
-                    xtype:panel
+                    xtype:panel,
+                    esSitio: esSitio
                 }
             ]
         });

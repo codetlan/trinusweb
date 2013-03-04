@@ -4,6 +4,7 @@ Ext.define('App.view.admin.clientes.Panel', {
     requires:['App.view.admin.clientes.form.FormCliente', 'App.view.admin.clientes.GridPanel'],
 
     layout:'border',
+    esSitio:undefined,
 
     initComponent:function () {
         this.items = this.buildItems();
@@ -19,6 +20,7 @@ Ext.define('App.view.admin.clientes.Panel', {
         return {
             xtype:'gridpanelfilterC',
             region:'center',
+            esSitio:this.esSitio,
             listeners: {
                 scope: this,
                 mask: function(){

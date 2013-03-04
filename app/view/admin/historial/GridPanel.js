@@ -2,6 +2,8 @@ Ext.define('App.view.admin.historial.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelfilterH',
 
+    esSitio:undefined,
+
     initComponent:function () {
         var me = this;
 
@@ -39,12 +41,16 @@ Ext.define('App.view.admin.historial.GridPanel', {
     },
 
     buildStore:function () { //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
-        var store;
+        var params = '?token=' + localStorage.getItem('Logeado');
 
-        store = new Ext.data.Store({
+        if(this.esSitio){
+            params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+        }
+
+        var store = new Ext.data.Store({
             model:'Historial',
             proxy:new Ext.data.ScriptTagProxy({
-                url:'http://isystems.com.mx:8181/Trinus/ServletServicios?token=' + localStorage.getItem('Logeado'),
+                url:'http://isystems.com.mx:8181/Trinus/ServletServicios' + params,
                 reader:{
                     type:'json',
                     root:'data'
