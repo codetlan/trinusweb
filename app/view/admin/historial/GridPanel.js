@@ -12,12 +12,15 @@ Ext.define('App.view.admin.historial.GridPanel', {
 
         this.store = this.buildStore();
         this.columns = this.buildColumns();
+        this.dockedItems = this.buildDockedItems();
+        this.bbar = this.buildBbar();
 
         this.store.on('load', function (t, r, o) {
             console.info(r);
         });
 
         this.callParent(arguments);
+        this.aplicarVtypes();
     },
 
     buildColumns:function () { // creamos las columnas de nuestro grid
@@ -27,6 +30,7 @@ Ext.define('App.view.admin.historial.GridPanel', {
             {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion'},
             {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad'},
             {text:'Placas', flex:1, sortable:true, dataIndex:'placas'},
+            {text:'Fecha', flex:1, sortable:true, dataIndex:'fechaHora'},
             {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'},
             {text:'Observaciones', flex:1, sortable:true, dataIndex:'observaciones'}
         ];
@@ -59,6 +63,7 @@ Ext.define('App.view.admin.historial.GridPanel', {
             {name:'direccion', type:'string'},
             {name:'unidad', type:'string'},
             {name:'placas', type:'string'},
+            {name:'fechaHora', type:'string'},
             {name:'estatus', type:'string'},
             {name:'observaciones', type:'string'}
         ];
@@ -66,21 +71,86 @@ Ext.define('App.view.admin.historial.GridPanel', {
         return fields;
     },
 
+    buildDockedItems:function () {
+        var me = this;
+        return [
+            {
+                xtype:'toolbar',
+                dock:'top',
+                items:[
+                    {
+                        text: 'Actualizar',
+                        ui: 'inverse',
+                        iconCls: 'icon-refresh icon-white',
+                        handler: function(){
+                            me.fireEvent("mask");
+                            me.store.load();
+                            me.fireEvent("unmask");
+                        }
+                    }
+                ]
+            }
+        ];
+    },
+
     buildBbar:function () {
-        var me = this, bBar, crEngine, cBrowser, cPlatform, ceVersion, cCss, bReset;
+        var me = this, bBar, nombreC, direccion, movil, email, imei, unidad, placas, bReset;
 
-        crEngine = me.buildCombo('Nombre', 'nombre');
-        cBrowser = me.buildCombo('Dirección', 'direccion');
-        cPlatform = me.buildCombo('Movil', 'movil');
-        ceVersion = me.buildCombo('Email', 'email');
-        cCss = me.buildCombo('Imei', 'imei');
-        bReset = Ext.create('Ext.Button', {text:'Reset', handler:function () {
-            me.resetCombos();
-        }});
+        nombreC = me.buildTextField('nombreTaxista', 'nombre');
+        direccion = me.buildTextField('nombreCliente', 'nombre');
+        movil = me.buildDateField('fechaHora');
+        email = me.buildCombo('estatus', 'estatus');
+        bReset = Ext.create('Ext.Button', {text:'Limpiar', ui:'info', flex:1, iconCls:'icon-refresh icon-white', scope:this, handler:me.resetSearchs});
 
-        bBar = [crEngine, cBrowser, cPlatform, ceVersion, cCss, bReset];
+        bBar = [nombreC, direccion, movil, email, bReset];
 
         return bBar;
+    },
+
+    buildTextField:function (dataIndex, vtype) {
+        var me = this,
+            textField = {
+                xtype:'textfield',
+                id:dataIndex + me.id,
+                flex:1,
+                vtype:vtype,
+                emptyText:dataIndex,
+                listeners:{
+                    scope:this,
+                    change:me.filterStore
+                }
+            };
+
+        return textField;
+    },
+
+    filterStore:function () {
+        var me = this, i, value, textfields = ['nombreTaxista', 'nombreCliente', 'fechaHora', 'estatus'];
+        me.store.clearFilter(false);
+
+        for (i = 0; i < textfields.length; i++) {
+            value = Ext.getCmp(textfields[i] + me.id).getValue();
+            if (!Ext.isEmpty(value)) {
+                me.store.filter(textfields[i], value, true, false)
+            }
+
+        }
+
+    },
+
+    buildDateField: function (dataIndex, vtype){
+        var me = this,
+            dateField = {
+                xtype: 'datefield',
+                id: dataIndex + me.id,
+                flex:1,
+                emptyText: dataIndex,
+                listeners: {
+                    scope: this,
+                    change:me.filterStore
+                }
+            };
+        return dateField;
     },
 
     buildCombo:function (name, dataIndex) {
@@ -89,7 +159,7 @@ Ext.define('App.view.admin.historial.GridPanel', {
         combo = Ext.create('Ext.form.ComboBox', {
             id:dataIndex + this.id,
             store:me.buildStore().collect(dataIndex),
-            emptyText:name + '...',
+            emptyText:name,
             displayField:dataIndex,
             valueField:dataIndex,
             queryMode:'local',
@@ -105,29 +175,31 @@ Ext.define('App.view.admin.historial.GridPanel', {
         return combo;
     },
 
-    filterStore:function () {
-        var me = this, i, value, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
+    resetSearchs:function () {
+        var me = this, i, textfields = ['nombreTaxista', 'nombreCliente', 'fechaHora', 'estatus'];
 
         me.store.clearFilter(false);
 
-        for (i = 0; i < combos.length; i++) {
-            value = Ext.getCmp(combos[i] + me.id).getValue();
-            if (!Ext.isEmpty(value)) {
-                me.store.filter(combos[i], value, true, false)
-            }
-
+        for (i = 0; i < textfields.length; i++) {
+            Ext.getCmp(textfields[i] + me.id).reset();
         }
-
     },
 
-    resetCombos:function () {
-        var me = this, i, combos = ['rendering_engine', 'browser', 'platform', 'engine_version', 'css_grade'];
-
-        me.store.clearFilter(false);
-
-        for (i = 0; i < combos.length; i++) {
-            Ext.getCmp(combos[i] + me.id).reset();
-        }
+    aplicarVtypes:function () {
+        Ext.apply(Ext.form.field.VTypes, {
+            //  vtype validation function
+            nombreMask:/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/,
+            nombreText:'Nombre no v&aacute;lido',
+            nombre:function (val, field) {
+                var regExp = /^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/;
+                ///^[a-zA-Z ][-_.a-zA-Z0-9 ]{0,30}$/;
+                return regExp.test(val);
+            },
+            numMask:/[\d\$.]/,
+            num:function (val, field) {
+                return val;
+            }
+        });
     }
 
 

@@ -133,7 +133,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                     {
                         text:'Agregar',
                         ui:'success',
-                        iconCls: 'icon-plus icon-white',
+                        iconCls:'icon-plus icon-white',
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Taxi());
@@ -145,7 +145,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         itemId:'delete',
                         text:'Desactivar',
                         ui:'danger',
-                        iconCls: 'icon-remove icon-white',
+                        iconCls:'icon-remove icon-white',
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
@@ -154,24 +154,39 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                                     invocation = new XMLHttpRequest(),
                                     url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Delete?idTaxista=' + record.idTaxista + '&token=' + localStorage.getItem('Logeado');
                                 me.fireEvent("mask");
-                                if (invocation) {
-                                    invocation.open('POST', url, true);
-                                    invocation.onreadystatechange = function (response) {
-                                        if (response.target.readyState == 4 && response.target.status == 200) {
-                                            var r = Ext.decode(response.target.responseText);
-                                            if (r.result === "ok") {
-                                                me.store.load();
-                                                me.fireEvent("unmask");
-                                                //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
-                                            } else {
-                                                Ext.MessageBox.alert('Información', r.result);
+                                if (record.idTaxista != '') {
+                                    if (invocation) {
+                                        invocation.open('POST', url, true);
+                                        invocation.onreadystatechange = function (response) {
+                                            if (response.target.readyState == 4 && response.target.status == 200) {
+                                                var r = Ext.decode(response.target.responseText);
+                                                if (r.result === "ok") {
+                                                    me.store.load();
+                                                    me.fireEvent("unmask");
+                                                    //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
+                                                } else {
+                                                    Ext.MessageBox.alert('Información', r.result);
+                                                }
                                             }
                                         }
+                                        invocation.send();
                                     }
-                                    invocation.send();
                                 }
                                 me.store.remove(selection);
+                                me.store.load();
+                                me.fireEvent("unmask");
                             }
+                        }
+                    },
+                    '-',
+                    {
+                        text: 'Actualizar',
+                        ui: 'inverse',
+                        iconCls: 'icon-refresh icon-white',
+                        handler: function(){
+                            me.fireEvent("mask");
+                            me.store.load();
+                            me.fireEvent("unmask");
                         }
                     }
                 ]
@@ -203,7 +218,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                 id:dataIndex + me.id,
                 flex:1,
                 vtype:vtype,
-                emptyText: dataIndex,
+                emptyText:dataIndex,
                 listeners:{
                     scope:this,
                     change:me.filterStore

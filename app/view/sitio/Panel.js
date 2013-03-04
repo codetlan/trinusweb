@@ -1,16 +1,16 @@
-Ext.define('App.view.admin.Panel', {
-    extend:'Ext.panel.Panel',
-    alias:'widget.panelprincipaladmin',
-    requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel', 'App.view.admin.historial.Panel', 'App.view.xtemplate.XtemplateTaxista'],
+Ext.define('App.view.sitio.Panel', {
+    extend:'App.view.admin.Panel',
+    alias:'widget.panelsitioadmin',
+    //requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel', 'App.view.admin.historial.Panel', 'App.view.xtemplate.XtemplateTaxista'],
 
-    layout:'border',
+    //layout:'border',
 
 
     initComponent:function () {
-        this.items = this.buildItems();
-
+        //this.items = this.buildItems();
+        console.info("sitio....");
         this.callParent(arguments);
-    },
+    }/*,
 
     buildItems:function () {
         var _this = this, items = [
@@ -99,7 +99,7 @@ Ext.define('App.view.admin.Panel', {
                 id:titulo + this.id,
                 listeners:{
                     maskara:function () {
-                        _this.body.mask('Cargando...');
+                        _this.body.mask();
                     },
                     unmaskara:function () {
                         _this.body.unmask();
@@ -156,7 +156,7 @@ Ext.define('App.view.admin.Panel', {
     },
 
     pedirTaxistas:function () {
-        var params = 'token=' + localStorage.getItem('Logeado');
+        var params = 'idSitio=1&token=' + localStorage.getItem('Logeado');
         Ext.data.JsonP.request({
             url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params,
             scope:this,
@@ -185,7 +185,7 @@ Ext.define('App.view.admin.Panel', {
                         map:_this.map,
                         draggable:false,
                         animation:google.maps.Animation.DROP,
-                        icon: 'images/trinus.png',
+                        icon: 'images/icon-1.png',
                         listeners:{
                             click:function () {
                                 var infowindow = new google.maps.InfoWindow({
@@ -220,5 +220,5 @@ Ext.define('App.view.admin.Panel', {
             '</div>' +
             '</div>';
         return tem;
-    }
+    }  */
 });

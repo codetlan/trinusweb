@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel'],
+    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel', 'App.view.sitio.Panel'],
 
     defaults: {
 
@@ -63,25 +63,28 @@ Ext.application({
         if (this.window) {
             this.window.destroy();
         }
-        var usuario = Ext.decode(localStorage.getItem('Usuario'));
-        if (usuario.tipo == "0") {
-            Ext.create('Ext.container.Viewport', {
-                layout:'fit',
-                items:[
-                    {
-                        xtype:'panelprincipaladmin'
-                    }
-                ]
-            });
-        } else {
-            Ext.create('Ext.container.Viewport', {
-                layout:'fit',
-                items:[
-                    {
-                        xtype:'panelprincipal'
-                    }
-                ]
-            });
+        var usuario = Ext.decode(localStorage.getItem('Usuario')),
+            panel = '';
+        usuario.tipo = "3";
+        switch (usuario.tipo) {
+            case "0" :
+                panel = 'panelprincipaladmin';
+                break;
+            case "1" :
+                panel = 'panelprincipal';
+                break;
+            case "3" :
+                panel = 'panelsitioadmin';
+                break;
         }
+
+        Ext.create('Ext.container.Viewport', {
+            layout:'fit',
+            items:[
+                {
+                    xtype:panel
+                }
+            ]
+        });
     }
 });

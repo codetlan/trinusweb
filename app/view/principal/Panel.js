@@ -244,7 +244,7 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
-            icon: 'images/icon-1.png',
+            icon: 'images/trinus.png',
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.

@@ -3,11 +3,11 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     alias:'widget.gridpanelfilterC',
 
     viewConfig:{
-        forceFit: true,
-        showPreview: true, // custom property
-        enableRowBody: true,
-        getRowClass: function(r,i,rp,d){
-            if(r.data.estatus == 'INACTIVO'){
+        forceFit:true,
+        showPreview:true, // custom property
+        enableRowBody:true,
+        getRowClass:function (r, i, rp, d) {
+            if (r.data.estatus == 'INACTIVO') {
                 console.info(rp);
                 rp.body = '<p>' + r.data.estatus + 'didier</p>'
                 return 'redUnder';
@@ -161,24 +161,40 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                     invocation = new XMLHttpRequest(),
                                     url = 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
                                 me.fireEvent("mask");
-                                if (invocation) {
-                                    invocation.open('POST', url, true);
-                                    invocation.onreadystatechange = function (response) {
-                                        if (response.target.readyState == 4 && response.target.status == 200) {
-                                            var r = Ext.decode(response.target.responseText);
-                                            if (r.result === "ok") {
-                                                me.store.load();
-                                                me.fireEvent("unmask");
-                                                //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
-                                            } else {
-                                                Ext.MessageBox.alert('Información', r.result);
+                                console.info(record);
+                                if (record.idCliente != '') {
+                                    if (invocation) {
+                                        invocation.open('POST', url, true);
+                                        invocation.onreadystatechange = function (response) {
+                                            if (response.target.readyState == 4 && response.target.status == 200) {
+                                                var r = Ext.decode(response.target.responseText);
+                                                if (r.result === "ok") {
+                                                    me.store.load();
+                                                    me.fireEvent("unmask");
+                                                    //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
+                                                } else {
+                                                    Ext.MessageBox.alert('Información', r.result);
+                                                }
                                             }
                                         }
+                                        invocation.send();
                                     }
-                                    invocation.send();
                                 }
                                 me.store.remove(selection);
+                                me.store.load();
+                                me.fireEvent("unmask");
                             }
+                        }
+                    },
+                    '-',
+                    {
+                        text: 'Actualizar',
+                        ui: 'inverse',
+                        iconCls: 'icon-refresh icon-white',
+                        handler: function(){
+                            me.fireEvent("mask");
+                            me.store.load();
+                            me.fireEvent("unmask");
                         }
                     }
                 ]
@@ -206,7 +222,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                 id:dataIndex + me.id,
                 flex:1,
                 vtype:vtype,
-                emptyText: dataIndex,
+                emptyText:dataIndex,
                 listeners:{
                     scope:this,
                     change:me.filterStore
