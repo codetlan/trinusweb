@@ -66,7 +66,7 @@ Ext.application({
         var usuario = Ext.decode(localStorage.getItem('Usuario')),
             panel = '',
             esSitio = false;
-        usuario.tipo = "3";
+        //usuario.tipo = "3";
         switch (usuario.tipo) {
             case "0" :
                 panel = 'panelprincipaladmin';

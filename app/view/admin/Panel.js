@@ -143,10 +143,17 @@ Ext.define('App.view.admin.Panel', {
 
         var runner = new Ext.util.TaskRunner();
 
-        var task = runner.start({
+        runner.start({
             run:this.pedirTaxistas.bind(this),
             interval:1000000
         });
+
+        if(this.esSitio){
+            runner.start({
+                run:this.pedirServciosSitio.bind(this),
+                interval:1000000
+            });
+        }
     },
 
     addMarker:function (markerOpts) {
@@ -160,7 +167,7 @@ Ext.define('App.view.admin.Panel', {
     pedirTaxistas:function () {
         var params = 'token=' + localStorage.getItem('Logeado');
         if(this.esSitio){
-            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario
+            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio
         }
         Ext.data.JsonP.request({
             url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params,
@@ -225,5 +232,9 @@ Ext.define('App.view.admin.Panel', {
             '</div>' +
             '</div>';
         return tem;
+    },
+
+    pedirServciosSitio:function(){
+
     }
 });

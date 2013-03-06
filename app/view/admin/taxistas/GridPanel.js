@@ -21,7 +21,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         this.getSelectionModel().on('selectionchange', function (selModel, selections) {
             this.down('#delete').setDisabled(selections.length === 0);
         }, this);
-        this.aplicarVtypes();
     },
 
     // afterRender override: it adds textfield and statusbar reference and start monitoring keydown events in textfield input
@@ -36,7 +35,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         var params = '?token=' + localStorage.getItem('Logeado');
 
         if(this.esSitio){
-            params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
         }
 
         var store = new Ext.data.Store({
@@ -63,7 +62,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                             'fechaNac=2013/02/11&imei=' + record.imei + '&unidad=' + record.unidad + '&placas=' + record.placas;
 
                     if(this.esSitio){
-                        params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                        params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                     }
 
                     if (record.idTaxista == '') {
@@ -167,7 +166,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                                     params = '?idTaxista=' + record.idTaxista + '&token=' + localStorage.getItem('Logeado');
 
                                 if(this.esSitio){
-                                    params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                                    params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                                 }
 
                                 me.fireEvent("mask");
@@ -285,23 +284,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
-    },
-
-    aplicarVtypes:function () {
-        Ext.apply(Ext.form.field.VTypes, {
-            //  vtype validation function
-            nombreMask:/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/,
-            nombreText:'Nombre no v&aacute;lido',
-            nombre:function (val, field) {
-                var regExp = /^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/;
-                ///^[a-zA-Z ][-_.a-zA-Z0-9 ]{0,30}$/;
-                return regExp.test(val);
-            },
-            numMask:/[\d\$.]/,
-            num:function (val, field) {
-                return val;
-            }
-        });
     }
 
 

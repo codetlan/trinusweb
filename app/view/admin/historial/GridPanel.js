@@ -22,7 +22,6 @@ Ext.define('App.view.admin.historial.GridPanel', {
         });
 
         this.callParent(arguments);
-        this.aplicarVtypes();
     },
 
     buildColumns:function () { // creamos las columnas de nuestro grid
@@ -44,7 +43,7 @@ Ext.define('App.view.admin.historial.GridPanel', {
         var params = '?token=' + localStorage.getItem('Logeado');
 
         if(this.esSitio){
-            params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
         }
 
         var store = new Ext.data.Store({
@@ -189,23 +188,6 @@ Ext.define('App.view.admin.historial.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
-    },
-
-    aplicarVtypes:function () {
-        Ext.apply(Ext.form.field.VTypes, {
-            //  vtype validation function
-            nombreMask:/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/,
-            nombreText:'Nombre no v&aacute;lido',
-            nombre:function (val, field) {
-                var regExp = /^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/;
-                ///^[a-zA-Z ][-_.a-zA-Z0-9 ]{0,30}$/;
-                return regExp.test(val);
-            },
-            numMask:/[\d\$.]/,
-            num:function (val, field) {
-                return val;
-            }
-        });
     }
 
 

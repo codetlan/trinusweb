@@ -34,7 +34,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         this.getSelectionModel().on('selectionchange', function (selModel, selections) {
             this.down('#delete').setDisabled(selections.length === 0);
         }, this);
-        this.aplicarVtypes();
     },
 
     // afterRender override: it adds textfield and statusbar reference and start monitoring keydown events in textfield input
@@ -48,7 +47,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     buildStore:function () { //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
         var params = '?token=' + localStorage.getItem('Logeado');
         if(this.esSitio){
-            params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+            params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitito;
         }
         var store = new Ext.data.Store({
             model:'Cliente',
@@ -72,7 +71,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                             '&movil=' + record.movil + '&email=' + record.email;
 
                     if(this.esSitio){
-                        params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                        params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                     }
 
                     if (record.idCliente == '') {
@@ -172,7 +171,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                     params = '?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
 
                                 if(this.esSitio){
-                                    params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                                    params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                                 }
 
                                 me.fireEvent("mask");
@@ -282,25 +281,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
-    },
-
-    aplicarVtypes:function () {
-        Ext.apply(Ext.form.field.VTypes, {
-            //  vtype validation function
-            nombreMask:/^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/,
-            nombreText:'Nombre no v&aacute;lido',
-            nombre:function (val, field) {
-                var regExp = /^[(a-zA-Z0-9 \u00e1\u00c1\u00e9\u00c9\u00ed\u00cd\u00f3\u00d3\u00fa\u00da\u00f1\u00d1.\,\/\-)]+$/;
-                ///^[a-zA-Z ][-_.a-zA-Z0-9 ]{0,30}$/;
-                return regExp.test(val);
-            },
-            numMask:/[\d\$.]/,
-            num:function (val, field) {
-                return val;
-            }
-        });
     }
-
-
 });
 
