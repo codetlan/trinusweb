@@ -63,9 +63,9 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                             'fechaNac=2013/02/11&imei=' + record.imei + '&unidad=' + record.unidad + '&placas=' + record.placas;
 
                     if(this.esSitio){
-                        params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                        params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
                     }
-
+                    console.info(params);
                     if (record.idTaxista == '') {
                         _this.fireEvent("mask");
                         url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create' + params + '&token=' + localStorage.getItem('Logeado');

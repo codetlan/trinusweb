@@ -278,7 +278,7 @@ Ext.define('App.view.principal.Panel', {
     },
 
     taxistaEnLugar:function(idServicio){
-        var _this=this,
+        var _this=this, data = [nombre='']
             invocation = new XMLHttpRequest(),
             params = 'idServicio=' + idServicio + '&estatusServicio=EN EL LUGAR&token='+localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletInfoServicio?' + params;
@@ -289,6 +289,9 @@ Ext.define('App.view.principal.Panel', {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
+                        console.info(_this);
+                        _this.datosTaxista(data);
+                        _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
                     }
@@ -384,5 +387,14 @@ Ext.define('App.view.principal.Panel', {
 
     datosTaxista:function(data){
         this.tplTaxista.tpl.overwrite(this.items.items[0].items.items[1].items.items[0].el,data);
+    },
+
+    deleteOverlays: function() {
+    if (markersArray) {
+        for (i in markersArray) {
+            markersArray[i].setMap(null);
+        }
+        markersArray.length = 0;
     }
+}
 });

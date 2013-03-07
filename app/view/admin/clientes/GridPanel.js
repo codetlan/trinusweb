@@ -72,7 +72,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                             '&movil=' + record.movil + '&email=' + record.email;
 
                     if(this.esSitio){
-                        params += params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
+                        params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idUsuario;
                     }
 
                     if (record.idCliente == '') {
