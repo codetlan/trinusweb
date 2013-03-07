@@ -258,8 +258,12 @@ Ext.define('App.view.admin.Panel', {
         Ext.each(response.data, function (servicio) {
             if(servicio.estatus == "SIN UNIDAD"){
                 me.agregarTabpanel("Asignar Unidades", "Asignar");
+                var store = Ext.getStore('storeAsignar'),
+                    indexOfRecord = store.indexOf(servicio);
 
-                Ext.getStore('storeAsignar').add(servicio);
+                if(indexOfRecord == -1){
+                    store.add(servicio);
+                }
             }
         });
     }

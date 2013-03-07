@@ -1,6 +1,7 @@
 Ext.define('App.view.admin.servicios.asignar.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelAsignar',
+    requires:['App.view.admin.taxistas.GridPanel'],
 
     initComponent:function(){
         Ext.define('Servicio', {
@@ -11,7 +12,6 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
         this.store = this.buildStore();
         this.columns = this.buildColumns();
         this.dockedItems = this.buildDockedItems();
-        this.plugins = this.buildPlugins();
 
         this.callParent(arguments);
     },
@@ -22,7 +22,7 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
             {text:'Nombre Taxista', flex:1, sortable:true, dataIndex:'nombreTaxista'},
             {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion'},
             {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad'},
-            {text:'Placas', flex:1, sortable:true, editor:{vtype:'alphanum', allowBlank:false}, dataIndex:'placas'},
+            {text:'Placas', flex:1, sortable:true, dataIndex:'placas'},
             {text:'Fecha', flex:1, sortable:true, dataIndex:'fechaHora'},
             {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'},
             {text:'Observaciones', flex:1, sortable:true, dataIndex:'observaciones'}
@@ -38,14 +38,10 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                 dock:'top',
                 items:[
                     {
-                        text: 'Actualizar',
-                        ui: 'inverse',
-                        iconCls: 'icon-refresh icon-white',
-                        handler: function(){
-                            me.fireEvent("mask");
-                            me.store.load();
-                            me.fireEvent("unmask");
-                        }
+                        text: 'Asignar Taxi',
+                        ui: 'success',
+                        iconCls: 'icon-add icon-white',//icon-ok
+                        handler: me.asignarTaxi.bind(me)
                     }
                 ]
             }
@@ -79,12 +75,66 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
         return store;
     },
 
-    buildDockedItems:Ext.emptyFn,
+    asignarTaxi:function(){
+        var me = this,
+            recordSeleccionado = this.getSelectionModel().getSelection();
+        if(recordSeleccionado[0]){
+            var windowBuscarTaxista = Ext.create('Ext.window.Window',{
+                title:'Buscar Taxista',
+                id:'windowBuscarTaxista'+this.id,
+                modal:true,
+                width:600,
+                height:450,
+                items:[{
+                    xtype:'gridpanelfilterT',
+                    buildDockedItems:Ext.emptyFn
+                }],
+                buttons:[{
+                    text:'Aceptar',
+                    handler:this.onSeleccionarTaxi.bind(me)
+                },{
+                    text:'Cancelar'
+                }]
+            });
 
-    buildPlugins:function () {
-        var rowEditing = Ext.create('Ext.grid.plugin.RowEditing');
-        return [rowEditing];
+            windowBuscarTaxista.show();
+        } else {
+            Ext.MessageBox.alert('Información', 'Debes seleccionar un Servicio.');
+        }
+    },
 
+    onSeleccionarTaxi:function(button){
+        var me = this,
+            window = Ext.getCmp('windowBuscarTaxista'+me.id),
+            gridTaxistas = window.down('gridpanelfilterT'),
+            servicioSeleccionado = me.getSelectionModel().getSelection(),
+            taxistaSeleccionado = gridTaxistas.getSelectionModel().getSelection();
+
+        if(taxistaSeleccionado[0]){
+            console.log('Taxista Seleccionado');
+            var params = '?token=' + localStorage.getItem('Logeado') + '&idServicio=' + servicioSeleccionado[0].data.idServicio +
+                '&idTaxista=' + taxistaSeleccionado[0].data.idTaxista;
+
+            var invocation=new XMLHttpRequest(),
+                url = 'http://isystems.com.mx:8181/Trinus/ServletOperadoraSitio'+params;
+            if(invocation) {
+                invocation.open('POST', url, true);
+                invocation.onreadystatechange = function(response){
+                    if (response.target.readyState == 4 && response.target.status == 200) {
+                        var r = Ext.decode(response.target.responseText);
+                        console.log('respuesta ServletOperadoraSitio' + r);
+                        if (r.result == 'ok') {
+                            me.getStore().remove(servicioSeleccionado[0]);
+                            window.close();
+                            Ext.MessageBox.alert('Información', '!Enhorabuena el servicio ha sido asignado¡');
+                        }
+                    }
+                };
+                invocation.send();
+            }
+        } else {
+            Ext.MessageBox.alert('Información', 'Selecciona un taxista para continuar.');
+        }
     }
 
 
