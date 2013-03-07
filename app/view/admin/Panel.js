@@ -1,7 +1,8 @@
 Ext.define('App.view.admin.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipaladmin',
-    requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel', 'App.view.admin.historial.Panel', 'App.view.xtemplate.XtemplateTaxista'],
+    requires:['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel',
+        'App.view.admin.servicios.historial.Panel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.admin.servicios.asignar.Panel'],
 
     layout:'border',
     esSitio: undefined,
@@ -42,6 +43,12 @@ Ext.define('App.view.admin.Panel', {
                         text:'Historial de Servicios',
                         scope:this,
                         cls:'Historial'
+                    },
+                    {
+                        iconCls:'icon-list-alt',
+                        text:'Asignar Unidades',
+                        scope:this,
+                        cls:'Asignar'
                     }
                 ],
                 listeners:{
@@ -52,6 +59,7 @@ Ext.define('App.view.admin.Panel', {
             },
             {
                 xtype:'tabpanel',
+                itemId:"principalTabPanel",
                 region:'center',
                 flex:5,
                 activeTab:0,
@@ -172,9 +180,7 @@ Ext.define('App.view.admin.Panel', {
         Ext.data.JsonP.request({
             url:'http://isystems.com.mx:8181/Trinus/ServletTaxistas?' + params,
             scope:this,
-            success:function (r) {
-                this.addTaxistasOnMap(r);
-            },
+            success:this.addTaxistasOnMap,
             failure:function(r){
                 Ext.MessageBox.alert('Información', r.result);
             }
@@ -235,6 +241,26 @@ Ext.define('App.view.admin.Panel', {
     },
 
     pedirServciosSitio:function(){
+        var params = '?token=' + localStorage.getItem('Logeado') + '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
+        Ext.data.JsonP.request({
+            url:'http://isystems.com.mx:8181/Trinus/ServletServicios' + params,
+            scope:this,
+            success:this.addNewServicios,
+            failure:function(response){
+                Ext.MessageBox.alert('Información', response.result);
+            }
+        });
+    },
 
+    addNewServicios:function(response){
+        var me = this;
+        console.log(response);
+        Ext.each(response.data, function (servicio) {
+            if(servicio.estatus == "SIN UNIDAD"){
+                me.agregarTabpanel("Asignar Unidades", "Asignar");
+
+                Ext.getStore('storeAsignar').add(servicio);
+            }
+        });
     }
 });

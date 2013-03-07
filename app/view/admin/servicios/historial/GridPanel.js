@@ -1,4 +1,4 @@
-Ext.define('App.view.admin.historial.GridPanel', {
+Ext.define('App.view.admin.servicios.historial.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelfilterH',
 
@@ -16,10 +16,6 @@ Ext.define('App.view.admin.historial.GridPanel', {
         this.columns = this.buildColumns();
         this.dockedItems = this.buildDockedItems();
         this.bbar = this.buildBbar();
-
-        this.store.on('load', function (t, r, o) {
-            console.info(r);
-        });
 
         this.callParent(arguments);
     },
