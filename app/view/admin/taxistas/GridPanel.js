@@ -64,7 +64,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                     if(this.esSitio){
                         params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                     }
-
+                    console.info(params);
                     if (record.idTaxista == '') {
                         _this.fireEvent("mask");
                         url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create' + params + '&token=' + localStorage.getItem('Logeado');
