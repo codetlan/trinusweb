@@ -1,7 +1,7 @@
-Ext.define('App.view.admin.historial.Panel', {
+Ext.define('App.view.admin.servicios.historial.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelHistorial',
-    requires:['App.view.admin.historial.GridPanel'],
+    requires:['App.view.admin.servicios.historial.GridPanel'],
 
     layout:'border',
     esSitio:undefined,
