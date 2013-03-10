@@ -27,7 +27,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         this.columns = this.buildColumns();
         this.plugins = this.buildPlugins();
         this.dockedItems = this.buildDockedItems();
-        this.bbar = this.buildBbar();
+        //this.bbar = this.buildBbar();
 
         this.callParent(arguments);
 
@@ -46,13 +46,13 @@ Ext.define('App.view.admin.clientes.GridPanel', {
 
     buildStore:function () { //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
         var params = '?token=' + localStorage.getItem('Logeado');
-        if(this.esSitio){
+        if (this.esSitio) {
             params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitito;
         }
         var store = new Ext.data.Store({
             model:'Cliente',
             proxy:new Ext.data.ScriptTagProxy({
-                url:'http://isystems.com.mx:8181/Trinus/ServletClientes'+params,
+                url:'http://isystems.com.mx:8181/Trinus/ServletClientes' + params,
                 reader:{
                     type:'json',
                     root:'data'
@@ -70,7 +70,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                         params = 'nombre=' + record.nombreCompleto + '&contrasena=' + record.contrasena +
                             '&movil=' + record.movil + '&email=' + record.email;
 
-                    if(this.esSitio){
+                    if (this.esSitio) {
                         params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                     }
 
@@ -88,6 +88,8 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                         //Ext.MessageBox.alert('Información', "Se agrego el taxista correctamente");
                                     } else {
                                         Ext.MessageBox.alert('Información', r.result);
+                                        _this.store.load();
+                                        _this.fireEvent("unmask");
                                     }
                                 }
                             }
@@ -170,7 +172,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                     invocation = new XMLHttpRequest(),
                                     params = '?idCliente=' + record.idCliente + '&token=' + localStorage.getItem('Logeado');
 
-                                if(this.esSitio){
+                                if (this.esSitio) {
                                     params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                                 }
 
@@ -178,7 +180,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                 console.info(record);
                                 if (record.idCliente != '') {
                                     if (invocation) {
-                                        invocation.open('POST', 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete'+ params, true);
+                                        invocation.open('POST', 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete' + params, true);
                                         invocation.onreadystatechange = function (response) {
                                             if (response.target.readyState == 4 && response.target.status == 200) {
                                                 var r = Ext.decode(response.target.responseText);
@@ -202,13 +204,22 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                     },
                     '-',
                     {
-                        text: 'Actualizar',
-                        ui: 'inverse',
-                        iconCls: 'icon-refresh icon-white',
-                        handler: function(){
+                        text:'Actualizar',
+                        ui:'inverse',
+                        iconCls:'icon-refresh icon-white',
+                        handler:function () {
                             me.fireEvent("mask");
                             me.store.load();
                             me.fireEvent("unmask");
+                        }
+                    },
+                    '->',
+                    {
+                        xtype:'textfield',
+                        fieldLabel:'Buscar',
+                        listeners:{
+                            scope:this,
+                            change:this.spotLight
                         }
                     }
                 ]
@@ -281,6 +292,24 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
+    },
+
+    spotLight:function (t, newValue, oldValue, e) {
+        var me = this;
+
+        console.info(me);
+        me.store.clearFilter(true);
+
+        me.store.filterBy(function(record){
+            if(record.get('nombreCompleto').search(newValue)  != -1 || record.get('movil').search(newValue) != -1
+                || record.get('email').search(newValue) != -1 || record.get('contrasena').search(newValue) != -1
+                || record.get('estatus').search(newValue) != -1){
+                return true;
+            }
+        },this);
+
+
+        console.info(me);
     }
 });
 

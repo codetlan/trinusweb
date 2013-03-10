@@ -102,6 +102,7 @@ Ext.define('App.view.admin.Panel', {
     },
 
     agregarTabpanel:function (titulo, panel) {
+        console.info(panel);
         var _this = this;
         if (this.items.items[0].descargas.indexOf(panel) == -1) {
             this.items.items[0].descargas.push(panel);
@@ -111,7 +112,7 @@ Ext.define('App.view.admin.Panel', {
                 title:titulo,
                 closable:true,
                 scope:this,
-                id:titulo + this.id,
+                id:panel + this.id,
                 esSitio:this.esSitio,
                 listeners:{
                     maskara:function () {
@@ -124,9 +125,9 @@ Ext.define('App.view.admin.Panel', {
                         _this.items.items[0].descargas.splice(_this.items.items[0].descargas.indexOf(panel), 1);
                     }
                 }});
-            this.items.items[1].setActiveTab(titulo + this.id);
+            this.items.items[1].setActiveTab(panel + this.id);
         } else {
-            this.items.items[1].setActiveTab(titulo + this.id);
+            this.items.items[1].setActiveTab(panel + this.id);
         }
     },
 
