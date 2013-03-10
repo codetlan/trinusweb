@@ -195,7 +195,6 @@ Ext.define('App.view.principal.Panel', {
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this, r.idServicio));
                     } else {
-                        console.info(this);
                         Ext.MessageBox.alert('Información', r.result);
 
                     }
@@ -289,7 +288,6 @@ Ext.define('App.view.principal.Panel', {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
-                        console.info(_this);
                         _this.datosTaxista(data);
                         _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                     } else {
@@ -317,7 +315,6 @@ Ext.define('App.view.principal.Panel', {
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
             var objLocation = autocomplete.getPlace();
-            console.info(objLocation);
             _this.destinoOnMap({latitud:objLocation.geometry.location.hb, longitud:objLocation.geometry.location.ib});
         });
     },
