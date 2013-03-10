@@ -3,6 +3,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     alias:'widget.gridpanelfilterT',
 
     esSitio:undefined,
+    resumida: false,
 
     initComponent:function () {
         Ext.define('Taxi', {
@@ -14,7 +15,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         this.columns = this.buildColumns();
         this.plugins = this.buildPlugins();
         this.dockedItems = this.buildDockedItems();
-        this.bbar = this.buildBbar();
+        //this.bbar = this.buildBbar();
 
         this.callParent(arguments);
 
@@ -64,7 +65,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                     if(this.esSitio){
                         params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
                     }
-                    console.info(params);
                     if (record.idTaxista == '') {
                         _this.fireEvent("mask");
                         url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Create' + params + '&token=' + localStorage.getItem('Logeado');
@@ -113,15 +113,16 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     },
 
     buildColumns:function () { // creamos las columnas de nuestro grid
+        console.info(this.resumida);
         var cols = [
             {text:'Nombre', flex:1, sortable:true, dataIndex:'nombreCompleto', editor:{vtype:'nombre', allowBlank:false}},
-            {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion', editor:{vtype:'nombre', allowBlank:false}},
+            {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion', editor:{vtype:'nombre', allowBlank:false}, hidden: this.resumida},
             {text:'Movil', flex:1, sortable:true, dataIndex:'movil', editor:{vtype:'num', allowBlank:false}},
-            {text:'Email', flex:1, sortable:true, dataIndex:'email', editor:{vtype:'email', allowBlank:false}},
-            {text:'Imei', flex:1, sortable:true, dataIndex:'imei', editor:{vtype:'num', allowBlank:false}},
+            {text:'Email', flex:1, sortable:true, dataIndex:'email', editor:{vtype:'email', allowBlank:false}, hidden: this.resumida},
+            {text:'Imei', flex:1, sortable:true, dataIndex:'imei', editor:{vtype:'num', allowBlank:false},hidden: this.resumida},
             {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad', editor:{vtype:'alphanum', allowBlank:false}},
             {text:'Placas', flex:1, sortable:true, dataIndex:'placas', editor:{vtype:'alphanum', allowBlank:false}},
-            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}},
+            {text:'Contraseña', flex:1, sortable:true, dataIndex:'contrasena', editor:{vtype:'alphanum', allowBlank:false}, hidden: this.resumida},
             {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'}
         ];
 
@@ -145,6 +146,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text:'Agregar',
                         ui:'success',
                         iconCls:'icon-plus icon-white',
+                        hidden: me.esSitio,
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Taxi());
@@ -157,6 +159,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text:'Desactivar',
                         ui:'danger',
                         iconCls:'icon-remove icon-white',
+                        hidden: me.esSitio,
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
@@ -199,10 +202,20 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text: 'Actualizar',
                         ui: 'inverse',
                         iconCls: 'icon-refresh icon-white',
+                        hidden: me.esSitio,
                         handler: function(){
                             me.fireEvent("mask");
                             me.store.load();
                             me.fireEvent("unmask");
+                        }
+                    },
+                    '->',
+                    {
+                        xtype: 'textfield',
+                        fieldLabel: 'Buscar',
+                        listeners:{
+                            scope:this,
+                            change:this.spotLight
                         }
                     }
                 ]
@@ -284,6 +297,20 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
+    },
+
+    spotLight:function (t, newValue, oldValue, e) {
+        var me = this;
+
+        me.store.clearFilter(true);
+
+        me.store.filterBy(function(record){
+            if(record.get('nombreCompleto').search(newValue)  != -1 || record.get('movil').search(newValue) != -1
+                || record.get('email').search(newValue) != -1 || record.get('contrasena').search(newValue) != -1
+                || record.get('estatus').search(newValue) != -1){
+                return true;
+            }
+        },this);
     }
 
 

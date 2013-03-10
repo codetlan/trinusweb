@@ -15,7 +15,7 @@ Ext.define('App.view.admin.servicios.historial.GridPanel', {
         this.store = this.buildStore();
         this.columns = this.buildColumns();
         this.dockedItems = this.buildDockedItems();
-        this.bbar = this.buildBbar();
+        //this.bbar = this.buildBbar();
 
         this.callParent(arguments);
     },
@@ -38,7 +38,7 @@ Ext.define('App.view.admin.servicios.historial.GridPanel', {
     buildStore:function () { //creamos nuestro store que contendra cada una de las entidades de nuestro tablero
         var params = '?token=' + localStorage.getItem('Logeado');
 
-        if(this.esSitio){
+        if (this.esSitio) {
             params += '&idSitio=' + Ext.decode(localStorage.getItem('Usuario')).idSitio;
         }
 
@@ -80,16 +80,25 @@ Ext.define('App.view.admin.servicios.historial.GridPanel', {
                 dock:'top',
                 items:[
                     {
-                        text: 'Actualizar',
-                        ui: 'inverse',
-                        iconCls: 'icon-refresh icon-white',
-                        handler: function(){
+                        text:'Actualizar',
+                        ui:'inverse',
+                        iconCls:'icon-refresh icon-white',
+                        handler:function () {
                             me.fireEvent("mask");
                             me.store.load();
                             me.fireEvent("unmask");
                         }
                     }
                 ]
+            },
+            '->',
+            {
+                xtype:'textfield',
+                fieldLabel:'Buscar',
+                listeners:{
+                    scope:this,
+                    change:this.spotLight
+                }
             }
         ];
     },
@@ -139,15 +148,15 @@ Ext.define('App.view.admin.servicios.historial.GridPanel', {
 
     },
 
-    buildDateField: function (dataIndex, vtype){
+    buildDateField:function (dataIndex, vtype) {
         var me = this,
             dateField = {
-                xtype: 'datefield',
-                id: dataIndex + me.id,
+                xtype:'datefield',
+                id:dataIndex + me.id,
                 flex:1,
-                emptyText: dataIndex,
-                listeners: {
-                    scope: this,
+                emptyText:dataIndex,
+                listeners:{
+                    scope:this,
                     change:me.filterStore
                 }
             };
@@ -184,6 +193,20 @@ Ext.define('App.view.admin.servicios.historial.GridPanel', {
         for (i = 0; i < textfields.length; i++) {
             Ext.getCmp(textfields[i] + me.id).reset();
         }
+    },
+
+    spotLight:function (t, newValue, oldValue, e) {
+        var me = this;
+
+        me.store.clearFilter(true);
+
+        me.store.filterBy(function (record) {
+            if (record.get('nombreCompleto').search(newValue) != -1 || record.get('movil').search(newValue) != -1
+                || record.get('email').search(newValue) != -1 || record.get('contrasena').search(newValue) != -1
+                || record.get('estatus').search(newValue) != -1) {
+                return true;
+            }
+        }, this);
     }
 
 

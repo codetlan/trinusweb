@@ -87,13 +87,18 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                 height:450,
                 items:[{
                     xtype:'gridpanelfilterT',
-                    buildDockedItems:Ext.emptyFn
+                    resumida: true,
+                    esSitio: true
                 }],
                 buttons:[{
                     text:'Aceptar',
                     handler:this.onSeleccionarTaxi.bind(me)
                 },{
-                    text:'Cancelar'
+                    text:'Cancelar',
+                    scope: this,
+                    handler: function(){
+                        windowBuscarTaxista.close();
+                    }
                 }]
             });
 
