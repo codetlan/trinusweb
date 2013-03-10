@@ -10,7 +10,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
         enableRowBody:true,
         getRowClass:function (r, i, rp, d) {
             if (r.data.estatus == 'INACTIVO') {
-                console.info(rp);
                 rp.body = '<p>' + r.data.estatus + 'didier</p>'
                 return 'redUnder';
             }
@@ -177,7 +176,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                                 }
 
                                 me.fireEvent("mask");
-                                console.info(record);
                                 if (record.idCliente != '') {
                                     if (invocation) {
                                         invocation.open('POST', 'http://isystems.com.mx:8181/Trinus/ServletCliente/Delete' + params, true);
@@ -297,7 +295,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
     spotLight:function (t, newValue, oldValue, e) {
         var me = this;
 
-        console.info(me);
         me.store.clearFilter(true);
 
         me.store.filterBy(function(record){
@@ -307,9 +304,6 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                 return true;
             }
         },this);
-
-
-        console.info(me);
     }
 });
 

@@ -75,8 +75,6 @@ Ext.define('App.view.registro.FormPanel', {
             iconCls: 'icon-ok icon-white',
             scale: 'medium',
             handler:function(){
-                console.info(this.form.isValid());
-                console.info(this.form.getValues());
                 if(this.form.isValid()){
                     var valores = this.form.getValues();
                     if(valores.txtPass === valores.txtConf){

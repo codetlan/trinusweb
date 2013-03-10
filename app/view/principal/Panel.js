@@ -197,7 +197,6 @@ Ext.define('App.view.principal.Panel', {
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this, r.idServicio));
                     } else {
-                        console.info(this);
                         Ext.MessageBox.alert('Información', r.result);
 
                     }

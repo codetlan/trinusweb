@@ -116,7 +116,6 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
             taxistaSeleccionado = gridTaxistas.getSelectionModel().getSelection();
 
         if(taxistaSeleccionado[0]){
-            console.log('Taxista Seleccionado');
             var params = '?token=' + localStorage.getItem('Logeado') + '&idServicio=' + servicioSeleccionado[0].data.idServicio +
                 '&idTaxista=' + taxistaSeleccionado[0].data.idTaxista;
 

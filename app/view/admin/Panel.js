@@ -102,7 +102,6 @@ Ext.define('App.view.admin.Panel', {
     },
 
     agregarTabpanel:function (titulo, panel) {
-        console.info(panel);
         var _this = this;
         if (this.items.items[0].descargas.indexOf(panel) == -1) {
             this.items.items[0].descargas.push(panel);
@@ -261,7 +260,6 @@ Ext.define('App.view.admin.Panel', {
 
     addNewServicios:function(response){
         var me = this;
-        console.log(response);
         Ext.each(response.data, function (servicio) {
             if(servicio.estatus == "SIN UNIDAD"){
                 me.agregarTabpanel("Asignar Unidades", "Asignar");

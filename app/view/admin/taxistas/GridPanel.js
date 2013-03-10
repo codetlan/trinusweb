@@ -5,6 +5,18 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     esSitio:undefined,
     resumida: false,
 
+    viewConfig:{
+        forceFit:true,
+        showPreview:true, // custom property
+        enableRowBody:true,
+        getRowClass:function (r, i, rp, d) {
+            if (r.data.estatus == 'INACTIVO') {
+                rp.body = '<p>' + r.data.estatus + 'didier</p>'
+                return 'redUnder';
+            }
+        }
+    },
+
     initComponent:function () {
         Ext.define('Taxi', {
             extend:'Ext.data.Model',
@@ -113,7 +125,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
     },
 
     buildColumns:function () { // creamos las columnas de nuestro grid
-        console.info(this.resumida);
         var cols = [
             {text:'Nombre', flex:1, sortable:true, dataIndex:'nombreCompleto', editor:{vtype:'nombre', allowBlank:false}},
             {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion', editor:{vtype:'nombre', allowBlank:false}, hidden: this.resumida},
@@ -307,7 +318,8 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
         me.store.filterBy(function(record){
             if(record.get('nombreCompleto').search(newValue)  != -1 || record.get('movil').search(newValue) != -1
                 || record.get('email').search(newValue) != -1 || record.get('contrasena').search(newValue) != -1
-                || record.get('estatus').search(newValue) != -1){
+                || record.get('direccion').search(newValue) != -1 || record.get('unidad').search(newValue) != -1
+                || record.get('imei').search(newValue) != -1 || record.get('placas').search(newValue) != -1){
                 return true;
             }
         },this);
