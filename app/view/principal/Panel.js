@@ -116,6 +116,8 @@ Ext.define('App.view.principal.Panel', {
     },
 
     createMap:function (position) {
+        console.log('actual position: ');
+        console.log(position);
         var _this = this,
             mapOptions = { //Se crean las opciones basicas del mapa
                 zoom:14,
@@ -239,7 +241,7 @@ Ext.define('App.view.principal.Panel', {
             latlng = new google.maps.LatLng(response.latitud, response.longitud), //Se crea la coordenada de la posicion actual
             infowindow = new google.maps.InfoWindow();
 
-        var marker = this.addMarker({ //Se crea el marcador de la ubicacion actual
+        this.markerTaxista = this.addMarker({ //Se crea el marcador de la ubicacion actual
             draggable:true,
             position:latlng,
             map:this.map,
@@ -247,17 +249,49 @@ Ext.define('App.view.principal.Panel', {
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    _this.setAddressMarker(_this.map, marker, infowindow, marker.getPosition());
+                    _this.setAddressMarker(_this.map, this.markerTaxista, infowindow, this.markerTaxista.getPosition());
                 },
                 click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    infowindow.open(_this.map, marker);
+                    infowindow.open(_this.map, this.markerTaxista);
                 }
             }
         });
 
-        this.setAddressMarker(this.map, marker, infowindow, latlng); //Agregamos la direccion al marcador
+        this.setAddressMarker(this.map, this.markerTaxista, infowindow, latlng); //Agregamos la direccion al marcador
         this.taxistaEnLugar(idServicio); //Hacer la petición para saber cuando el taxista este en el lugar del servicio solicitado
         this.datosTaxista(response); //Se envian datos del taxista al xtemplate
+
+        this.runner = new Ext.util.TaskRunner();
+
+        this.runner.start({
+            run:this.updateTaxiPosition.bind(this, [response]),
+            interval:10000
+        });
+    },
+
+    updateTaxiPosition:function(taxista){
+        console.log('update taxista: ');
+        console.log(taxista);
+        var me=this,
+            invocation = new XMLHttpRequest(),
+            params = 'idTaxista=' + taxista[0].idTaxista +
+                '&token='+localStorage.getItem('Logeado'),
+            url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Read?' + params;
+        if (invocation) {
+            invocation.open('POST', url, true);
+            invocation.onreadystatechange = function (response) {
+                if (response.target.readyState == 4 && response.target.status == 200) {
+                    var r = Ext.decode(response.target.responseText);
+                    if (r.result === "ok") {
+                        console.log('ServletTaxista/Read');
+                        console.log(r);
+                        var latLng = latlng = new google.maps.LatLng(r.latitud, r.longitud); //Se crea la coordenada de la posicion actual;
+                        me.markerTaxista.setPosition(latLng);
+                    }
+                }
+            }
+            invocation.send();
+        }
     },
 
     addMarker: function(markerOpts) {
@@ -269,6 +303,8 @@ Ext.define('App.view.principal.Panel', {
     },
 
     actualizaPosicionCliente:function(position){
+        console.log('client position');
+        console.log(position);
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); //Se crea la coordenada de la posicion actual
 
         this.markerCliente.setPosition(latlng);
@@ -288,6 +324,7 @@ Ext.define('App.view.principal.Panel', {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
+                        _this.runner.stop();
                         _this.datosTaxista(data);
                         _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                     } else {
@@ -315,7 +352,7 @@ Ext.define('App.view.principal.Panel', {
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
             var objLocation = autocomplete.getPlace();
-            _this.destinoOnMap({latitud:objLocation.geometry.location.hb, longitud:objLocation.geometry.location.ib});
+            _this.destinoOnMap({latitud:objLocation.geometry.location.ib, longitud:objLocation.geometry.location.jb});
         });
     },
 
@@ -345,19 +382,23 @@ Ext.define('App.view.principal.Panel', {
     },
 
     calcularRuta:function (position) {
-        var directionsService = new google.maps.DirectionsService(),
-            directionsDisplay = new google.maps.DirectionsRenderer();
+        var me = this;
+        if(me.directionsDisplay){ //si ya hay otro destino, borrar la ruta
+            me.directionsDisplay.setMap(null);
+        }
+        me.directionsService = new google.maps.DirectionsService();
+        me.directionsDisplay = new google.maps.DirectionsRenderer();
 
-        directionsDisplay.setMap(this.map);
+        me.directionsDisplay.setMap(me.map);
         var request = {
-            origin:new google.maps.LatLng(this.markerCliente.getPosition().lat(), this.markerCliente.getPosition().lng()),
+            origin:new google.maps.LatLng(me.markerCliente.getPosition().lat(), me.markerCliente.getPosition().lng()),
             destination:new google.maps.LatLng(position.latitud, position.longitud),
 
             travelMode:google.maps.TravelMode["DRIVING"]
         };
-        directionsService.route(request, function (response, status) {
+        me.directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
+                me.directionsDisplay.setDirections(response);
             }
         });
     },

@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/util/VTypes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/admin/historial/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/servicios/historial/GridPanel.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/view/admin/historial/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/Panel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/login/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/login/FormPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/principal/Panel.js" afterPath="$PROJECT_DIR$/app/view/principal/Panel.js" />
     </list>
-    <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list id="f1c5ef11-9e43-4bba-9336-5c2e977b3f6b" name="No subir" comment="" />
     <ignored path="trinus.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +30,7 @@
       <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="68" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
+            <state line="31" column="68" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -83,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridPanel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GridPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="257" column="88" selection-start="11151" selection-end="11151" vertical-scroll-proportion="0.7003676">
+            <state line="257" column="88" selection-start="11151" selection-end="11151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,16 +84,16 @@
       <file leaf-file-name="GridPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="100" selection-start="2614" selection-end="2614" vertical-scroll-proportion="0.0">
+            <state line="64" column="100" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="92" selection-start="13232" selection-end="13232" vertical-scroll-proportion="0.0">
+            <state line="334" column="92" selection-start="13358" selection-end="13358" vertical-scroll-proportion="14.822485">
               <folding />
             </state>
           </provider>
@@ -171,10 +160,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="285" />
     <option name="y" value="22" />
-    <option name="width" value="1635" />
-    <option name="height" value="1054" />
+    <option name="width" value="1280" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -528,17 +516,17 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../sht" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="141" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="794" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="795" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="795" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="794" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="139" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="136" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -717,15 +705,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="285" y="22" width="1635" height="1054" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38799572" sideWeight="0.76823336" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38744256" sideWeight="0.76823336" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1680302" sideWeight="0.6120043" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17098865" sideWeight="0.6125574" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41960183" sideWeight="0.22609401" order="7" side_tool="true" content_ui="tabs" />
@@ -736,6 +723,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264642" sideWeight="0.4975728" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -846,6 +834,13 @@
         <state line="72" column="34" selection-start="2005" selection-end="2005" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="68" selection-start="981" selection-end="981" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/admin/MenuAdminPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="39" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0" />
@@ -866,9 +861,11 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="92" selection-start="13232" selection-end="13232" vertical-scroll-proportion="0.0" />
+        <state line="64" column="100" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
@@ -881,23 +878,16 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="68" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="100" selection-start="2614" selection-end="2614" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="88" selection-start="11151" selection-end="11151" vertical-scroll-proportion="0.7003676">
+        <state line="257" column="88" selection-start="11151" selection-end="11151" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="334" column="92" selection-start="13358" selection-end="13358" vertical-scroll-proportion="14.822485">
           <folding />
         </state>
       </provider>

@@ -15,7 +15,38 @@ Ext.define('App.view.admin.Panel', {
     },
 
     buildItems:function () {
-        var _this = this, items = [
+        var _this = this,
+            opciones = [
+                {
+                    iconCls:"icon-user",
+                    text:"Clientes",
+                    scope:this,
+                    cls:"Cliente"
+                },
+                {
+                    iconCls:"icon-hand-right",
+                    text:"Taxistas",
+                    scope:this,
+                    cls:"Taxi"
+                },
+                {
+                    iconCls:'icon-list-alt',
+                    text:'Historial de Servicios',
+                    scope:this,
+                    cls:'Historial'
+                }
+            ];
+
+        if(this.esSitio){
+            opciones.push({
+                    iconCls:'icon-list-alt',
+                    text:'Asignar Unidades',
+                    scope:this,
+                    cls:'Asignar'
+                });
+        }
+
+        var items = [
             {
                 descargas:[],
                 xtype:"menuadmin",
@@ -25,32 +56,7 @@ Ext.define('App.view.admin.Panel', {
                 bbar:this.buildBbar(),
                 flex:1,
                 scope:this,
-                opciones:[
-                    {
-                        iconCls:"icon-user",
-                        text:"Clientes",
-                        scope:this,
-                        cls:"Cliente"
-                    },
-                    {
-                        iconCls:"icon-hand-right",
-                        text:"Taxistas",
-                        scope:this,
-                        cls:"Taxi"
-                    },
-                    {
-                        iconCls:'icon-list-alt',
-                        text:'Historial de Servicios',
-                        scope:this,
-                        cls:'Historial'
-                    },
-                    {
-                        iconCls:'icon-list-alt',
-                        text:'Asignar Unidades',
-                        scope:this,
-                        cls:'Asignar'
-                    }
-                ],
+                opciones:opciones,
                 listeners:{
                     opcion:function (titulo, panel) {
                         _this.agregarTabpanel(titulo, panel);
