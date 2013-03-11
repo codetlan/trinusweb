@@ -19,10 +19,10 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
     buildColumns:function () { // creamos las columnas de nuestro grid
         var cols = [
             {text:'Nombre Cliente', flex:1, sortable:true, dataIndex:'nombreCliente'},
-            {text:'Nombre Taxista', flex:1, sortable:true, dataIndex:'nombreTaxista'},
+            {text:'Nombre Taxista', flex:1, sortable:true, dataIndex:'nombreTaxista', hidden: this.esSitio},
             {text:'Dirección', flex:1, sortable:true, dataIndex:'direccion'},
-            {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad'},
-            {text:'Placas', flex:1, sortable:true, dataIndex:'placas'},
+            {text:'Unidad', flex:1, sortable:true, dataIndex:'unidad', hidden: this.esSitio},
+            {text:'Placas', flex:1, sortable:true, dataIndex:'placas', hidden: this.esSitio},
             {text:'Fecha', flex:1, sortable:true, dataIndex:'fechaHora'},
             {text:'Estatus', flex:1, sortable:true, dataIndex:'estatus'},
             {text:'Observaciones', flex:1, sortable:true, dataIndex:'observaciones'}
@@ -88,7 +88,7 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                 items:[{
                     xtype:'gridpanelfilterT',
                     resumida: true,
-                    esSitio: true
+                    esSitio: me.esSitio
                 }],
                 buttons:[{
                     text:'Aceptar',
