@@ -1,7 +1,7 @@
 Ext.define('App.view.principal.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipal',
-    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel','App.view.xtemplate.XtemplateTaxista','App.view.recarga.FormPanel'],
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.recarga.FormPanel'],
 
     layout:'border',
 
@@ -13,38 +13,41 @@ Ext.define('App.view.principal.Panel', {
     },
 
     buildItems:function () {
-        this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista',{
+        this.tplTaxista = Ext.create('App.view.xtemplate.XtemplateTaxista', {
             data:{
-            nombre:''
-        }});
+                nombre:''
+            }});
         var items = [
             {
-                xtype: 'panel',
+                xtype:'panel',
                 region:'east',
-                bbar: this.buildBbar(),
+                bbar:this.buildBbar(),
                 flex:2,
                 layout:{
-                    type: 'vbox',
-                    align: 'stretch',
-                    pack: 'start'
+                    type:'vbox',
+                    align:'stretch',
+                    pack:'start'
                 },
-                items:[{
-                    flex: 7,
-                    xtype:'menupanel',
-                    layout:{
-                        type: 'vbox',
-                        align: 'stretch',
-                        pack: 'start'
+                items:[
+                    {
+                        flex:7,
+                        xtype:'menupanel',
+                        layout:{
+                            type:'vbox',
+                            align:'stretch',
+                            pack:'start'
+                        },
+                        listeners:{
+                            scope:this,
+                            pedirtaxi:this.pedirTaxi
+                        }
                     },
-                    listeners:{
-                        scope:this,
-                        pedirtaxi:this.pedirTaxi
+                    {
+                        flex:4,
+                        xtype:'container',
+                        items:[this.tplTaxista]
                     }
-                },{
-                    flex: 4,
-                    xtype: 'container',
-                    items:[this.tplTaxista]
-                }]
+                ]
             },
             {
                 xtype:'container',
@@ -53,7 +56,7 @@ Ext.define('App.view.principal.Panel', {
                 html:'<div id="map_canvas" style="height: 100%; width: 100%;"></div>',
                 listeners:{
                     scope:this,
-                    afterrender:function(){
+                    afterrender:function () {
                         this.setPosicionActual(this.createMap.bind(this));
                     }
                 }
@@ -64,39 +67,43 @@ Ext.define('App.view.principal.Panel', {
     },
 
     buildBbar:function () {
-        var _this=this,
+        var _this = this,
             toolbar = Ext.create('Ext.toolbar.Toolbar', {
-            xtype:'container',
-            layout: 'hbox',
-            items:[{
-                xtype:'button',
-                text: 'Posición',
-                flex: 1,
-                ui: 'inverse',
-                iconCls: 'icon-map-marker icon-white',
-                scale: 'medium',
-                handler:function(){
-                    _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
-                }
-            },{
-                xtype: 'button',
-                text: 'Recarga',
-                flex: 1,
-                ui: 'warning',
-                iconCls: 'icon-shopping-cart icon-white',
-                scale: 'medium',
-                scope: this,
-                handler: _this.recargaSaldo
-            }, {
-                xtype:'button',
-                text:'Salir',
-                flex: 1,
-                ui: 'inverse',
-                iconCls: 'icon-off icon-white',
-                scale: 'medium',
-                handler:_this.salir
-            }]
-        });
+                xtype:'container',
+                layout:'hbox',
+                items:[
+                    {
+                        xtype:'button',
+                        text:'Posición',
+                        flex:1,
+                        ui:'inverse',
+                        iconCls:'icon-map-marker icon-white',
+                        scale:'medium',
+                        handler:function () {
+                            _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
+                        }
+                    },
+                    {
+                        xtype:'button',
+                        text:'Recarga',
+                        flex:1,
+                        ui:'warning',
+                        iconCls:'icon-shopping-cart icon-white',
+                        scale:'medium',
+                        scope:this,
+                        handler:_this.recargaSaldo
+                    },
+                    {
+                        xtype:'button',
+                        text:'Salir',
+                        flex:1,
+                        ui:'inverse',
+                        iconCls:'icon-off icon-white',
+                        scale:'medium',
+                        handler:_this.salir
+                    }
+                ]
+            });
 
         return toolbar;
     },
@@ -158,7 +165,7 @@ Ext.define('App.view.principal.Panel', {
 
                     infowindow.setContent(results[0].formatted_address);
                     infowindow.open(map, marker);
-                    if(!sinAddressText){
+                    if (!sinAddressText) {
                         _this.setAddressText(results[0].formatted_address);
                     }
                 }
@@ -182,12 +189,12 @@ Ext.define('App.view.principal.Panel', {
     },
 
     pedirTaxi:function (formValues) {
-        var _this=this,
+        var _this = this,
             invocation = new XMLHttpRequest(),
             position = _this.markerCliente.getPosition(),
             params = 'idCliente=' + Ext.decode(localStorage.getItem('Usuario')).idCliente +
                 '&direccion=' + formValues.txtOrigen + '&latitud=' + position.lat() + '&longitud=' + position.lng() +
-                '&observ='+formValues.txtObservaciones+'&token='+localStorage.getItem('Logeado'),
+                '&observ=' + formValues.txtObservaciones + '&token=' + localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletServicioMovil?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
@@ -195,7 +202,7 @@ Ext.define('App.view.principal.Panel', {
                 if (response.target.readyState == 4 && response.target.status == 200) {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
-                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.",_this.pedirDatosTaxi.bind(_this, r.idServicio));
+                        Ext.MessageBox.alert('Información', "La petición se ha procesado con éxito.", _this.pedirDatosTaxi.bind(_this, r.idServicio));
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
 
@@ -206,11 +213,11 @@ Ext.define('App.view.principal.Panel', {
         }
     },
 
-    pedirDatosTaxi:function(idServicio){
-        var _this=this,
+    pedirDatosTaxi:function (idServicio) {
+        var _this = this,
             invocation = new XMLHttpRequest(),
             params = 'idServicio=' + idServicio +
-                '&estatus=ACEPTADO&token='+localStorage.getItem('Logeado'),
+                '&estatus=ACEPTADO&token=' + localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/DatosTaxista?' + params;
         _this.items.items[1].el.mask("Buscando al taxista mas cercano, por favor espere...");
         if (invocation) {
@@ -222,7 +229,7 @@ Ext.define('App.view.principal.Panel', {
                         _this.items.items[1].el.unmask();
                         _this.taxistaOnMap(r, idServicio);
                     } else {
-                        Ext.MessageBox.alert('Información', r.result+'. Por Favor Pide Taxi!!! Nuevamente');
+                        Ext.MessageBox.alert('Información', r.result + '. Por Favor Pide Taxi!!! Nuevamente');
                         _this.items.items[1].el.unmask();
                     }
                 }
@@ -230,14 +237,14 @@ Ext.define('App.view.principal.Panel', {
             invocation.send();
         }
     },
-    
-    setAddressText:function(address){
+
+    setAddressText:function (address) {
         this.items.items[0].items.items[0].setAddressText(address);
 
     },
 
-    taxistaOnMap:function(response, idServicio){
-        var _this=this,
+    taxistaOnMap:function (response, idServicio) {
+        var _this = this,
             latlng = new google.maps.LatLng(response.latitud, response.longitud), //Se crea la coordenada de la posicion actual
             infowindow = new google.maps.InfoWindow();
 
@@ -245,7 +252,7 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
-            icon: 'images/trinus.png',
+            icon:'images/trinus.png',
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
@@ -269,13 +276,13 @@ Ext.define('App.view.principal.Panel', {
         });
     },
 
-    updateTaxiPosition:function(taxista){
+    updateTaxiPosition:function (taxista) {
         console.log('update taxista: ');
         console.log(taxista);
-        var me=this,
+        var me = this,
             invocation = new XMLHttpRequest(),
             params = 'idTaxista=' + taxista[0].idTaxista +
-                '&token='+localStorage.getItem('Logeado'),
+                '&token=' + localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletTaxista/Read?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
@@ -294,15 +301,15 @@ Ext.define('App.view.principal.Panel', {
         }
     },
 
-    addMarker: function(markerOpts) {
-        var marker =  new google.maps.Marker(markerOpts);
-        Ext.Object.each(markerOpts.listeners, function(name, fn){
+    addMarker:function (markerOpts) {
+        var marker = new google.maps.Marker(markerOpts);
+        Ext.Object.each(markerOpts.listeners, function (name, fn) {
             google.maps.event.addListener(marker, name, fn);
         });
         return marker;
     },
 
-    actualizaPosicionCliente:function(position){
+    actualizaPosicionCliente:function (position) {
         console.log('client position');
         console.log(position);
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude); //Se crea la coordenada de la posicion actual
@@ -312,10 +319,10 @@ Ext.define('App.view.principal.Panel', {
         this.map.setCenter(latlng);
     },
 
-    taxistaEnLugar:function(idServicio){
-        var _this=this, data = [nombre='']
-            invocation = new XMLHttpRequest(),
-            params = 'idServicio=' + idServicio + '&estatusServicio=EN EL LUGAR&token='+localStorage.getItem('Logeado'),
+    taxistaEnLugar:function (idServicio) {
+        var _this = this, data = [nombre = '']
+        invocation = new XMLHttpRequest(),
+            params = 'idServicio=' + idServicio + '&estatusServicio=EN EL LUGAR&token=' + localStorage.getItem('Logeado'),
             url = 'http://isystems.com.mx:8181/Trinus/ServletInfoServicio?' + params;
         if (invocation) {
             invocation.open('POST', url, true);
@@ -325,6 +332,7 @@ Ext.define('App.view.principal.Panel', {
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
                         _this.runner.stop();
+                        _this.map.clearOverlays();
                         _this.datosTaxista(data);
                         _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                     } else {
@@ -336,28 +344,29 @@ Ext.define('App.view.principal.Panel', {
         }
     },
 
-    autoCompleteOnDestino:function(position){
-        var _this=this,
+    autoCompleteOnDestino:function (position) {
+        var _this = this,
             defaultBounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-            new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+                new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 
         var input = document.getElementById('txtDestino-inputEl');
 
         var options = {
-            bounds: defaultBounds
+            bounds:defaultBounds
         };
 
         var autocomplete = new google.maps.places.Autocomplete(input, options);
 
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
             var objLocation = autocomplete.getPlace();
-            _this.destinoOnMap({latitud:objLocation.geometry.location.ib, longitud:objLocation.geometry.location.jb});
+            console.info(objLocation);
+            _this.destinoOnMap({latitud:objLocation.geometry.location.mb, longitud:objLocation.geometry.location.nb});
         });
     },
 
-    destinoOnMap:function(response){
-        var _this=this,
+    destinoOnMap:function (response) {
+        var _this = this,
             latlng = new google.maps.LatLng(response.latitud, response.longitud), //Se crea la coordenada de la posicion actual
             infowindow = new google.maps.InfoWindow();
 
@@ -383,7 +392,7 @@ Ext.define('App.view.principal.Panel', {
 
     calcularRuta:function (position) {
         var me = this;
-        if(me.directionsDisplay){ //si ya hay otro destino, borrar la ruta
+        if (me.directionsDisplay) { //si ya hay otro destino, borrar la ruta
             me.directionsDisplay.setMap(null);
         }
         me.directionsService = new google.maps.DirectionsService();
@@ -403,36 +412,29 @@ Ext.define('App.view.principal.Panel', {
         });
     },
 
-    recargaSaldo: function(){
+    recargaSaldo:function () {
         this.el.mask();
         this.window = Ext.create('Ext.window.Window', {
-            title: 'Recarga de Credito',
-            width: 400,
-            height: 150,
-            draggable: false,
-            scope: this,
-            items:[{
-                xtype: 'containerrecarga'
-            }],
+            title:'Recarga de Credito',
+            width:400,
+            height:150,
+            draggable:false,
+            scope:this,
+            items:[
+                {
+                    xtype:'containerrecarga'
+                }
+            ],
             listeners:{
-                scope: this,
-                close: function(){
+                scope:this,
+                close:function () {
                     this.el.unmask();
                 }
             }
         }).show();
     },
 
-    datosTaxista:function(data){
-        this.tplTaxista.tpl.overwrite(this.items.items[0].items.items[1].items.items[0].el,data);
-    },
-
-    deleteOverlays: function() {
-    if (markersArray) {
-        for (i in markersArray) {
-            markersArray[i].setMap(null);
-        }
-        markersArray.length = 0;
+    datosTaxista:function (data) {
+        this.tplTaxista.tpl.overwrite(this.items.items[0].items.items[1].items.items[0].el, data);
     }
-}
 });
