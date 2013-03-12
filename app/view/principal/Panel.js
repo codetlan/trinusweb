@@ -351,8 +351,8 @@ Ext.define('App.view.principal.Panel', {
         var autocomplete = new google.maps.places.Autocomplete(input, options);
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            var objLocation = autocomplete.getPlace();
-            _this.destinoOnMap({latitud:objLocation.geometry.location.ib, longitud:objLocation.geometry.location.jb});
+            var objLocation = autocomplete.getPlace().geometry.location;
+            _this.destinoOnMap({latitud:objLocation.lat(), longitud:objLocation.lng()});
         });
     },
 
