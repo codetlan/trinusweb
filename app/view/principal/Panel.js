@@ -265,7 +265,6 @@ Ext.define('App.view.principal.Panel', {
         });
 
         this.setAddressMarker(this.map, this.markerTaxista, infowindow, latlng); //Agregamos la direccion al marcador
-        this.taxistaEnLugar(idServicio); //Hacer la petición para saber cuando el taxista este en el lugar del servicio solicitado
         this.datosTaxista(response); //Se envian datos del taxista al xtemplate
 
         this.runner = new Ext.util.TaskRunner();
@@ -274,6 +273,8 @@ Ext.define('App.view.principal.Panel', {
             run:this.updateTaxiPosition.bind(this, [response]),
             interval:10000
         });
+
+        this.taxistaEnLugar(idServicio); //Hacer la petición para saber cuando el taxista este en el lugar del servicio solicitado
     },
 
     updateTaxiPosition:function (taxista) {
@@ -331,10 +332,10 @@ Ext.define('App.view.principal.Panel', {
                     var r = Ext.decode(response.target.responseText);
                     if (r.result === "ok") {
                         Ext.MessageBox.alert('Información', "¡Enhorabuena!, El taxi ha llegado.");
-                        _this.runner.stop();
-                        _this.map.clearOverlays();
-                        _this.datosTaxista(data);
-                        _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
+                          _this.runner.destroy();
+                          _this.markerTaxista.setMap(null);
+                          _this.datosTaxista(data);
+                          _this.setPosicionActual(_this.actualizaPosicionCliente.bind(_this))
                     } else {
                         Ext.MessageBox.alert('Información', r.result);
                     }
