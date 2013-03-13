@@ -165,7 +165,7 @@ Ext.define('App.view.admin.Panel', {
         if(this.esSitio){
             runner.start({
                 run:this.pedirServciosSitio.bind(this),
-                interval:1000000
+                interval:5000
             });
         }
     },
@@ -261,12 +261,12 @@ Ext.define('App.view.admin.Panel', {
     addNewServicios:function(response){
         var me = this;
         Ext.each(response.data, function (servicio) {
-            if(servicio.estatus == "SIN UNIDAD"){
+            if(servicio.estatus == "ASIGNADO"){
                 me.agregarTabpanel("Asignar Unidades", "Asignar");
                 var store = Ext.getStore('storeAsignar'),
-                    indexOfRecord = store.indexOf(servicio);
+                    record = store.findRecord('idServicio',servicio.idServicio);
 
-                if(indexOfRecord == -1){
+                if(!record){
                     store.add(servicio);
                 }
             }
