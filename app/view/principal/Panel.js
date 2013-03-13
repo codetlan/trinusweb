@@ -154,12 +154,14 @@ Ext.define('App.view.principal.Panel', {
         geocoder.geocode({'latLng':latlng}, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
+                    var address = results[0].formatted_address;
                     map.setZoom(16);
 
-                    infowindow.setContent(results[0].formatted_address);
+                    infowindow.setContent(address);
+                    infowindow.setOptions({maxWidth: 150});
                     infowindow.open(map, marker);
                     if(!sinAddressText){
-                        _this.setAddressText(results[0].formatted_address);
+                        _this.setAddressText(address);
                     }
                 }
             }

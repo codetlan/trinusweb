@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.clientes.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelCliente',
-    requires:['App.view.admin.clientes.form.FormCliente', 'App.view.admin.clientes.GridPanel'],
+    requires:['App.view.admin.clientes.GridPanel'],
 
     layout:'border',
     esSitio:undefined,

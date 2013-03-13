@@ -35,7 +35,15 @@ Ext.define('App.view.login.FormPanel', {
                 fieldLabel:'Password',
                 inputType:'password',
                 name:'txtPass',
-                value: 'trinus'
+                value: 'trinus',
+                listeners:{
+                    scope:this,
+                    specialkey:function(field,e){
+                        if(e.getKey()==e.ENTER){
+                            this.logeo();
+                        }
+                    }
+                }
             }
         ];
 
