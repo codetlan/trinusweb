@@ -207,8 +207,7 @@ Ext.define('App.view.admin.clientes.GridPanel', {
                         iconCls:'icon-refresh icon-white',
                         handler:function () {
                             me.fireEvent("mask");
-                            me.store.load();
-                            me.fireEvent("unmask");
+                            me.store.load(function(){me.fireEvent("unmask")});
                         }
                     },
                     '->',

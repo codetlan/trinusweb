@@ -20,7 +20,17 @@ Ext.define('App.view.admin.servicios.historial.Panel', {
         return {
             xtype:'gridpanelfilterH',
             region:'center',
-            esSitio:this.esSitio
+            esSitio:this.esSitio,
+            listeners: {
+                scope: this,
+                mask: function(){
+                    console.info(this.items.items[0].body);
+                    this.items.items[0].el.mask('Cargando....');
+                },
+                unmask: function(){
+                    this.items.items[0].el.unmask();
+                }
+            }
         }
     }
 });

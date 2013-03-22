@@ -67,7 +67,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
             autoLoad:true,
             listeners:{
                 scope:this,
-                update:function (store, record, operation, eOpts) {
+                update:function (store, record, operation) {
                     var _this = this, record = record.data,
                         invocation = new XMLHttpRequest(), url,
                         params = '?nombre=' + record.nombreCompleto + '&contrasena=' + record.contrasena + '&direccion=' + record.direccion +
@@ -216,8 +216,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         hidden: me.esSitio,
                         handler: function(){
                             me.fireEvent("mask");
-                            me.store.load();
-                            me.fireEvent("unmask");
+                            me.store.load(function(){me.fireEvent("unmask")});
                         }
                     },
                     '->',

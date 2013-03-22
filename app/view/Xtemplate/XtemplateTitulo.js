@@ -8,7 +8,7 @@ Ext.define('App.view.xtemplate.XtemplateTitulo', {
         backgroundColor: '#333',
         lineHeight: '90px',
         fontSize:  '80pt',
-        fontFamily: 'orbitron-medium',
+        //fontFamily: 'orbitron-medium',
         textAlign: 'center',
         paddingTop: '20px'
     },

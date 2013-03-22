@@ -21,7 +21,8 @@ Ext.define('App.view.menu.MenuPanel', {
             {
                 flex: 2,
                 layout:'fit',
-                xtype:'xtemplatetitulo'
+                xtype:'container',
+                html: '<img width="100%"; height="100%"; src="images/titulo.png" title="Trinus">'
             },
             {
 
@@ -29,8 +30,8 @@ Ext.define('App.view.menu.MenuPanel', {
                 xtype:'formpanel',
                 layout:{
                     type: 'vbox',
-                    align: 'stretch',
-                    pack: 'start'
+                    align: 'stretch'
+                    //pack: 'start'
                 },
                 listeners:{
                     scope:this,

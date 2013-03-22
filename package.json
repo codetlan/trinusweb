@@ -1,0 +1,14 @@
+{
+  "name": "trinus",
+  "version": "0.1.0",
+  "description": "App for taxi",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-compress": "0.4.0rc7",
+    "grunt-contrib-uglify": "~0.1.1rc6",
+    "grunt-contrib-copy": "0.4.0rc7",
+    "grunt-sencha-dependencies": "~0.5.2"
+  },
+  "author": "Consultora Codetlan Copyright 2013"
+}

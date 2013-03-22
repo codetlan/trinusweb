@@ -20,10 +20,10 @@ Ext.define('App.view.admin.taxistas.Panel', {
             listeners: {
                 scope: this,
                 mask: function(){
-                    this.items.items[0].mask('Cargando....');
+                    this.items.items[0].el.mask('Cargando....');
                 },
                 unmask: function(){
-                    this.items.items[0].unmask();
+                    this.items.items[0].el.unmask();
                 }
             }
         }];

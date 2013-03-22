@@ -140,6 +140,7 @@ Ext.define('App.view.principal.Panel', {
             draggable:true,
             position:latlng,
             map:this.map,
+            icon:'images/personaje_mapa.png',
             animation:google.maps.Animation.DROP,
             listeners:{
                 dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
@@ -251,17 +252,22 @@ Ext.define('App.view.principal.Panel', {
             infowindow = new google.maps.InfoWindow();
 
         this.markerTaxista = this.addMarker({ //Se crea el marcador de la ubicacion actual
-            draggable:true,
+            draggable:false,
             position:latlng,
             map:this.map,
             icon:'images/trinus.png',
             animation:google.maps.Animation.DROP,
             listeners:{
-                dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
+                /*dragend:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
                     _this.setAddressMarker(_this.map, this.markerTaxista, infowindow, this.markerTaxista.getPosition());
-                },
+                },*/
                 click:function () { //Agregamos el evento para cuando se termine de arrastrar el marcador.
-                    infowindow.open(_this.map, this.markerTaxista);
+                    console.info(infowindow);
+                    if(infowindow == ''){
+                        infowindow.open(_this.map, this.markerTaxista);
+                    } else {
+                        infowindow.close();
+                    }
                 }
             }
         });
@@ -353,13 +359,13 @@ Ext.define('App.view.principal.Panel', {
                 new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
                 new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 
-        var input = document.getElementById('txtDestino-inputEl');
+        var input = document.getElementById('txtDestino-bodyEl').getElementsByTagName('input');
 
         var options = {
             bounds:defaultBounds
         };
 
-        var autocomplete = new google.maps.places.Autocomplete(input, options);
+        var autocomplete = new google.maps.places.Autocomplete(input[0], options);
 
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
             var objLocation = autocomplete.getPlace().geometry.location;
