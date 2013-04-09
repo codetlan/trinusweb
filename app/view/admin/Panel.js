@@ -1,8 +1,8 @@
 Ext.define('App.view.admin.Panel', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.panelprincipaladmin',
-    //requires: ['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel',
-      //  'App.view.admin.servicios.historial.Panel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.admin.servicios.asignar.Panel'],
+    requires: ['App.view.admin.MenuAdminPanel', 'App.view.admin.taxistas.Panel', 'App.view.admin.clientes.Panel',
+        'App.view.admin.servicios.historial.Panel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.admin.servicios.asignar.Panel'],
 
     layout: 'border',
     esSitio: undefined,

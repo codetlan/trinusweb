@@ -8,7 +8,7 @@
 Ext.define('App.view.admin.servicios.asignar.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelAsignar',
-    //requires:['App.view.admin.servicios.asignar.GridPanel'],
+    requires:['App.view.admin.servicios.asignar.GridPanel'],
 
     layout:'border',
     esSitio:undefined,

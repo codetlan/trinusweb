@@ -1,7 +1,7 @@
 Ext.define('App.view.principal.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelprincipal',
-    //requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.recarga.FormPanel'],
+    requires:['Ext.toolbar.Toolbar', 'App.view.menu.MenuPanel', 'App.view.xtemplate.XtemplateTaxista', 'App.view.recarga.FormPanel'],
 
     layout:'border',
 

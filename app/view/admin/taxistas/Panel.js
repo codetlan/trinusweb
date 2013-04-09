@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.taxistas.Panel', {
     extend:'Ext.panel.Panel',
     alias:'widget.panelTaxi',
-    //requires:['App.view.admin.taxistas.GridPanel'],
+    requires:['App.view.admin.taxistas.GridPanel'],
 
     layout:'border',
     esSitio:undefined,
