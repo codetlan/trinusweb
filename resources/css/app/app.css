@@ -20,3 +20,29 @@
     color: red;
 }
 
+.avisoNot {
+       -webkit-background-clip: padding;
+       background-clip: padding-box;
+       -webkit-border-radius: 1em;
+       border-radius: 1em;
+       padding: 0.1em 0.6em;
+       z-index: 3;
+       overflow: hidden;
+       color: #fff;
+       border: 1px solid #000;
+       position: absolute;
+       /*width: auto;*/
+       min-width: 2em;
+       line-height: 1.2em;
+       font-size: .9em;
+       right: 6px;
+       max-width: 95%;
+       background-image: none;
+       background-color: #c00;
+       background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff1a1a), color-stop(3%, #e60000), color-stop(100%, #b30000));
+       background-image: -webkit-linear-gradient(top, #ff1a1a, #e60000 3%, #b30000);
+       background-image: linear-gradient(top, #ff1a1a, #e60000 3%, #b30000);
+       display: inline-block;
+       text-decoration: blink;
+   }
+

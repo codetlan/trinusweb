@@ -2,13 +2,167 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/menu/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/menu/FormPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/login/FormPanel.js" afterPath="$PROJECT_DIR$/app/view/login/FormPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" afterPath="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/menu/MenuPanel.js" afterPath="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" afterPath="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/principal/Panel.js" afterPath="$PROJECT_DIR$/app/view/principal/Panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_all.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_all.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_all.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_all.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_all.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_all.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_alternating-rows-and-columns.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_alternating-rows-and-columns.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_appearance.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_appearance.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-clip.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-clip.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_background-gradient.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_background-gradient.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-origin.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-origin.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-size.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_background-size.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_badges.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_badges.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/a4870f396a0e84bf3c6e9df3ee265d170a21290a/_base.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/a4870f396a0e84bf3c6e9df3ee265d170a21290a/_base.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_border-radius.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_border-radius.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_borders.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_borders.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_boundlist.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_boundlist.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_boundlist.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_boundlist.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box-shadow.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box-shadow.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box-sizing.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box-sizing.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_box.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_btn-group.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_btn-group.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_btn-group.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_btn-group.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_bullets.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_bullets.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_button.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_button.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_button.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_button.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_checkbox.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_checkbox.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_checkboxgroup.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_checkboxgroup.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_clearfix.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_clearfix.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_color.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_color.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_colorpicker.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_colorpicker.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/60c82ba29d2f252915c3805179e683ef82631c33/_colors.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/60c82ba29d2f252915c3805179e683ef82631c33/_colors.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_columns.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_columns.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/6037b3b3d55526d570a8596d6a0f589c4bf94480/_compass.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/6037b3b3d55526d570a8596d6a0f589c4bf94480/_compass.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b6dd49db1af4041ec17f9b03554c000211564171/_contrast.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b6dd49db1af4041ec17f9b03554c000211564171/_contrast.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4a532503d7c21771ee30a831de49c86098d8866f/_core.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4a532503d7c21771ee30a831de49c86098d8866f/_core.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_core.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_core.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_core.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_core.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_css3.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_css3.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_danger.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_danger.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_datepicker.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_datepicker.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_dragdrop.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_dragdrop.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_drawcomponent.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_drawcomponent.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_ellipsis.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_ellipsis.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_field.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_field.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_fieldset.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_fieldset.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_file.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_file.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_filter.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_filter.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_float.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_float.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_focus.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_focus.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_focus.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_focus.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_font-face.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_font-face.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_force-wrap.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_force-wrap.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_form.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_form.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_form.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_form.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_frame.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_frame.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_functions.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_functions.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_general.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_general.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/20d00b6ba686be58235656dcba58316dd55f31d2/_grid-background.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/20d00b6ba686be58235656dcba58316dd55f31d2/_grid-background.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_grid.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_grid.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_grid.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_grid.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_hacks.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_hacks.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_horizontal-list.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_horizontal-list.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_hover-link.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_hover-link.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_html.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_html.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_htmleditor.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_htmleditor.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_htmleditor.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_htmleditor.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_hyphenation.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_hyphenation.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_images.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_images.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_info.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_info.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_inline-block-list.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_inline-block-list.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_inline-block.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_inline-block.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_inline-list.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d9d45189d1097671045d9802f9ef48d7f5a67800/_inline-list.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_inner-border.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_inner-border.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_inverse.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_inverse.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/717213af5a5b6a960d34881cb2a7faa9bd6a611e/_layout.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/717213af5a5b6a960d34881cb2a7faa9bd6a611e/_layout.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_layout.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_layout.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_link-colors.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_link-colors.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_links.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_links.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_lists.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_lists.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_loadmask.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_loadmask.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_loadmask.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_loadmask.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_menu.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_menu.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_menu.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_menu.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_messagebox.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_messagebox.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_min.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_min.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_mixins.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_mixins.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_nowrap.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_nowrap.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_opacity.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_opacity.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_panel.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_panel.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_panel.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_panel.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_pickers.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_pickers.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_primary.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_primary.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_progress-bar.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_progress-bar.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_progress-bar.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_progress-bar.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_qtip.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_qtip.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_qtip.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_qtip.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_regions.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_regions.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_replacement.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ac36f59d190aea0dad48719a846cd266eddb6c1d/_replacement.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_reset-extras.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_reset-extras.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4a532503d7c21771ee30a831de49c86098d8866f/_reset.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4a532503d7c21771ee30a831de49c86098d8866f/_reset.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_reset.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_reset.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_resizable.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_resizable.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_scaffolding.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d8edd8cbdd15077dbf5cbd0b0210c5abdf2fbf1d/_scaffolding.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_scroller.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_scroller.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_shared.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_shared.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_slider.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_slider.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_splitter.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_splitter.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/a4870f396a0e84bf3c6e9df3ee265d170a21290a/_sprite-img.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/a4870f396a0e84bf3c6e9df3ee265d170a21290a/_sprite-img.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_sprites.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_sprites.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_sprites.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_sprites.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_success.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_success.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_support.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_support.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tab.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tab.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tabbar.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tabbar.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_table.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_table.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_tables.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/94e5c8bca1e045e4d2b6beec96e7e9adc5c4c6d1/_tables.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_tabs.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_tabs.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_tag-cloud.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/559de47e2f4c2bfda95cad4e2ea37bb42e9691e7/_tag-cloud.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_text-shadow.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_text-shadow.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_text.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_text.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_theme-background-image.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f211fc686b398632661bc0d2a4bb485376650400/_theme-background-image.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_tool.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b7c1008dbb9e046eeeb55c715df69e98585ca3d9/_tool.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_toolbar.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_toolbar.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_toolbar.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_toolbar.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_transform.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_transform.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_transition.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b2f170e64c01218984d568f869642e5e39c9597f/_transition.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_tree.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_tree.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tree.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_tree.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_triggerfield.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/4738e07e21730cf00359c81aaba1c7f9ceb0df8a/_triggerfield.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_typography.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_typography.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/60c82ba29d2f252915c3805179e683ef82631c33/_typography.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/60c82ba29d2f252915c3805179e683ef82631c33/_typography.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_typography.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_typography.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_unstyled-link.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/2168bdf1e1553e4c6bea553419a45e099c2f2c8b/_unstyled-link.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1cf942b00585b59b96f27c3ac61c447713c4172d/_utilities.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1cf942b00585b59b96f27c3ac61c447713c4172d/_utilities.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_utilities.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/d7ee54496f69e031205bba081d9aada2df2a992a/_utilities.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_variables.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_variables.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_vertical_rhythm.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/f6f69b3f71d7832835e2f74178a512d4ed9b264f/_vertical_rhythm.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_viewport.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_viewport.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_warning.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/38b392872b65910ef53493eeed37f8a08a5b249b/_warning.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_well.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/1a2ad04cb1754e36ed58cc47c764a53ab49dd92d/_well.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_widgets.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/b733e6749596342c3b78e866c9ce03bc34708dbd/_widgets.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_window.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/ced0f0825e2938d979c11f09fb142d3fca7c08e0/_window.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_window.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/eea6c1e91b782de1dabdb4ac999c26d86670de71/_window.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/css/app/app.css" afterPath="$PROJECT_DIR$/resources/css/app/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/app.min.js" afterPath="$PROJECT_DIR$/build/app.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/abf2b004ea30118ea0c9e430ef111822fd31eca1/bootstrap.scssc" afterPath="$PROJECT_DIR$/resources/sass/bootstrap/.sass-cache/abf2b004ea30118ea0c9e430ef111822fd31eca1/bootstrap.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/source-map.js" afterPath="$PROJECT_DIR$/build/source-map.js" />
     </list>
     <ignored path="trinus.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="e489a876-9c45-4335-87b1-f3eef969d26e" time="1363934037327" ignored="false" />
+    <file path="/Dummy.txt" changelist="e489a876-9c45-4335-87b1-f3eef969d26e" time="1365487427174" ignored="false" />
+    <file path="/GridPanel.js" changelist="e489a876-9c45-4335-87b1-f3eef969d26e" time="1365484957542" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,37 +182,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/menu/FormPanel.js">
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="4" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1365487396000" expanded="false" signature="2389:2415" placeholder="..." />
+                <marker date="1365487396000" expanded="false" signature="8274:8293" placeholder="..." />
+                <marker date="1365487396000" expanded="false" signature="8428:8480" placeholder="..." />
+                <marker date="1365487396000" expanded="false" signature="8553:8573" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="4" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
+        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="4" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1365487356000" expanded="false" signature="1700:1726" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="4" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="4" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Panel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="4" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Panel.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="13" column="0" selection-start="347" selection-end="347" vertical-scroll-proportion="0.5855856">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GridPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
+        <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="92" column="0" selection-start="3313" selection-end="3313" vertical-scroll-proportion="-3.7692308">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuPanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="4" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -67,25 +273,7 @@
       <file leaf-file-name="GridPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="37" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="20" selection-start="353" selection-end="369" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="140" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
+            <state line="265" column="13" selection-start="11904" selection-end="12202" vertical-scroll-proportion="-37.5">
               <folding />
             </state>
           </provider>
@@ -116,22 +304,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/historial/GridPanel.js" />
         <option value="$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js" />
         <option value="$PROJECT_DIR$/app/view/admin/servicios/historial/GridPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js" />
-        <option value="$PROJECT_DIR$/app/view/principal/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/all-classes.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
-        <option value="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
         <option value="$PROJECT_DIR$/trinus.jsb3" />
         <option value="$PROJECT_DIR$/app-all.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/view/login/FormPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/menu/MenuPanel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/principal/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/taxistas/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/clientes/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js" />
+        <option value="$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js" />
       </list>
     </option>
   </component>
@@ -140,7 +328,7 @@
     <option name="x" value="4" />
     <option name="y" value="22" />
     <option name="width" value="1276" />
-    <option name="height" value="774" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -156,7 +344,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -167,7 +355,261 @@
       <autoscrollFromSource ProjectPane="true" />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="principal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taxistas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servicios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="historial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servicios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="asignar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trinusweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clientes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
@@ -183,17 +625,17 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/EBCC/Proyecto/extjs/StratusPMApp" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="121" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="782" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="835" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="835" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="782" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="136" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="135" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -241,6 +683,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e489a876-9c45-4335-87b1-f3eef969d26e" name="Default" comment="" />
+      <changelist id="1667164c-41eb-4eda-8103-670d244bae99" name="NO SUBIR" comment="" />
       <created>1358897900497</created>
       <updated>1358897900497</updated>
     </task>
@@ -380,29 +823,33 @@
       <created>1363152397258</created>
       <updated>1363152397258</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="[LEMG] Se agrega campo de tiempo estimado al asignar taxista">
+      <created>1365486807293</created>
+      <updated>1365486807293</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="22" width="1276" height="774" extended-state="0" />
+    <frame x="4" y="22" width="1276" height="778" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41704717" sideWeight="0.5382114" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32674772" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41641337" sideWeight="0.5382114" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31382114" sideWeight="0.5829528" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18861789" sideWeight="0.58358663" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41704717" sideWeight="0.08699187" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46352583" sideWeight="0.11463415" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46423134" sideWeight="0.9073171" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46352583" sideWeight="0.8796748" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.4975728" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279743" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -450,7 +897,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="[LEMG] Compresión" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/admin/servicios/asignar/GridPanel.js&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -464,8 +911,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="[LEMG] Peticion de taxi &amp; Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/login/FormPanel.js&#10;&#9;app/view/menu/FormPanel.js&#10;" />
-    <MESSAGE value="[ODLG] Se sube pantaalla principal de admin" />
     <MESSAGE value="[ODLG] Se sube administrador  y funcionalidad de trinus para solicitar taxis." />
     <MESSAGE value="[LEMG] Se sube funcionalidad para pintar los taxistas en el mapa, autocompletar el destino y pinta la ruta." />
     <MESSAGE value="[LEMG] Se Elimina proxy.php" />
@@ -489,25 +934,13 @@
     <MESSAGE value="[LEMG] Se modifican los dockedItems" />
     <MESSAGE value="[LEMG] Se corrige bug de location" />
     <MESSAGE value="[LEMG] Compresión" />
+    <MESSAGE value="[LEMG] Se agrega campo de tiempo estimado al asignar taxista" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;app/view/admin/servicios/asignar/GridPanel.js&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="353" selection-end="369" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="140" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
@@ -515,42 +948,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js">
+    <entry file="file://$PROJECT_DIR$/app/view/Xtemplate/XtemplateTitulo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/xtemplate/XtemplateTitulo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="13" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="145" selection-end="154" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="33" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/GridPanel.js">
@@ -560,23 +960,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="353" selection-end="369" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="140" selection-start="1191" selection-end="1191" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -588,16 +974,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/login/FormPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/asignar/GridPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="3313" selection-end="3313" vertical-scroll-proportion="-3.7692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/GridPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="265" column="13" selection-start="11904" selection-end="12202" vertical-scroll-proportion="-37.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/menu/MenuPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/admin/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="3" column="4" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1365487396000" expanded="false" signature="2389:2415" placeholder="..." />
+            <marker date="1365487396000" expanded="false" signature="8274:8293" placeholder="..." />
+            <marker date="1365487396000" expanded="false" signature="8428:8480" placeholder="..." />
+            <marker date="1365487396000" expanded="false" signature="8553:8573" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/principal/Panel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="3" column="4" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1365487356000" expanded="false" signature="1700:1726" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/taxistas/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="110" selection-end="110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/clientes/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="4" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/asignar/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/admin/servicios/historial/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="347" selection-end="347" vertical-scroll-proportion="0.5855856">
           <folding />
         </state>
       </provider>

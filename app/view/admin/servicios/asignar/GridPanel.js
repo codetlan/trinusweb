@@ -90,6 +90,7 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                     xtype:'gridpanelfilterT',
                     resumida: true,
                     esSitio: me.esSitio,
+                    ocultar: true,
                     bbar:[{
                         xtype:'textfield',
                         itemId:'tEstimado',

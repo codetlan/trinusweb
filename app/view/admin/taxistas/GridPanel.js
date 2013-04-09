@@ -148,6 +148,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
 
     buildDockedItems:function () {
         var me = this;
+        console.log(this);
         return [
             {
                 xtype:'toolbar',
@@ -157,7 +158,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text:'Agregar',
                         ui:'success',
                         iconCls:'icon-plus icon-white',
-                        hidden: me.esSitio,
+                        hidden: me.ocultar,
                         handler:function () {
                             // empty record
                             me.store.insert(0, new Taxi());
@@ -170,7 +171,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text:'Desactivar',
                         ui:'danger',
                         iconCls:'icon-remove icon-white',
-                        hidden: me.esSitio,
+                        hidden: me.ocultar,
                         disabled:true,
                         handler:function () {
                             var selection = me.getView().getSelectionModel().getSelection()[0];
@@ -213,7 +214,7 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
                         text: 'Actualizar',
                         ui: 'inverse',
                         iconCls: 'icon-refresh icon-white',
-                        hidden: me.esSitio,
+                        hidden: me.ocultar,
                         handler: function(){
                             me.fireEvent("mask");
                             me.store.load(function(){me.fireEvent("unmask")});
