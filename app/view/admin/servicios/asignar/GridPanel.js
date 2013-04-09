@@ -85,10 +85,18 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                 modal:true,
                 width:600,
                 height:450,
+                layout:'fit',
                 items:[{
                     xtype:'gridpanelfilterT',
                     resumida: true,
-                    esSitio: me.esSitio
+                    esSitio: me.esSitio,
+                    bbar:[{
+                        xtype:'textfield',
+                        itemId:'tEstimado',
+                        fieldLabel:'Tiempo estimado de llegada',
+                        labelWidth:200,
+                        flex:1
+                    }]
                 }],
                 buttons:[{
                     text:'Aceptar',
@@ -117,7 +125,7 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
 
         if(taxistaSeleccionado[0]){
             var params = '?token=' + localStorage.getItem('Logeado') + '&idServicio=' + servicioSeleccionado[0].data.idServicio +
-                '&idTaxista=' + taxistaSeleccionado[0].data.idTaxista;
+                '&idTaxista=' + taxistaSeleccionado[0].data.idTaxista + '&tiempoEstimado=' + gridTaxistas.down('#tEstimado').getValue();
 
             var invocation=new XMLHttpRequest(),
                 url = 'http://isystems.com.mx:8181/Trinus/ServletOperadoraSitio'+params;
