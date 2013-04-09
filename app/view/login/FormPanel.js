@@ -1,7 +1,7 @@
 Ext.define('App.view.login.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formpanellogin',
-    requires:['App.view.registro.FormPanel'],
+    //requires:['App.view.registro.FormPanel'],
 
     bodyPadding: 10,
     buttonAlign: 'center',
@@ -29,13 +29,13 @@ Ext.define('App.view.login.FormPanel', {
         var items = [
             {
                 fieldLabel:'Movil',
-                name:'txtMovil',
-                value: '5555555555'
+                name:'txtMovil'
+                //value: '5555555555'
             },{
                 fieldLabel:'Password',
                 inputType:'password',
                 name:'txtPass',
-                value: 'trinus',
+                //value: 'trinus',
                 listeners:{
                     scope:this,
                     specialkey:function(field,e){

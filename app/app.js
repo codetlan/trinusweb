@@ -24,7 +24,7 @@ Ext.application({
      */
     name:'Trinus',
 
-    requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel'],
+    //requires:['App.view.login.FormPanel', 'App.view.principal.Panel', 'App.view.admin.Panel'],
 
     defaults: {
 

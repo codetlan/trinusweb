@@ -8,7 +8,7 @@
 Ext.define('App.view.menu.MenuPanel', {
     extend:'Ext.container.Container',
     alias:'widget.menupanel',
-    requires:['App.view.xtemplate.XtemplateTitulo', 'App.view.menu.FormPanel'],
+    //requires:['App.view.xtemplate.XtemplateTitulo', 'App.view.menu.FormPanel'],
 
     initComponent:function () {
         this.items = this.buildItems();
