@@ -148,7 +148,6 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
 
     buildDockedItems:function () {
         var me = this;
-        console.log(this);
         return [
             {
                 xtype:'toolbar',
@@ -293,7 +292,8 @@ Ext.define('App.view.admin.taxistas.GridPanel', {
             {name:'unidad', type:'string'},
             {name:'placas', type:'string'},
             {name:'contrasena', type:'string'},
-            {name:'estatus', type:'string'}
+            {name:'estatus', type:'string'},
+            {name:'estatusServicio', type:'string'}
         ];
 
         return fields;

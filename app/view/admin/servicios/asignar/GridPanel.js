@@ -109,7 +109,11 @@ Ext.define('App.view.admin.servicios.asignar.GridPanel', {
                         windowBuscarTaxista.close();
                     }
                 }]
-            });
+            }),
+            gridTaxistas = windowBuscarTaxista.down('gridpanelfilterT'),
+            storeTaxistas = gridTaxistas.getStore();
+
+            storeTaxistas.filter("estatusServicio", "LIBRE");//Mostramos solo los taxistas libres
 
             windowBuscarTaxista.show();
         } else {

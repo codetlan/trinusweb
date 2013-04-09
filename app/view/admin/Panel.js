@@ -39,6 +39,7 @@ Ext.define('App.view.admin.Panel', {
             ];
 
         if (this.esSitio) {
+            opciones.splice(0,1);//Se quita el menu de clientes :S
             opciones.push({
                 iconCls: 'icon-list-alt',
                 id: 'asigUni'+this.id,
@@ -141,7 +142,7 @@ Ext.define('App.view.admin.Panel', {
 
     setPosicionActual: function (fn) {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(fn, this.gestionaErroresGeo);
+            navigator.geolocation.getCurrentPosition(fn, this.gestionaErroresGeo.bind(this));
         } else {
             alert('Tu navegador no soporta la API de geolocalizacion');
         }
@@ -150,7 +151,7 @@ Ext.define('App.view.admin.Panel', {
     createMap: function (position) {
         var mapOptions = { //Se crean las opciones basicas del mapa
             zoom: 8,
-            center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+            center: position?new google.maps.LatLng(position.coords.latitude, position.coords.longitude):new google.maps.LatLng(19.3698657, -99.1377672),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }; //Se crea la coordenada de la posicion actual
         this.infowindow = new google.maps.InfoWindow(); //Globo del marker con información
@@ -280,5 +281,20 @@ Ext.define('App.view.admin.Panel', {
                 }
             }
         });
+    },
+
+    gestionaErroresGeo:function (err) {
+        if (err.code == 0) {
+            alert("error desconocido");
+        }
+        if (err.code == 1) {
+            this.createMap();
+        }
+        if (err.code == 2) {
+            alert("no se puede obtener la posicion actual");
+        }
+        if (err.code == 3) {
+            alert("timeout recibiendo la posicion");
+        }
     }
 });
