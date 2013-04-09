@@ -1,7 +1,7 @@
 Ext.define('App.view.admin.servicios.asignar.GridPanel', {
     extend:'Ext.grid.Panel',
     alias:'widget.gridpanelAsignar',
-    //requires:['App.view.admin.taxistas.GridPanel'],
+    requires:['App.view.admin.taxistas.GridPanel'],
 
     initComponent:function(){
         Ext.define('Servicio', {

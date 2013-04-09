@@ -1,7 +1,7 @@
 Ext.define('App.view.login.FormPanel', {
     extend: 'Ext.form.Panel',
     alias :'widget.formpanellogin',
-    //requires:['App.view.registro.FormPanel'],
+    requires:['App.view.registro.FormPanel'],
 
     bodyPadding: 10,
     buttonAlign: 'center',
